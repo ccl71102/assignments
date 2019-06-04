@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+}
+
+/* used to store the divs so that each div inside the container
+can be resized and positioned relative to its container rather
+than the whole page - namely, adjust the width by percentage
+and set them to display as inline blocks*/
+
+.container {
+    height: 130px;
+    width: 70%;
+    margin: auto;
+} 
+
+.sizing {
+    height: 130px;
+    margin: auto;
+    display: inline-block;
+    border: 5px solid white;   
+}
+
+.pink {
+    background-color: #F5C6D6;
+    width: 100%; 
+}
+
+.magenta {
+    background-color: #EE2E84;
+    width: 25%;
+}
+
+.cyan {
+   background-color: #85CFD8;
+   width: 50%;
+}
+
+.green {
+    background-color: #8DC63F;
+    width: 75%;
+}
+
+.orange {
+    background-color: #E76E34;
+    width: 25%;
+}
+

@@ -1,0 +1,87 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(243, 243, 243);
+    color: rgb(15,15,15);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 44px;
+}
+
+h1, h2 { 
+    text-align: center;
+}
+
+p {
+    width: 400px;
+    border: 40px;
+    margin: 10px auto;
+    text-indent: 30px;
+    text-align: justify;
+    font-size: 0.92em;
+}
+
+.paragraph-1 > span{
+    color: rgb(140, 160, 140);
+    font-weight: bold;
+}
+
+.paragraph-2 > span{
+    color:rgb(160, 140, 140);
+    font-style: italic;
+}
+
+.paragraph-3 > span{
+    color:rgb(140, 140, 160);
+    font-style: italic;
+}
+
+#location {
+    font-style: italic;
+    color: #000000;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.90em;
+}
+
+a:link {
+    color: rgb(160,160,140);
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a:visited {
+    color: rgb(140,160,160);
+}
+
+footer {
+    text-align: center;
+    margin: 30px auto;
+    font-size: .7em;
+}
+
+.car-image {
+    margin: 10px auto;
+    width: 400px;
+    display: block;
+}
+
+.author {
+    text-align: center;
+    font-size: 0.75em;
+    margin: 16px auto;
+}
+
+hr {
+    max-width: 400px;
+}
+
+.caption {
+    font-size: 0.7em;
+    text-align: center;
+    margin: 0 auto 20px;
+    width: 400px;
+}

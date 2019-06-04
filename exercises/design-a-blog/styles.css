@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+}
+
+#nav {
+    position: fixed;
+    width: 100vw;
+    background-color: rgb(180,200,180);
+    width: 100vw;
+}
