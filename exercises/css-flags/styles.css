@@ -1,29 +1,351 @@
-* {
-    margin: 0;
-}
 
-#french-flag {
-    width: 300px;
-    height: 250px;
+
+.flag {
+    width: 50%;
+    height: 300px;
+    border: 2px solid black;
     position: relative;
-    border: 1px solid black;
 }
 
-#french-blue {
-    width: 100px;
-    height: 250px;
-    background-color: blue;
+.french-blue {
+    width: 33%;
+    height: 300px;
+    background-color: RGB(0, 35, 149);
     position: absolute;
 }
 
-#french-white {
-    width: 100px;
-    height: 250px;
+.french-white {
+    width: 34%;
+    height: 300px;
+    background-color: white;
+    position: absolute;
+    right: 33%;
+}
+
+.french-red {
+    width: 33%;
+    height: 300px;
+    background-color: RGB(237, 41, 57);
+    position: absolute;
+    left: 67.1%;
+}
+
+.german-black {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+}
+
+.german-red {
+    width: 100%;
+    height: 100px;
+    background-color: RGB(221, 0, 0);
+    position: absolute;
+    top: 100px;
+}
+
+.german-yellow {
+    width: 100%;
+    height: 100px;
+    background-color: RGB(255, 206, 0);
+    position: absolute;
+    top: 200px;
+
+}
+
+.madagascar-white {
+    background-color: white;
+    width: 33%;
+    height: 100%;
+    position: absolute;
+
+}
+
+.madagascar-red {
+    width: 67%;
+    height: 50%;
+    background-color: RGB(252, 61, 50);
+    position: absolute;
+    left: 33.1%;
+}
+
+.madagascar-green {
+    width: 67%;
+    height: 50%;
+    background-color: RGB(0, 126, 58);
+    position: absolute;
+    left: 33.1%;
+    top: 50%;
+}
+
+.swiss-red {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: RGB(213, 43, 30);
+
+}
+
+.swiss-white {
+    background-color: white;
+    position: absolute;
+}
+
+.swiss-cross-vertical{
+    height: 60%;
+    width: 15%;
+    top: 20%;
+    left: 42%;  
+}
+
+.swiss-cross-horizontal{
+    height: 20%;
+    width: 46%;
+    top: 40%;
+    left: 27%;
+}
+
+.swedish-blue {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: RGB(0, 106, 167);
+}
+
+.swedish-yellow {
+    position: absolute;
+    background-color: RGB(254, 204, 0);
+}
+
+.swedish-cross-vertical {
+    width: 12%;
+    height: 100%;
+    bottom: 0px;
+    left: 30%;
+
+}
+
+.swedish-cross-horizontal {
+    width: 100%;
+    height: 20%;
+    top: 40%;
+
+}
+
+.gambia-white {
+    position: relative;
+    width: 100%;
+    height: 100%;
     background-color: white;
 }
 
-#french-red {
-    width: 100px;
-    height: 250px;
-    background-color: red;
+.gambia-red {
+    background-color: RGB(206, 17, 38);
+    position: absolute;
+    width: 100%;
+    height: 33%;
+    bottom: 67%;
+}
+
+.gambia-green {
+    background-color: RGB(58, 119, 40);
+    position: absolute;
+    width: 100%;
+    height: 33%;
+    bottom: 0px;
+}
+
+.gambia-blue {
+    background-color: RGB(12, 28, 140);
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 35%;
+}
+
+.tonga-red {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(193, 0, 0);
+}
+
+.tonga-white {
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    background-color: white;
+    top: 0;
+}
+
+.tonga-cross-vertical {
+    position: absolute;
+    width: 8%;
+    height: 28%;
+    background-color: rgb(193, 0, 0);
+    top: 10%;
+    left: 15%;
+
+}
+
+.tonga-cross-horizontal {
+    position: absolute;
+    width: 22%;
+    height: 10%;
+    background-color: rgb(193, 0, 0);
+    top: 18%;
+    left:8%;
+}
+
+.japan-white {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+
+}
+
+.japan-red {
+    position: absolute;
+    background-color: rgb(188, 0, 45);
+    height: 50%;
+    width: 30%;
+    border-radius: 50%;
+    top: 25%;
+    left: 35%;
+
+}
+
+.greece-blue {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(13, 94, 175);
+    position: relative;
+}
+
+.greece-white {
+    background-color: white;
+    position: absolute;
+}
+
+.greece-cross-horizontal{
+    width: 33%;
+    height: 11.1%;
+    top: 20%;
+}
+
+.greece-cross-vertical {
+    width: 8%;
+    height: 54%;
+    top: 0%;
+    left: 12.5%;
+}
+
+.greece-first-line {
+    width: 67.1%;
+    height: 11.1%;
+    top: 8.7%;
+    left: 33%;
+}
+
+.greece-second-line {
+    width: 67.1%;
+    height: 11.1%;
+    top: 31.4%;
+    left: 33%;
+}
+
+.greece-third-line {
+    width: 100%;
+    height: 11.1%;
+    top: 54%;
+}
+
+.greece-fourth-line {
+    width: 100%;
+    height: 11.1%;
+    top: 77%;
+}
+
+.niger-orange {
+    background-color: RGB(224, 82, 6);
+    height: 33%;
+    width: 100%;
+    position: absolute;
+}
+
+.niger-white {
+    background-color: white;
+    height: 33%;
+    width: 100%;
+    position: absolute;
+    top: 33%;
+}
+
+.niger-green {
+    background-color: RGB(13, 176, 43);
+    height: 33%;
+    width: 100%;
+    top: 67%;
+    position: absolute;
+}
+
+.niger-circle {
+    background-color: RGB(224, 82, 6);
+    position: absolute;
+    height: 30%;
+    width: 20%;
+    border-radius: 50%;
+    top: 35%;
+    left: 40%;
+}
+
+.maldives-red {
+    background-color: RGB(210, 16, 52);
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.maldives-green {
+    background-color: RGB(0, 126, 58);
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    left: 20%;
+    top: 20%;
+
+}
+
+.maldives-white-circle {
+    background-color: white;
+    position: absolute;
+    height: 44%;
+    width: 30%;
+    border-radius: 50%;
+    top: 28%;
+    left: 40%;
+}
+
+.maldives-green-circle {
+    background-color: RGB(0, 126, 58);
+    position: absolute;
+    height: 44%;
+    width: 30%;
+    border-radius: 50%;
+    top: 28%;
+    left: 45%;
+
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
 }
