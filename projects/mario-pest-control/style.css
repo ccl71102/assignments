@@ -1,0 +1,79 @@
+* {
+    font-family: "Arial";
+}
+
+body {
+    background-color: rgb(7,155,176);
+}
+
+.baddies-image {
+    width: 80px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 20px 20px;
+    float: left;
+}
+
+.coin-image {
+    width: 40px;
+    padding: 10px;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.div-struct {
+    width: 500px;
+    height: 120px;
+    border: 1px solid black;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px black;
+}
+
+.result-area {
+    width: 500px;
+    height: 80px;
+    margin: 10px auto;
+    border: 1px solid black;
+    background-color: rgb(4, 156, 216);
+    border-radius: 5px;
+    box-shadow: 5px 5px black;
+}
+
+.red {
+    background-color: rgb(229, 37, 33);
+}
+
+.green {
+    background-color: rgb(67, 176, 71);
+}
+
+.blue {
+    background-color: rgb(251, 208, 0);
+}
+
+.input-baddies {
+    width: 400px;
+    position: relative;
+    top: 70px;
+    left: 130px;
+}
+
+.submit-button {
+    width: 80px;
+    height: 20px;
+    font-size: 16px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background-color: rgb(141,79,58);
+    border: 1px solid black;
+    box-shadow: 2px 2px black;
+}
+
+
+
+
