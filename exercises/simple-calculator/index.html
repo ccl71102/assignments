@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Calculators</title>
+</head>
+<body>
+    <h1>Calculators</h1>
+    <div class="container">
+        <div class="operation-forms">
+            <form name="formAdd">
+                <p>First digit:</p>
+                <input type="text" name="firstDigit">
+                <p>Second digit:</p>
+                <input type="text" name="secondDigit">
+                <input class="button-style" type="submit" value="Add (+)">
+            </form>
+            <div id="result-add"></div>
+        </div>
+
+        <div class="operation-forms">
+            <form name="formSub">
+                <p>First digit:</p>
+                <input type="text" name="firstDigit">
+                <p>Second digit:</p>
+                <input type="text" name="secondDigit">
+                <input class="button-style" type="submit" value="Substract (-)">
+            </form>
+            <div id="result-sub"></div>
+        </div>
+
+        <div class="operation-forms">
+            <form name="formMul">
+                <p>First digit:</p>
+                <input type="text" name="firstDigit">
+                <p>Second digit:</p>
+                <input type="text" name="secondDigit">
+                <input class="button-style" type="submit" value="Multiply (x)">
+            </form>
+            <div id="result-mul"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
