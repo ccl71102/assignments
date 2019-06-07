@@ -5,28 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Mario Pest Control</title>
 </head>
 <body>
-    <h1>Mario Pest Control</h1>
-    <form name="formTotal">
-        <div class="div-struct red">
-            <img class="baddies-image" src="./images/goomba.png">
-            <p class="input-baddies">Goombas: <input type="number" name="inputGoomba" min="0"></p>
-        </div>
-        <div class="div-struct green">
-            <img class="baddies-image" src="./images/bob-omb.png">
-            <p class="input-baddies">Bob-Ombs: <input type="number" name="inputBobomb" min="0"></p>
-        </div>
-        <div class="div-struct blue">
-            <img class="baddies-image" src="./images/cheep-cheep.png">
-            <p class="input-baddies">Cheep Cheeps: <input type="number" name="inputCheepCheep" min="0"></p>
-        </div>
-        <div class="result-area">
-            <input type="submit" name="submitButton" class="submit-button">
-        </div>
-    </form>
-    <footer></footer>
+    <div id="main-container">
+        <form name="formTotal">
+            <h1 id="title">Mario Pest Control</h1>
+            <div class="baddies-container red">
+                <p class="baddies-name">Goomba (<img src="images/coin.png" class="coin-image"> x 5)</p>
+                <img class="baddies-image" src="./images/goomba.png">
+                <p class="baddies-input">Total Killed: <input type="number" name="inputGoomba" min="0" max="999" maxlength="999" placeholder="0"></p>
+            </div>
+            <div class="baddies-container green">
+                <p class="baddies-name">Bob-Omb (<img src="images/coin.png" class="coin-image"> x 7)</p>
+                <img class="baddies-image" src="./images/bob-omb.png">
+                <p class="baddies-input">Total Killed: <input type="number" name="inputBobomb" min="0"  max="999" maxlength="999" placeholder="0"></p>
+            </div>
+            <div class="baddies-container blue">
+                <p class="baddies-name">Cheep Cheep (<img src="images/coin.png" class="coin-image"> x 11)</p>
+                <img class="baddies-image" src="./images/cheep-cheep.png">
+                <p class="baddies-input">Total Killed: <input type="number" name="inputCheepCheep" min="0"  max="999" maxlength="999" placeholder="0"></p>
+            </div>
+            <div id="result-container">
+                <button class="submit-btn">Submit Total</button>
+                <div id="result-text"></div>
+            </div>
+            <footer>
+                <div id="div-footer" class="flex-container">
+                    <p class="footer-text">email: mario@mariopestcontrol.com</p>
+                    <a class="footer-text" href="https://github.com/ccl71102?tab=repositories">www.mariopestcontrol.com</a>
+                    <p class="footer-text">Castle 4, World 8<br>Mushroom Kingdom</p>
+                </div>
+            </footer>
+        </form>
+    </div>
     <script src="./main.js"></script>
 </body>
 </html>

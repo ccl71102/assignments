@@ -43,13 +43,13 @@ function search42(arr1){
 console.log(search42([2,50,39,12,14,42,30,29,18]));
 console.log(search42([2,50,39,12]));
 
-function largestNumber(arr1){
+function smallestNumber(arr1){
     var smallest= arr1[0];
-    for(i = 1; i < arr1.length; i++){
+    for(var i = 1; i < arr1.length; i++){
         if(arr1[i] < smallest)
             smallest = arr1[i];
     }
     return smallest;
 }
 
-console.log(largestNumber([12,9,4,7,10,5]));
+console.log(smallestNumber([76, 138, 29, 4508, 41, 5, 99, 80085, 32, 10]));

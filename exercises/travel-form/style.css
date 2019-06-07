@@ -48,3 +48,10 @@ body {
     font-size: 14px;
     background-color: rgb(252,250,250);
 }
+
+#div-footer {
+    width: 100%;
+    height:200px;
+    background-image: url("./images/bricks.jpeg");
+    background-size: 100% 100%;
+}
