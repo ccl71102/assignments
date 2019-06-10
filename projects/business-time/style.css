@@ -1,0 +1,226 @@
+/*General styling*/
+
+* {
+    font-family: sans-serif;
+    color: rgb(245,240,240);
+    margin: 0px;
+}
+
+body {
+    background-color: rgb(120,120,120);
+}
+
+nav {
+    display: flex;
+    background-color: rgb(90,90,90);
+    border: 2px solid rgb(245,240,240);
+    overflow: hidden;
+    width: 100%;
+    min-width: 320px;
+    height: 50px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+input {
+    color: rgb(90,90,90);
+}
+
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(90,90,90);
+    font-size: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+nav > a {
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 24px;
+}
+
+header {
+    margin-top: 60px;
+}
+
+#title {
+    text-align: center;
+    padding-top: 80px;
+    font-size: 34px;
+    text-shadow: 2px 2px rgb(30,30,30);
+}
+
+.background-image {
+    background-position: center;
+    width: 100%;
+    min-width: 320px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.submit-button {
+    margin-top: 10px;
+    border: 2px solid rgb(245,240,240);
+    background-color: rgb(90, 90, 90);
+    font-size: 16px;
+    width: 100px;
+    box-shadow: 2px 2px rgb(30,30,30);
+}
+
+/*Home image styling*/
+
+.home-title {
+    text-align: center;
+    padding: 10px;
+}
+
+.home-image {
+    width: 60%;
+    padding: 10px;
+
+}
+
+.home-text {
+    text-align: justify;
+    text-indent: 30px;
+
+}
+
+.home-content {
+   margin: 0;
+}
+
+.home-main {
+    margin: 20px 20px 30px;
+}
+
+.image-main {
+    background-image: url("./images/content-image-main.jpg");
+}
+
+/*Book page styling*/
+
+.package-flex {
+    display: flex;
+    margin: 10px 10px;
+    background-color: rgb(90,90,90);
+    border: 2px solid rgb(245,240,240);
+    text-align: center;
+    box-shadow: 2px 2px rgb(30,30,30);
+    min-width: 320px;
+
+}
+
+.packages {
+    margin-bottom: 40px;
+}
+
+.package-title {
+    text-align: center;
+}
+
+.package-submit {
+    padding: 10px;
+    display: flex;
+}
+
+.package-cost {
+    margin: 5px;
+    width: 100%;
+}
+
+.package-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.package-details {
+    width: 50%;
+    font-size: 12px;
+    text-align: justify;
+    padding: 30px 20px;
+    flex-direction: column;
+}
+
+.image-book {
+    background-image: url("./images/content-image-book.jpg");
+}
+
+/*Contact page styling*/
+
+.contact-flex {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.contact-column {
+    margin:10px 10px;
+    width: 50%;
+    align-items: center;
+}
+
+.contact-form-text {
+    margin: 0;
+}
+
+.contact-text-title {
+    margin-top:5px;
+}
+
+.contact-title {
+    margin-bottom: 5px;
+}
+
+.image-contact {
+    background-image: url("./images/content-image-contact.jpg");
+}
+
+
+
+
+/*Media queries*/
+
+@media only screen and (min-width: 415px){
+    body{
+        background-color: blue;
+    }
+
+    .contact-flex {
+        flex-direction: row;
+    }
+
+}
+
+@media only screen and (min-width: 768px){
+    body{
+        background-color: red;
+    }
+
+    .contact-flex {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    body {
+        background-color: green;
+    }
+
+    .contact-flex {
+        flex-direction: row;
+    }
+}
+
