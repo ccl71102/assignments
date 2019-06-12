@@ -13,7 +13,7 @@ body {
 
 nav {
     display: flex;
-    background-color: rgb(53, 69, 114);
+    background-color: rgb(48, 55, 73);
     border: 2px solid rgb(240, 240, 241);
     overflow: hidden;
     width: 100%;
@@ -74,7 +74,7 @@ header {
     margin-top: 10px;
     padding: 5px;
     border: 2px solid rgb(240, 240, 241);
-    background-color: rgb(53, 69, 114);
+    background-color: rgb(48, 55, 73);
     font-size: 16px;
     width: 100px;
     box-shadow: 2px 2px rgb(30,30,30);
