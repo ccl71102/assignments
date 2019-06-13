@@ -80,5 +80,15 @@ console.log(quadratic(0,34,13));
 console.log(fibonacciSum(12));
 
 function mostCommonCharacter(input) {
-    //to do
+
+    const arr = input.split("");
+    arr.sort();
+    let count = 1;
+    let mostCommon = arr[0];
+    return mostCommon;
+    
+    //TODO
 }
+
+console.log(mostCommonCharacter("Pennsylvania"));
+
