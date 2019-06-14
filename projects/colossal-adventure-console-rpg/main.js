@@ -35,40 +35,15 @@ if(playerClassSelect === -1) {
     gameOver = true;
 }
 
+//assign class
+
 setPlayerClass(playerClassSelect);
 
 //start game
 
 while(!gameOver) {
     //walk mode
-    const answer = readline.keyInSelect(walkModeOptions, "Your options:");
-    
-    switch(answer)  {
-        case 0: 
-            if(isAmbushed())
-                fightMode(createEnemy());
-            else {
-                console.log("\n[You march one step closer into oblivion]");
-                playerSteps+= Math.floor((Math.random() + 1 )* 4);
-                if(playerSteps >= winCondition)
-                    endGame();
-            }
-            break;
-        case 1:
-            showPlayerStats();
-            break;
-        default:
-            if(isAmbushed())
-                fightMode(createEnemy());
-            else {
-                showRandomWalkMessage();
-                playerSteps+= Math.floor((Math.random() + 1 )* 4);
-                if(playerSteps >= winCondition)
-                    endGame();
-            }
-            break;
-    }
-
+    walk(readline.keyInSelect(walkModeOptions, "[You narrow down your options to the following]"));
 }
 
 //if the game is gameOver, show game over message regardless of outcome
@@ -100,44 +75,100 @@ function Actor(name = "Soldier", health = 100, damage = 20, armor = 0, inventory
     }
 }
 
+function walk(answer){
+    switch(answer)  {
+        case 0: 
+            if(isAmbushed()) {
+                fightMode(createEnemy());
+                playerSteps++;
+                checkEndGame();
+                
+            }
+            else {
+                showRandomWalkMessage();
+                playerSteps+= Math.floor((Math.random() + 1 ) * 4);
+                checkEndGame();
+            }
+            break;
+        case 1:
+            showPlayerStats();
+            break;
+        default:
+            if(isAmbushed()) {
+                fightMode(createEnemy());
+                playerSteps++;
+                checkEndGame();
+            }
+            else {
+                showRandomWalkMessage();
+                playerSteps+= Math.floor((Math.random() + 1 ) * 4);
+                checkEndGame();
+            }
+            break;
+    }
+}
+
+function checkEndGame(){
+    if(playerSteps >= winCondition)
+        endGame();
+}
+
 function showRandomWalkMessage(){
     let index = Math.floor(Math.random() * 4);
 
-    if(player.health >= 10) {
+    if(player.health >= 75){
         switch(index) {
-            case 0: console.log("[You march one step closer to oblivion]")
-            case 1: console.log("[You press on towards your objective]")
-            case 2: console.log("[You confidenly move ahead]");
-            case 3: console.log("[You press on, determined to complete your mission]");
-            default: console.log("[You march one step closer to oblivion]")
+            case 0: console.log("\n[You march one step closer to oblivion]");
+                    break;
+            case 1: console.log("\n[You press on towards your objective]");
+                    break;
+            case 2: console.log("\n[You confidenly move ahead]");
+                    break;
+            case 3: console.log("\n[You press on, determined to complete your mission]");
+                    break;
+            default: console.log("\n[You march one step closer to oblivion]");
+                    break;
         }
-    } else if(player.health >= 25) {
-        switch(index) {
-            case 0: console.log("[You march one step closer to oblivion]")
-            case 1: console.log("[You press on towards your objective]")
-            case 2: console.log("[You confidenly move ahead]");
-            case 3: console.log("[You press on, determined to complete your mission]");
-            default: console.log("[You march one step closer to oblivion]")
-        }
-
     } else if(player.health >= 50) {
         switch(index) {
-            case 0: console.log("[You march one step closer to oblivion]")
-            case 1: console.log("[You press on towards your objective]")
-            case 2: console.log("[You confidenly move ahead]");
-            case 3: console.log("[You press on, determined to complete your mission]");
-            default: console.log("[You march one step closer to oblivion]")
+            case 0: console.log("\n[You march one step closer to oblivion]");
+                    break;
+            case 1: console.log("\n[You press on towards your objective]");
+                    break;
+            case 2: console.log("\n[You confidenly move ahead]");
+                    break;
+            case 3: console.log("\n[You press on, determined to complete your mission]");
+                    break;
+            default: console.log("\n[You march one step closer to oblivion]");
+                    break;
         }
-
-    } else if(player.health >= 80){
+    } else if(player.health > 25) {
         switch(index) {
-            case 0: console.log("[You march one step closer to oblivion]")
-            case 1: console.log("[You press on towards your objective]")
-            case 2: console.log("[You confidenly move ahead]");
-            case 3: console.log("[You press on, determined to complete your mission]");
-            default: console.log("[You march one step closer to oblivion]")
+            case 0: console.log("\n[You march one step closer to oblivion]");
+                    break;
+            case 1: console.log("\n[You press on towards your objective]");
+                    break;
+            case 2: console.log("\n[You confidenly move ahead]");
+                    break;
+            case 3: console.log("\n[You press on, determined to complete your mission]");
+                    break;
+            default: console.log("\n[You march one step closer to oblivion]");
+                    break;
         }
-    } 
+    }   else if(player.health <= 25) {
+            switch(index) {
+                case 0: console.log("\n[You march one step closer to oblivion]");
+                        break;
+                case 1: console.log("\n[You press on towards your objective]");
+                        break;
+                case 2: console.log("\n[You confidenly move ahead]");
+                        break;
+                case 3: console.log("\n[You press on, determined to complete your mission]");
+                        break;
+                default: console.log("\n[You march one step closer to oblivion]");
+                        break;
+            }
+    }  
 }
 
 function showPlayerStats() {
@@ -217,7 +248,7 @@ function fightMode(enemy) {
         else
             console.log(enemy.name + "'s health: Unknown");
 
-        const choice = readline.keyInSelect(fightOptions, "Choose option");
+        const choice = readline.keyInSelect(fightOptions, "[Your finger is firmly pressed against the trigger]");
         let runChance = 0;
 
         //let player attack first

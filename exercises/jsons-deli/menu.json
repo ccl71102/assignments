@@ -1,0 +1,84 @@
+{
+    "menu" : {
+            "appetizers": [
+                {
+                    "name": "cheese curds",
+                    "ingredients": [
+                        "cheddar cheese curds", "tempura breading"
+                    ],
+                    "description": "Fried cheese curds"
+                },
+                {
+                    "name": "nachos",
+                    "ingredients": [
+                        "tortilla chips", "cheese", "sour cream"
+                    ],
+                    "description": "Great for sharing"
+                }
+            ],
+            "coldSandwiches": [
+                {
+                    "name": "club sandwich",
+                    "ingredients": [
+                        "bread", "lettuce", "tomato", "mayo"
+                    ],
+                    "description": "It's a Club Sandwich"
+                },
+                {
+                    "name": "subzero",
+                    "ingredients": [
+                        "frozen bread", "frozen lettuce", "frozen tomato"
+                    ],
+                    "description": "We forgot to microwave this before serving"
+                }
+            ],
+            "hotSandwiches": [
+                {
+                    "name": "grilled cheese",
+                    "ingredients": [
+                        "bread", "cheddar cheese", "butter"
+                    ],
+                    "description": "Only heathens use mayo"
+                },
+                {
+                    "name": "BLT melt",
+                    "ingredients": [
+                        "bread", "bacon", "lettuce", "tomato", "cheddar cheese"
+                    ],
+                    "description": "This sure is a sandwich"
+                }
+            ],
+            "desserts": [
+                {
+                    "name": "chocolate cake",
+                    "ingredients": [
+                        "flour", "eggs", "milk", "chocolate"
+                    ],
+                    "description": "Deadly and decadent"
+                },
+                {
+                    "name": "ice cream",
+                    "ingredients": [
+                        "milk", "egg yolks", "sugar", "air"
+                    ],
+                    "description": "I scream for this dessert"
+                }
+            ],
+            "drinks": [
+                {
+                    "name": "mountain dew",
+                    "ingredients": [
+                        "sugar", "carbonated water", "yellow 5"
+                    ],
+                    "description": "Get the crab juice instead"
+                },
+                {
+                    "name": "crab juice",
+                    "ingredients": [
+                        "water", "crab"
+                    ],
+                    "description": "Wash off the taste of your meal with this"
+                }
+            ]
+    }
+}

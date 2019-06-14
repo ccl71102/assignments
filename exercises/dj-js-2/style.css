@@ -1,0 +1,127 @@
+
+* {
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 60px;
+    color:rgb(235, 189, 104);
+    text-shadow: 2px 2px black;
+    margin-top: 50px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+#box-1 {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    margin: 50px auto;
+    border-radius: 0px;
+    background-color: rgb(235, 189, 104);
+    transition: height, width, background-color, border-radius, 750ms, linear, 100ms;
+}
+
+#box-2 {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    margin: 50px auto;
+    background-color: rgb(235, 189, 104);
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transition: background-color, height, width, border-top-left-radius, border-bottom-right-radius, 750ms, linear, 100ms;
+}
+
+#box-3 {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    margin: 50px auto;
+    border-radius: 0px;
+    background-color: rgb(235, 189, 104);
+    transition: background-color, height, width, align-content, 750ms, linear, 100ms;
+}
+
+#box-4 {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    margin: 50px auto;
+    border-radius: 0px;
+    background-color: rgb(235, 189, 104);
+    transition: background-color, height, width, 750ms, linear, 100ms;
+}
+
+#box-5 {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    margin: 50px auto;
+    border-radius: 0px;
+    background-color: rgb(235, 189, 104);
+    transition: height, width, background-color, border-top-left-radius, border-top-right-radius, 750ms, linear, 100ms;
+}
+
+#box-6 {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    margin: 50px auto;
+    border-radius: 0px;
+    background-color: rgb(235, 189, 104);
+    transition: background-color, width, height, 750ms, linear, 100ms;
+}
+
+#box-1:hover {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: rgb(67, 28, 99);
+}
+
+#box-2:hover {
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: rgb(103, 177, 55);
+    height: 200px;
+    width: 250px;
+}
+
+#box-3:hover {
+    height: 150px;
+    width: 150px;
+    background-color: rgb(175, 115, 175);
+    align-content: center;
+}
+
+#box-4:hover {
+    height: 150px;
+    width: 250px;
+    background-color: rgb(21, 127, 189);
+}
+
+#box-5:hover {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: rgb(158, 42, 42);
+    height: 250px;
+    width:250px;
+}
+
+#box-6:hover {
+    width: 150px;
+    height: 250px;
+    background-color: rgb(92, 203, 211);
+}
