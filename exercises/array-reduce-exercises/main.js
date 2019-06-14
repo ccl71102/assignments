@@ -1,21 +1,21 @@
 
 function total(arr) {
-    return arr.reduce((a,b) => a + b);
+    return arr.reduce((total,item) => total + item);
 }
 
 console.log(total([1,2,3]));
 
 function stringConcat(arr) {
-    return arr.reduce((a,b) => a.toString() + b.toString());
+    return arr.reduce((total,item) => total.toString() + item.toString());
 }
 
 console.log(stringConcat([1,2,3]));
 
 function totalVotes(arr) {
-    return arr.reduce((a, b) => {
-       if(b.voted) 
-           return a + 1;
-        return a;
+    return arr.reduce((total, item) => {
+       if(item.voted) 
+           return total + 1;
+        return total;
     }, 0)
 }
 
@@ -37,7 +37,7 @@ const voters = [
 console.log(totalVotes(voters));
 
 function shoppingSpree(arr) {
-    return arr.reduce((sum, a) => sum + Number(a.price), 0);
+    return arr.reduce((total, item) => total + Number(item.price), 0);
  }
  
  var wishlist = [
@@ -51,7 +51,7 @@ function shoppingSpree(arr) {
  console.log(shoppingSpree(wishlist));
 
  function flatten(arr) {
-    return arr.reduce((sum, item) => sum + (item + " "), "")  
+    return arr.reduce((total, item) => total + (item + " "), "")  
  }
  
  var arrays = [

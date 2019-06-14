@@ -7,14 +7,12 @@ let sleep = require("thread-sleep");
 let gameOver = false;
 let killCount = 0;
 let playerSteps = 0;
-const winCondition = Math.floor((Math.random() * 30) + 30);
 let enemyScanned = false;
-
-console.log(winCondition);
-
+const winCondition = Math.floor((Math.random() * 30) + 30);
 const walkModeOptions = ["Walk", "Check Status"];
 const fightOptions = ["Fire", "Check Status", "Scan Target", "Run"];
-//const defaultOptions = readline.setDefaultOptions();
+
+console.log(winCondition);
 
 //Show game name and some intro for flavor
 
@@ -345,7 +343,7 @@ function scanTarget(enemy){
 function createEnemy() {
     const enemyType = Math.floor(Math.random() * 5);
     switch(enemyType) {
-        case 0: return new Actor("Locust", 25, 5, 0,["Junk"]);
+        case 0: return new Actor("Horror", 25, 5, 0,["Junk"]);
         case 1: return new Actor("Mauler", 50, 10, 0, ["Junk"]);
         case 2: return new Actor("Torment", 75, 10, 0, ["Junk"]);
         case 3: return new Actor("Wraith", 75, 15, 20, ["Junk"]);
