@@ -62,7 +62,34 @@ function shoppingSpree(arr) {
  
  console.log(flatten(arrays));
 
- //TODO e 6
+ //TODO e6
+
+function voterResults(arr) {
+    return voters.reduce((total, voter) => {
+        if(voter.age >= 18 && voter.age <= 25) {
+            total.youth++;
+            if(voter.voted)
+                total.youngVotes++;
+        } else if(voter.age >= 26 && voter.age <= 35) {
+            total.mids++;
+            if(voter.voted)
+                total.midVotes++;
+        } else if(voter.age >= 36 && voter.age <= 55) {
+            total.olds++;
+            if(voter.voted)
+                total.oldVotes++;
+        }
+        return total;
+    }, {
+        youngVotes: 0,
+        youth: 0,
+        midVotes: 0,
+        mids: 0,
+        oldVotes: 0,
+        olds: 0
+    })
+}
+
 
 
 

@@ -11,7 +11,7 @@ let enemyScanned = false;
 let killCount = 0;
 let playerSteps = 0;
 let totalOrganicMatter = 0;
-const winCondition = Math.floor((Math.random() * 10) + 50);
+const winCondition = Math.floor((Math.random() * 10) + 70);
 const walkModeOptions = ["Walk", "Check Status", "Heal"];
 const fightOptions = ["Fire", "Check Status", "Scan Target", "Run", "Heal"];
 
@@ -67,7 +67,7 @@ console.log("[You browse the vast selection of weapons, but only three of them c
 
 //select class
 
-const classes = [".50 Cal Light Machine Gun (Heavy Gunner): 125 HP | 30 DMG | 40 DEF | 70% HIT", ".50 Cal Hand Cannon (Operative): 100 HP | 40 DMG | 25 DEF | 80% HIT", ".50 Cal Anti-Materiel Rifle (Ghost): 75 HP | 50 DMG | 10 DEF | 90% HIT"];
+const classes = [".50 Cal Light Machine Gun (Heavy Gunner): 125 HP | 30 DMG | 40 DEF | 70% HIT", ".50 Cal Hand Cannon (Operative): 100 HP | 40 DMG | 25 DEF | 90% HIT", ".50 Cal Anti-Materiel Rifle (Ghost): 75 HP | 50 DMG | 10 DEF | 80% HIT"];
 const playerClassSelect = readline.keyInSelect(classes,"[Select your equipment]");
 
 if(playerClassSelect === -1) {
@@ -354,6 +354,7 @@ function fightMode(enemy) {
         console.log("\n["+player.name + "'s Health: " + player.health + " HP ]");
 
         //need to scan enemy for health to show up on HUD
+
         if(enemyScanned)
             console.log("[" + enemy.name + "'s Health: " + enemy.health + " HP ]");
         else
@@ -388,7 +389,7 @@ function fightMode(enemy) {
                     heal();
                     break;
                 default:
-                        runChance = Math.floor(Math.random() * 2);
+                    runChance = Math.floor(Math.random() * 2);
                     if(runChance === 0) {
                         console.log("\n[SUCCESS: You distracted the enemy and escaped]");
                         return;
@@ -396,7 +397,6 @@ function fightMode(enemy) {
                         console.log("\n[FAILURE: There is no escape]");
                     }
                     break;
-
             }
 
             //check if anyone died after player attack
@@ -444,7 +444,6 @@ function fightMode(enemy) {
                 killCount++;
                 fightOver = true;
             } 
-
             if(player.health <= 0 && !fightOver) {
                 console.log("\n[You now lie dead on the ground; Earth and everything you hold dear will now be lost]");
                 sleep(2000);
@@ -503,9 +502,9 @@ function checkEnemyThreatLevel(enemy){
 
 function checkEnemyTargetDescription(enemy) {
     if(enemy.name === "Mauler")
-        return "A humanoid foot soldier. Appears to fill the role of a common grunt. Allergic to bullets.";
+        return "A humanoid foot soldier carrying a rifle. Appears to fill the role of a common grunt. Allergic to bullets.";
     else if(enemy.name === "Hunter")
-        return "A floating mass of tentacles, capable of cloaking (although it only seems to this while scouting targets.";
+        return "A floating mass of tentacles, capable of cloaking (although it only seems to this while scouting targets). Does not seem to be designed for a frontal assault.";
     else if(enemy.name === "Horror")
         return "A mass of flesh, claws, and teeth. Expect some resistance.";
     else if(enemy.name === "Mutilator")
@@ -522,7 +521,6 @@ function createEnemy() {
         case 2: return new Actor("Horror", Math.floor(Math.random() * 5 + 70), 15, 0, ["Organic Matter"]);
         case 3: return new Actor("Mutilator", Math.floor(Math.random() * 5 + 100), 20, 10, ["Organic Matter"]);
         case 4: return new Actor("Annihilator", Math.floor(Math.random() * 5 + 150), 30, 15, ["Organic Matter"]);
-        default: break;
     }
 }
 
@@ -530,104 +528,103 @@ function attack(attacker, defender){
 
     let attackDamage = 0;
 
-        switch(attacker.actorClass) {
-            case 0: 
-                attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 5)) + attacker.damage);
-                if(attackDamage <= defender.armor)
-                    console.log("\n[" + attacker.name + " fires a barrage of bullets art " + defender.name + "; " + " the bullets could not penetrate its armor]");
-                else
-                    console.log("\n[" + attacker.name + " fires a barrage of bullets at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                break;
-            case 1:
-                attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 3)) + attacker.damage);
-                if(attackDamage <= defender.armor)
-                    console.log("\n[" + attacker.name + " fires at " + defender.name + "; " + " the bullets could not penetrate its armor]");
-                else
-                    console.log("\n[" + attacker.name + " fires at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                break;
-            case 2:
-                attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 2)) + attacker.damage);
-                if(attackDamage <= defender.armor)
-                    console.log("\n[" + attacker.name + " fires a well placed shot on " + defender.name + "; " + " the bullets could not penetrate its armor]");
-                else
-                    console.log("\n[" + attacker.name + " fires a well placed shot on " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                break;
-            default:
-                attackDamage = Math.floor(Math.random() * (attacker.damage - 5) + attacker.damage);
-                if(defender.actorClass !== 2 ) {
-                    switch(attacker.name)
-                    {
-                        case "Mauler": 
+    switch(attacker.actorClass) {
+        case 0: 
+            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 5)) + attacker.damage);
+            if(attackDamage <= defender.armor)
+                console.log("\n[" + attacker.name + " fires a barrage of bullets art " + defender.name + "; " + " the bullets could not penetrate its armor]");
+            else
+                console.log("\n[" + attacker.name + " fires a barrage of bullets at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+            break;
+        case 1:
+            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 3)) + attacker.damage);
+            if(attackDamage <= defender.armor)
+                console.log("\n[" + attacker.name + " fires at " + defender.name + "; " + " the bullets could not penetrate its armor]");
+            else
+                console.log("\n[" + attacker.name + " fires at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+            break;
+        case 2:
+            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 2)) + attacker.damage);
+            if(attackDamage <= defender.armor)
+                console.log("\n[" + attacker.name + " fires a well placed shot on " + defender.name + "; " + " the bullets could not penetrate its armor]");
+            else
+                console.log("\n[" + attacker.name + " fires a well placed shot on " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+            break;
+        default:
+            attackDamage = Math.floor(Math.random() * (attacker.damage - 5) + attacker.damage);
+            if(defender.actorClass !== 2 ) {
+                switch(attacker.name)
+                {
+                    case "Mauler": 
+                        if(attackDamage <= defender.armor)
+                            console.log("\n[" + attacker.name + " hits " + defender.name + " with the back of its rifle; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " hits " + defender.name + " with the back of its rifle, causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
+                    case "Hunter":
                             if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " hits " + defender.name + " with the back of its rifle; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " hits " + defender.name + " with the back of its rifle, causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
-                        case "Hunter":
-                                if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " strangles " + defender.name + " with its tenctacles; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " strangles " + defender.name + " with its tenctacles, causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
-                        case "Horror":
-                                if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " lashes at " + defender.name + "; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " lashes at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
-                        case "Mutilator":
-                                if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " lashes at " + defender.name + "; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " lashes at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
-                        case "Annihilator":
-                                if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " kicks " + defender.name + "; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " kicks " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
-                    }
-                } else {
-                    switch(attacker.name) {
-                        case "Mauler": 
+                            console.log("\n[" + attacker.name + " strangles " + defender.name + " with its tenctacles; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " strangles " + defender.name + " with its tenctacles, causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
+                    case "Horror":
                             if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " fires at " + defender.name + "; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " fires at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
-                        case "Hunter":
-                                if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " fires beams at " + defender.name + "; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " fires beams at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
-                        case "Horror":
-                                if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " throws rock at " + defender.name + "; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " throws rock at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
-                        case "Mutilator":
-                                if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " fires at " + defender.name + "; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " fires at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
-                        case "Annihilator":
-                                if(attackDamage <= defender.armor)
-                                console.log("\n[" + attacker.name + " shoots a massive plasma blast " + defender.name + "; your body armor absorbed all damage]");
-                            else
-                                console.log("\n[" + attacker.name + " shoots a massive plasma blast " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
-                            break;
+                            console.log("\n[" + attacker.name + " lashes at " + defender.name + "; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " lashes at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
+                    case "Mutilator":
+                            if(attackDamage <= defender.armor)
+                            console.log("\n[" + attacker.name + " lashes at " + defender.name + "; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " lashes at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
+                    case "Annihilator":
+                            if(attackDamage <= defender.armor)
+                            console.log("\n[" + attacker.name + " kicks " + defender.name + "; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " kicks " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
+                }
+            } else {
+                switch(attacker.name) {
+                    case "Mauler": 
+                        if(attackDamage <= defender.armor)
+                            console.log("\n[" + attacker.name + " fires at " + defender.name + "; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " fires at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
+                    case "Hunter":
+                            if(attackDamage <= defender.armor)
+                            console.log("\n[" + attacker.name + " fires beams at " + defender.name + "; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " fires beams at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
+                    case "Horror":
+                            if(attackDamage <= defender.armor)
+                            console.log("\n[" + attacker.name + " throws rock at " + defender.name + "; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " throws rock at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
+                    case "Mutilator":
+                            if(attackDamage <= defender.armor)
+                            console.log("\n[" + attacker.name + " fires at " + defender.name + "; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " fires at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
+                    case "Annihilator":
+                            if(attackDamage <= defender.armor)
+                            console.log("\n[" + attacker.name + " shoots a massive plasma blast " + defender.name + "; your body armor absorbed all damage]");
+                        else
+                            console.log("\n[" + attacker.name + " shoots a massive plasma blast " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
+                        break;
                     }   
-                }                         
-        
-            } 
-            if(attackDamage <= defender.armor) {
-                //skip - no damage done
-            } else
-                defender.health -= (attackDamage - defender.armor);
+            }                         
+    } 
+        if(attackDamage <= defender.armor) {
+            //skip - no damage done
+        } else
+            defender.health -= (attackDamage - defender.armor);
     
 }
 
@@ -655,7 +652,7 @@ function attackHit(playerClass) {
 
 function endGame() {
 
-    if (player.health >= 100) {
+    if(player.health >= 100) {
         console.log("\n[You made it to the portal core. You attempt to initiate the detonation sequence of your portable nuclear device. As the sequence starts, you proceed to dash towards the portal's exit before it collapses. After reach the exit, you retreat to a safe distance and watch the portal disappear into thin air. You pat yourself on the back knowing that Earth has been saved before the real invasion ever began]");
         sleep(2000);
         console.log("\nMISSION STATUS: COMPLETE");
