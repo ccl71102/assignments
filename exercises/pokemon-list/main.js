@@ -29,9 +29,3 @@ function showAll(obj) {
         document.body.appendChild(p);
     }
 }
-
-/*
-
-{ meta: {...}, objects: [{...pokemon: [get this]}]}
-
-*/

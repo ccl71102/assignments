@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jzz-midi-smf": "^1.2.4",
+    "midi-player-js": "^2.0.5",
     "readline-sync": "^1.4.9",
     "thread-sleep": "^2.2.0"
   }
