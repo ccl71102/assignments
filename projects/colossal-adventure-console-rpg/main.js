@@ -12,8 +12,8 @@ let killCount = 0;
 let playerSteps = 0;
 let totalOrganicMatter = 0;
 const winCondition = Math.floor((Math.random() * 10) + 70);
-const walkModeOptions = ["Walk", "Check Status", "Heal"];
-const fightOptions = ["Fire", "Check Status", "Scan Target", "Run", "Heal"];
+const walkModeOptions = ["Walk", "Check Status (Free Action)", "Heal (Free Action)"];
+const fightOptions = ["Fire", "Check Status (Free Action)", "Scan Target (Free Action)", "Run", "Heal"];
 
 //MIDI player initialization
 
@@ -26,6 +26,7 @@ const fightOptions = ["Fire", "Check Status", "Scan Target", "Run", "Heal"];
 
 //Show game name and some intro for flavor
 
+console.log("");
 console.log("OPERATION: ZERO SIGNAL");
 sleep(500);
 console.log("DATE: June, 21, 2194");
@@ -33,6 +34,7 @@ sleep(500);
 console.log("LOCATION: Amundsen–Scott Station, Antarctica");
 sleep(500);
 console.log("MISSION DEBRIEFING:");
+console.log("");
 console.log("Sightings of unknown entities have been spotted in the region for the last twenty years."); 
 console.log("First contact occurred in 2177, which culminated in 6 research scientists killed.");
 console.log("After several similar incidents, the Antarctic Treaty was modified to grant an exception to a small team of armed personnel who appeared to know how to engage these threats.");
@@ -40,7 +42,7 @@ console.log("");
 console.log("You were currently the only operative assigned at the time the entities decided to launch a full scale");
 console.log("assault by opening a portal, pressumably with the goal to mobilize and expand across Earth.");
 console.log("No one else in the station knew of this, but you have been trained in case a scenario like this occurred.");
-console.log("The world is counting on you to stop this incursion and you have the chance to end it before anyone finds out\n");
+console.log("The world is counting on you to stop this incursion and you have the chance to end it before anyone finds out.\n");
 sleep(2000);
 
 //Create player - ask for info
@@ -57,17 +59,17 @@ if(player.name === "") {
     sleep(500);
 }
 else {
-    console.log("\n[The lock recognizes your voice. You then type in your passcode]\n");
+    console.log("\n[The lock recognizes your voice]\n");
     sleep(500);
     console.log("DOOR LOCK: Access granted.\n");
     sleep(100);
 }
 
-console.log("[You browse the vast selection of weapons, but only three of them catch your attention]");
+console.log("[You are now inside the armory. You browse the vast selection of weapons, but only three of them catch your attention]");
 
 //select class
 
-const classes = [".50 Cal Light Machine Gun (Heavy Gunner): 125 HP | 30 DMG | 40 DEF | 70% HIT", ".50 Cal Hand Cannon (Operative): 100 HP | 40 DMG | 25 DEF | 90% HIT", ".50 Cal Anti-Materiel Rifle (Ghost): 75 HP | 50 DMG | 10 DEF | 80% HIT"];
+const classes = [".50 Cal Light Machine Gun [Heavy Gunner: 125 HP | 30 BASE DMG | 45 DEF | 70% HIT | Slow Movement Speed]", ".50 Cal Hand Cannon [Agent: 100 HP | 40 BASE DMG | 25 DEF | 90% HIT | Fast Movement Speed]", ".50 Cal Anti-Materiel Rifle [Ghost: 75 HP | 50 BASE DMG | 15 DEF | 80% HIT | Average Movement Speed]"];
 const playerClassSelect = readline.keyInSelect(classes,"[Select your equipment]");
 
 if(playerClassSelect === -1) {
@@ -82,6 +84,7 @@ if(playerClassSelect === -1) {
 } else {
     //assign class
     setPlayerClass(playerClassSelect);
+    player.setMaxHealth();
     console.log("\n[You grab a portable nuclear device and your trusty " + player.getInventoryItemAtIndex(0) + " and head out] ");
     sleep(1000);
     console.log("\n[You step into the portal, knowing there is a chance you might not make it back]");
@@ -106,37 +109,41 @@ console.log("\nGAME OVER");
 
 //functions and constructors
 
-function Actor(name = "[CLASSIFIED]", health = 100, damage = 20, armor = 0, inventory = [], actorClass = -1, playerLoot = []) {
+function Actor(name = "[CLASSIFIED]", health = 100, damage = 20, armor = 0, inventory = [], actorClass = -1) {
     this.name = name;
     this.health = health;
+    this.maxHealth = health;
     this.damage = damage;
     this.armor = armor;
     this.inventory = inventory;
     this.actorClass = actorClass;
-    this.playerLoot = playerLoot;
     this.getInventory = function() {
         return this.inventory.join(", ");
-    }
+    };
     this.getInventoryItem = function(item) {
         return inventory.find(item => item);
-    }
+    };
     this.getInventoryItemAtIndex = function(index) {
         return inventory[index]; //0 weapon
-    }
+    };
     this.updateInventory = function(item) {
         inventory.push(item);
-    }
+    };
     this.getActorClass = function() {
         switch(this.actorClass) {
             case 0: return "Heavy Gunner";
-            case 1: return "Operative";
+            case 1: return "Agent";
             case 2: return "Ghost";
-            default: return "Abomination";
+            case 3: return "Mauler";
+            case 4: return "Hunter";
+            case 5: return "Horror";
+            case 6: return "Mutilator";
+            case 7: return "Annihilator";
         }
-    }
+    };
     this.getActorClassNumber = function() {
         return this.actorClass;
-    }
+    };
     this.getHealingItem = function() {
         let healingItem = inventory.find( item => item === "Organic Matter");
         if(typeof healingItem === "undefined")
@@ -145,7 +152,18 @@ function Actor(name = "[CLASSIFIED]", health = 100, damage = 20, armor = 0, inve
             inventory.pop();
             return healingItem;
         }
-    }
+    };
+    this.setMaxHealth = function(){
+        switch(this.actorClass)
+        {
+            case 0: this.maxHealth = 125;
+                    break;
+            case 1: this.maxHealth = 100;
+                    break;
+            case 2: this.maxHealth = 75;
+                    break;
+        }
+    };
 }
 
 function walk(answer){
@@ -153,7 +171,8 @@ function walk(answer){
         case 0: 
             if(isAmbushed()) {
                 fightMode(createEnemy());
-                checkEndGame();
+                if(!gameOver)
+                    checkEndGame();
                 postFightWalk(true);  
             }
             else {
@@ -171,7 +190,8 @@ function walk(answer){
         default:
             if(isAmbushed()) {
                 fightMode(createEnemy());
-                checkEndGame();
+                if(!gameOver)
+                    checkEndGame();
                 postFightWalk(true);
             }
             else {
@@ -187,18 +207,26 @@ function heal(){
     const healing = player.getHealingItem();
     if(healing === 0)
         console.log("\n[You have no organic matter to convert]");
+    else if(player.health >= player.maxHealth)
+            console.log("[You are already at full health]");
     else {
-            console.log("\n[You converted some organic matter, gaining 25 HP]");
-            player.health += 25;
-            totalOrganicMatter--;
+            console.log("\n[You converted some organic matter, gaining up to 20 HP]");
+            if(player.health + 20 >= player.maxHealth) {
+                player.health = player.maxHealth;
+                totalOrganicMatter--;
+            }
+            else {
+                player.health += 20;
+                totalOrganicMatter--;
+            }
         }
 }
 
 function checkEndGame(){
     if((winCondition - playerSteps) <= 10 && (playerSteps < winCondition))
-        console.log("The portal core's light is nearly blinding you]");
+        console.log("\n[The portal core's light is nearly blinding you. You are very close to your objective]");
     else if((winCondition - playerSteps) <= 20 && (playerSteps < winCondition))
-        console.log("[You see the portal core off in the distance]");
+        console.log("\n[You see the portal core off in the distance. Your objective is getting closer]");
 
     if(playerSteps >= winCondition)
         endGame();
@@ -271,7 +299,7 @@ function showRandomWalkMessage(){
 }
 
 function showPlayerStats() {
-    console.log("\nSoldier Profile:");
+    console.log("\nOperative Profile:");
     sleep(500);
     console.log("Name: " + player.name);
     sleep(100);
@@ -281,11 +309,13 @@ function showPlayerStats() {
     sleep(500);
     console.log("Health: " + player.health + " HP");
     sleep(100);
-    console.log("Weapon Damage: " + player.damage + " DMG");
+    console.log("Weapon Damage: " + player.damage + " BASE DMG");
     sleep(100);
     console.log("Armor Strength: " + player.armor + " DEF");
     sleep(100);
-    console.log("Equipment: " + player.getInventory());
+    console.log("Organic Matter Available (First Aid): " + totalOrganicMatter);
+    sleep(100);
+    console.log("Equipment: " + player.getInventoryItemAtIndex(0) + ", " + player.getInventoryItemAtIndex(1) + ", " + player.getInventoryItemAtIndex(2) + ", " + player.getInventoryItemAtIndex(3));
     sleep(100);
 }
 
@@ -294,7 +324,7 @@ function setPlayerClass(index) {
         case 0: 
             player.health = 125;
             player.damage = 30;
-            player.armor = 40;
+            player.armor = 45;
             player.updateInventory(".50 Cal Light Machine Gun");
             player.updateInventory("Ammunition Fabricator");
             player.updateInventory("Portable Nuclear Device");
@@ -314,7 +344,7 @@ function setPlayerClass(index) {
         case 2:
             player.health = 75;
             player.damage = 50;
-            player.armor = 10;
+            player.armor = 15;
             player.updateInventory(".50 Cal Anti-Materiel Rifle");
             player.updateInventory("Ammunition Fabricator");
             player.updateInventory("Portable Nuclear Device");
@@ -345,22 +375,21 @@ function fightModeCheckPlayerCondition(){
 
 function fightMode(enemy) {
     console.log("\n[" + enemy.name + " ambushes you]");
-
     let fightOver = false;
     enemyScanned = false;
 
     while(!fightOver) {
 
-        console.log("\n["+player.name + "'s Health: " + player.health + " HP ]");
+        console.log("\n["+player.name + " Health: " + player.health + " HP]");
 
         //need to scan enemy for health to show up on HUD
 
         if(enemyScanned)
-            console.log("[" + enemy.name + "'s Health: " + enemy.health + " HP ]");
+            console.log("[" + enemy.name + " Health: " + enemy.health + " HP]");
         else
-            console.log("[" + enemy.name + "'s Health: UNKNOWN]");
+            console.log("[" + enemy.name + " Health: UNKNOWN]");
 
-        console.log("[Organic Matter Available: " + totalOrganicMatter + "]");
+        console.log("[Organic Matter Available (First Aid): " + totalOrganicMatter + "]");
         
         const choice = readline.keyInSelect(fightOptions, fightModeCheckPlayerCondition());
         let runChance = 0;
@@ -371,14 +400,13 @@ function fightMode(enemy) {
 
             switch(choice) {
                 case 0:
-                    if(attackHit(player.actorClass))
+                    if(checkChanceToHit(player.actorClass))
                         attack(player, enemy);
                     else
                         console.log("\n[Your shot misses the target]")
                     break;
                 case 3: 
-                    runChance = Math.floor(Math.random() * 2);
-                    if(runChance === 0) {
+                    if(checkRunChance()) {
                         console.log("\n[SUCCESS: You distracted the enemy and escaped]");
                         return;
                     } else {
@@ -389,8 +417,7 @@ function fightMode(enemy) {
                     heal();
                     break;
                 default:
-                    runChance = Math.floor(Math.random() * 2);
-                    if(runChance === 0) {
+                    if(checkRunChance()) {
                         console.log("\n[SUCCESS: You distracted the enemy and escaped]");
                         return;
                     } else {
@@ -404,11 +431,14 @@ function fightMode(enemy) {
             if(enemy.health <= 0 && !fightOver) {
                 console.log("\n[" + enemy.name + " has been eliminated]");
                 sleep(500);
-                console.log("\n[You use your matter extractor to remove its remaining lifeforce, gaining 25 HP]");
+                console.log("\n[You use your matter extractor to remove its remaining lifeforce, gaining up to 25 HP]");
                 player.updateInventory(enemy.getInventory());
-                console.log("[You obtained some Organic Matter]");
                 totalOrganicMatter++;
-                player.health += 25;
+                console.log("[You obtained some Organic Matter, for a total of " + totalOrganicMatter + "]");
+                if(player.health + 25 >= player.maxHealth)
+                    player.health = player.maxHealth;
+                else
+                    player.health += 25;
                 killCount++;
                 fightOver = true;
             } 
@@ -428,7 +458,7 @@ function fightMode(enemy) {
             //enemy gets to attack now
 
             if(!fightOver)
-                if(attackHit(enemy.actorClass))
+                if(checkChanceToHit(enemy.actorClass))
                     attack(enemy, player);
                 else   
                     console.log("\n[" + enemy.name + "'s attack misses]");
@@ -436,11 +466,14 @@ function fightMode(enemy) {
             if(enemy.health <= 0 && !fightOver) {
                 console.log("\n[" + enemy.name + " has been eliminated]");
                 sleep(500);
-                console.log("\n[You use your matter extractor to remove its remaining lifeforce, gaining 25 HP]");
+                console.log("\n[You use your matter extractor to remove its remaining lifeforce, gaining up to 25 HP]");
                 player.updateInventory(enemy.getInventory());
-                console.log("[You obtained some Organic Matter]");
                 totalOrganicMatter++;
-                player.health += 25;
+                console.log("[You obtained some Organic Matter, for a total of " + totalOrganicMatter + "]");
+                if(player.health + 25 >= player.maxHealth)
+                    player.health = player.maxHealth;
+                else
+                    player.health += 25;
                 killCount++;
                 fightOver = true;
             } 
@@ -462,11 +495,29 @@ function fightMode(enemy) {
     }
 }
 
+function checkRunChance() {
+    let chance = Math.floor(Math.random() * 10);
+    switch(player.actorClass) {
+        case 0: if(chance >= 6)
+                    return true;
+                else
+                    return false;
+        case 1: if(chance >= 4)
+                    return true;
+                else
+                    return false;
+        case 2: if(chance >= 5)
+                    return true;
+                else
+                    return false;
+    }
+}
+
 function scanTarget(enemy){
     enemyScanned = true;
     console.log("Scanning...");
     sleep(500);
-    console.log("\nTarget Scan Complete");
+    console.log("\nTarget Scan Complete:");
     sleep(100);
     console.log("Category Name: " + enemy.name);
     sleep(100);
@@ -479,22 +530,22 @@ function scanTarget(enemy){
 
 function checkEnemyStatus(enemy){
     if(enemy.health < 15)
-        return "Critically wounded";
+        return "Critically Wounded";
     else if(enemy.health < 30)
-        return "Moderately injured";
+        return "Moderately Injured";
     else if(enemy.health < 50)
-        return "Lightly injured";
+        return "Lightly Injured";
     else 
-        return "No visible wounds";
+        return "No Visible Wounds";
 }
 
 function checkEnemyThreatLevel(enemy){
 
-    if(enemy.damage < 10)
+    if(enemy.damage < 30)
         return "Low";
-    else if(enemy.damage < 15)
+    else if(enemy.damage < 35)
         return "Medium";
-    else if(enemy.damage < 20)
+    else if(enemy.damage < 40)
         return "High";
     else  
         return "Extreme";
@@ -516,11 +567,12 @@ function checkEnemyTargetDescription(enemy) {
 function createEnemy() {
     const enemyType = Math.floor(Math.random() * 5);
     switch(enemyType) {
-        case 0: return new Actor("Mauler", Math.floor(Math.random() * 5 + 50), 10, 0,["Organic Matter"]);
-        case 1: return new Actor("Hunter", Math.floor(Math.random() * 5 + 70), 5, 0, ["Organic Matter"]);
-        case 2: return new Actor("Horror", Math.floor(Math.random() * 5 + 70), 15, 0, ["Organic Matter"]);
-        case 3: return new Actor("Mutilator", Math.floor(Math.random() * 5 + 100), 20, 10, ["Organic Matter"]);
-        case 4: return new Actor("Annihilator", Math.floor(Math.random() * 5 + 150), 30, 15, ["Organic Matter"]);
+        case 0: return new Actor("Mauler", Math.floor(Math.random() * 5 + 70), 20, 5,["Organic Matter"], 3);
+        case 1: return new Actor("Hunter", Math.floor(Math.random() * 5 + 50), 25, 0, ["Organic Matter"], 4);
+        case 2: return new Actor("Horror", Math.floor(Math.random() * 5 + 80), 30, 0, ["Organic Matter"], 5);
+        case 3: return new Actor("Mutilator", Math.floor(Math.random() * 5 + 100), 35, 10, ["Organic Matter"], 6);
+        case 4: return new Actor("Annihilator", Math.floor(Math.random() * 5 + 150), 40, 15, ["Organic Matter"], 7);
+        default: return new Actor("Mauler", Math.floor(Math.random() * 5 + 70), 20, 5,["Organic Matter"], 3);
     }
 }
 
@@ -530,21 +582,21 @@ function attack(attacker, defender){
 
     switch(attacker.actorClass) {
         case 0: 
-            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 5)) + attacker.damage);
+            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 2)) + attacker.damage);
             if(attackDamage <= defender.armor)
                 console.log("\n[" + attacker.name + " fires a barrage of bullets art " + defender.name + "; " + " the bullets could not penetrate its armor]");
             else
                 console.log("\n[" + attacker.name + " fires a barrage of bullets at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
             break;
         case 1:
-            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 3)) + attacker.damage);
+            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 5)) + attacker.damage);
             if(attackDamage <= defender.armor)
                 console.log("\n[" + attacker.name + " fires at " + defender.name + "; " + " the bullets could not penetrate its armor]");
             else
                 console.log("\n[" + attacker.name + " fires at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
             break;
         case 2:
-            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 2)) + attacker.damage);
+            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 3)) + attacker.damage);
             if(attackDamage <= defender.armor)
                 console.log("\n[" + attacker.name + " fires a well placed shot on " + defender.name + "; " + " the bullets could not penetrate its armor]");
             else
@@ -628,7 +680,7 @@ function attack(attacker, defender){
     
 }
 
-function attackHit(playerClass) {
+function checkChanceToHit(playerClass) {
     let chance = Math.floor(Math.random() * 10);
     switch(playerClass) {
         case 0: if(chance >= 3)
@@ -643,7 +695,27 @@ function attackHit(playerClass) {
                     return true;
                 else
                     return false;
-        default: if(chance >= 4)
+        case 3: if(chance >= 3)
+                    return true;
+                else
+                    return false;
+        case 4: if(chance >= 2)
+                    return true;
+                else
+                    return false;
+        case 5: if(chance >= 4)
+                    return true;
+                else
+                    return false;
+        case 6: if(chance >= 4)
+                    return true;
+                else
+                    return false;
+        case 7: if(chance >= 5)
+                    return true;
+                else
+                    return false;
+        default: if(chance >= 5) //shouldn't happen but, eh, I'd rather play it safe
                     return true;
                 else
                     return false;
@@ -652,7 +724,7 @@ function attackHit(playerClass) {
 
 function endGame() {
 
-    if(player.health >= 100) {
+    if(player.health >= 90 || (player.health >= 65 && player.actorClass === 2)) {
         console.log("\n[You made it to the portal core. You attempt to initiate the detonation sequence of your portable nuclear device. As the sequence starts, you proceed to dash towards the portal's exit before it collapses. After reach the exit, you retreat to a safe distance and watch the portal disappear into thin air. You pat yourself on the back knowing that Earth has been saved before the real invasion ever began]");
         sleep(2000);
         console.log("\nMISSION STATUS: COMPLETE");
@@ -661,7 +733,7 @@ function endGame() {
         sleep(100);
         console.log("TARGETS ELIMINATED: " + killCount);
 
-    } else if(player.health < 100 || player.health >= 50) {
+    } else if(player.health < 90 || player.health >= 50) {
         console.log("\n[You made it to the portal core with minor injuries. You attempt to initiate the detonation sequence of your portable nuclear device. As the sequence starts, you proceed to dash towards the portal's exit before it collapses. Before you reach the exit, an energy blast of unknown origin hits you and knocks you out cold. You are somehow aware that the portal has been destroyed, but you are unsure of your current whereabouts]");
         sleep(2000);
         console.log("\nMISSION STATUS: COMPLETE");
