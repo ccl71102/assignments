@@ -1,4 +1,3 @@
-
 const readline = require("readline-sync");
 const sleep = require("thread-sleep");
 // const JZZ = require('jzz');
@@ -24,7 +23,7 @@ const fightOptions = ["Fire", "Check Status (Free Action)", "Scan Target (Free A
 // midi.connect(midiout);
 // midi.play();
 
-//Show game name and some intro for flavor
+//Show game intro for flavor
 
 console.log("");
 console.log("OPERATION: ZERO SIGNAL");
@@ -43,7 +42,7 @@ console.log("You were currently the only operative assigned at the time the enti
 console.log("assault by opening a portal, pressumably with the goal to mobilize and expand across Earth.");
 console.log("No one else in the station knew of this, but you have been trained in case a scenario like this occurred.");
 console.log("The world is counting on you to stop this incursion and you have the chance to end it before anyone finds out.\n");
-sleep(2000);
+sleep(500);
 
 //Create player - ask for info
 
@@ -235,16 +234,16 @@ function checkEndGame(){
 function postFightWalk(fought) {
     if(fought) {
         switch(player.getActorClassNumber()) {
-            case 0: playerSteps++;
+            case 0: playerSteps += 2;
                     break;
-            case 1: playerSteps+= Math.floor((Math.random() * 3) + 1);
+            case 1: playerSteps+= Math.floor((Math.random() * 4) + 1);
                     break;
-            case 2: playerSteps+= Math.floor((Math.random() * 2) + 1);
+            case 2: playerSteps+= Math.floor((Math.random() * 3) + 1);
                     break;
         }   
     } else {
         switch(player.getActorClassNumber()) {
-            case 0: playerSteps+= Math.floor((Math.random() * 2) + 1);
+            case 0: playerSteps+= Math.floor((Math.random() * 3) + 1);
                     break;
             case 1: playerSteps+= Math.floor((Math.random() * 5) + 1);
                     break;
@@ -498,15 +497,15 @@ function fightMode(enemy) {
 function checkRunChance() {
     let chance = Math.floor(Math.random() * 10);
     switch(player.actorClass) {
-        case 0: if(chance >= 6)
+        case 0: if(chance >= 5)
                     return true;
                 else
                     return false;
-        case 1: if(chance >= 4)
+        case 1: if(chance >= 3)
                     return true;
                 else
                     return false;
-        case 2: if(chance >= 5)
+        case 2: if(chance >= 4)
                     return true;
                 else
                     return false;
@@ -589,14 +588,14 @@ function attack(attacker, defender){
                 console.log("\n[" + attacker.name + " fires a barrage of bullets at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
             break;
         case 1:
-            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 5)) + attacker.damage);
+            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 3)) + attacker.damage);
             if(attackDamage <= defender.armor)
                 console.log("\n[" + attacker.name + " fires at " + defender.name + "; " + " the bullets could not penetrate its armor]");
             else
                 console.log("\n[" + attacker.name + " fires at " + defender.name + ", causing " + (attackDamage - defender.armor) + " HP of damage]");
             break;
         case 2:
-            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 3)) + attacker.damage);
+            attackDamage = Math.floor(Math.random() * (attacker.damage - (Math.random() * 2)) + attacker.damage);
             if(attackDamage <= defender.armor)
                 console.log("\n[" + attacker.name + " fires a well placed shot on " + defender.name + "; " + " the bullets could not penetrate its armor]");
             else
@@ -707,7 +706,7 @@ function checkChanceToHit(playerClass) {
                     return true;
                 else
                     return false;
-        case 6: if(chance >= 4)
+        case 6: if(chance >= 2)
                     return true;
                 else
                     return false;
@@ -760,7 +759,5 @@ function endGame() {
         sleep(100);
         console.log("TARGETS ELIMINATED: " + killCount);
     }
-
     gameOver = true;
 }
-
