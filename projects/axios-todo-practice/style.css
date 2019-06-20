@@ -1,5 +1,19 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(228, 228, 233);
+}
+
 .container {
-    border: 1px solid black;
+    border: 2px solid black;
+    margin: 10px auto;
+    padding: 20px;
+    box-shadow: 2px 2px gray;
+    background-color: rgb(205, 205, 215);
+    color: rgb(60,60,62);
 }
 
 .checked {
@@ -8,4 +22,35 @@
 
 .unchecked {
     text-decoration-line: none;
+}
+
+#divSetForm {
+    margin: 5px auto;
+    /* width: 600px; */
+    display: inline;
+}
+
+#divGet {
+    margin: 5px auto;
+    /* width: 600px; */
+    display: inline;
+}
+
+#getpostDiv {
+    margin: 5px auto;
+    width: 600px;
+}
+
+#getButton {
+    display: inline;
+}
+
+#todosTitle {
+    text-align: center;
+    margin: 10px auto;
+    color: rgb(60,60,62);
+}
+
+#containerDiv {
+    margin: 30px auto;
 }
