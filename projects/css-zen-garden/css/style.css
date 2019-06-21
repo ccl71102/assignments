@@ -1,0 +1,142 @@
+/*fonts*/
+
+@font-face {
+    font-family: verdeModerna;
+    src: url(../fonts/verdemoderna.woff);
+}
+
+@font-face {
+    font-family: juliusSansOne;
+    src: url(../fonts/1Pt2g8TAX_SGgBGUi0tGOYEga5WOwnsXy6KHHg.woff2);
+}
+
+@font-face {
+    font-family: libreBakersvilleItalic;
+    src: url(../fonts/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWxEQDO-Wyrs.woff2);
+}
+
+@font-face {
+    font-family: libreBakersville;
+    src: url(../fonts/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxMaC82U.woff2);
+}
+
+.verde-moderna {
+    font-family: verdeModerna;
+}
+
+.text-padding {
+    padding: 0px 10px;
+}
+
+.julius-sans-one {
+    font-family: juliusSansOne;
+}
+
+.libre-bakersville-italic {
+    font-family: libreBakersvilleItalic;
+}
+
+.libre-bakersville {
+    font-family: libreBakersville;
+}
+
+.underlineDotted {
+    text-decoration-style: dotted;
+    text-decoration-line: underline;
+}
+
+.download-icon {
+    background-color: rgb(221, 228, 206);
+    color: rgb(163, 176, 148);
+    margin: 5px;
+    padding: 2px 3px;
+    border-radius: 2px;
+}
+
+.download-text {
+    color: rgb(163, 176, 148);
+    text-decoration: none;
+}
+
+#download-p {
+    display: none;
+}
+
+/*divs*/
+
+#bannerDiv {
+    background-image: url(../images/huntington.jpg);
+    background-color: rgb(19,67,71);
+    width: 100%;
+}
+
+#creditsDiv {
+    background-image: url(../images/koi.jpg);
+    width: 100%;
+    height: 100px;
+}
+
+#paragraph2Div {
+    background-color: rgba(138,188,159,0.5);
+    background-image: url(../images/bamboo.png);
+}
+
+#linksDiv {
+    background-color: rgba(138,188,159,0.5);
+    background-image: url(../images/bamboo.png);
+}
+
+#iconLinks {
+    background-color: rgb(19,67,71);
+}
+
+#fontsDiv {
+   background-color: rgba(183, 208, 194, 0.8);
+}
+
+/*images*/
+
+#zenCircle {
+    width: 50px;
+}
+
+/*text*/
+
+#title {
+    color: white;
+}
+
+.dark-green {
+    color: rgb(19,67,71);
+}
+
+.mint-green {
+    color: rgba(183, 208, 194, 0.7);
+}
+
+.links-teal {
+    color: rgb(67, 154, 153);
+    text-decoration: none;
+}
+
+.links-light-green {
+    color: rgba(229, 240, 234, 0.892);
+    text-decoration: none;
+}
+
+/* 
+
+138,188,159 rgb
+
+#134347
+
+19, 67, 71
+
+*/
+
+
+@media only screen and (min-width: 600px){
+    #download-p {
+        display: block;
+    }
+}
