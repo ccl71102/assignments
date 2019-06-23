@@ -1,4 +1,8 @@
-/*fonts*/
+* {
+    margin: 0px;
+}
+
+/*fonts and text*/
 
 @font-face {
     font-family: verdeModerna;
@@ -22,10 +26,11 @@
 
 .verde-moderna {
     font-family: verdeModerna;
+    font-size: 30px;
 }
 
 .text-padding {
-    padding: 0px 10px;
+    padding: 0px 35px;
 }
 
 .julius-sans-one {
@@ -40,7 +45,7 @@
     font-family: libreBakersville;
 }
 
-.underlineDotted {
+.underline-dotted {
     text-decoration-style: dotted;
     text-decoration-line: underline;
 }
@@ -62,10 +67,55 @@
     display: none;
 }
 
+.line-height-2 {
+    line-height: 2;
+}
+
+.font-size-p{
+    font-size: 13px;
+    line-height: 2;
+}
+
+.br-line-height {
+    line-height: 0.4;
+}
+
+.font-size-h2 {
+    font-size: 18px;
+    line-height: 2;
+    padding-top: 20px;
+}
+
+.font-size-h3 {
+    font-size: 16px;
+}
+
+.icon-links {
+    padding: 0px 10px;
+}
+
+#icon-container {
+    padding: 30px 25%;
+    margin: auto;
+}
+
+#view-designs-p {
+    text-align: center;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
 /*divs*/
+
+#main-container {
+    display: grid;
+}
 
 #bannerDiv {
     background-image: url(../images/huntington.jpg);
+    background-size: cover;
     background-color: rgb(19,67,71);
     width: 100%;
 }
@@ -84,6 +134,8 @@
 #linksDiv {
     background-color: rgba(138,188,159,0.5);
     background-image: url(../images/bamboo.png);
+    display: grid;
+    grid-template-columns: 3fr 3fr;
 }
 
 #iconLinks {
@@ -91,19 +143,44 @@
 }
 
 #fontsDiv {
-   background-color: rgba(183, 208, 194, 0.8);
+   background-color: rgb(221, 228, 224);
+   display: grid;
+   grid-template-columns: 3fr 3fr;
+   grid-template-rows: 2fr 2fr 2fr 2fr;
 }
 
 /*images*/
 
 #zenCircle {
     width: 50px;
+    display: block;
+    margin: 10px auto 0;
+    
 }
 
 /*text*/
 
+li {
+    list-style: none;
+    padding: 15px;
+    width: 100%;
+}
+
+ul {
+    border: 1px solid rgba(201, 208, 193, 0.6);
+} 
+
 #title {
     color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#subtitle {
+    padding: 5px 0 26px;
+    font-size: 18px;
+    text-align: center;
 }
 
 .dark-green {
@@ -112,6 +189,7 @@
 
 .mint-green {
     color: rgba(183, 208, 194, 0.7);
+    text-decoration: none;
 }
 
 .links-teal {
@@ -122,6 +200,20 @@
 .links-light-green {
     color: rgba(229, 240, 234, 0.892);
     text-decoration: none;
+}
+
+.font-link {
+    color: rgb(79, 101, 81);
+}
+
+.font-names {
+    color: rgb(71, 79, 48);
+    font-size: 12px;
+}
+
+.by {
+    font-size: 12px;
+    color: rgba(129, 136, 122,0.6);
 }
 
 /* 
@@ -140,3 +232,14 @@
         display: block;
     }
 }
+
+@media only screen and (min-width: 1130px){
+    #download-p {
+        display: block;
+    }
+
+    #main-container {
+        grid-template-columns: 4fr 2fr;
+    }
+}
+
