@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-image: url(http://pureimg.com/public/uploads/large/2414982380483k6ceyzeywcefv0igrurh2zkgifnzqzwkuw8pv0nw1vrywp0rjaavirc5xgukcw5mmhbgvlmhvabadmqk8irgpkf15f7tcdlyk8y.jpg);
+    border: 2px solid rgb(233, 229, 224);
+}
+
+.navbar > a {
+    text-decoration: none;
+    color: rgb(247, 240, 231);
+    text-shadow: 2px 2px rgb(22,20,20);
+    font-size: 30px; 
+    padding: 10px;
+}
+
+.content {
+    background-color: rgb(223, 216, 210);
+}
+
+
+.content > div > img {
+    width: 500px;
+    display: block;
+    border: 1px solid rgb(22,20,20);
+    margin: 10px auto;
+    box-shadow: 2px 2px rgb(22,20,20);
+    opacity: 1;
+}
+
+.content > div > p {
+    padding: 20px;
+    margin: auto;
+    width: 55%;
+    text-align: justify;
+    text-indent: 24px;
+}
+
+.content > div > h1 {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 44px;
+    text-shadow: 2px 2px rgb(206, 198, 187);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-image: url(http://pureimg.com/public/uploads/large/2414982380483k6ceyzeywcefv0igrurh2zkgifnzqzwkuw8pv0nw1vrywp0rjaavirc5xgukcw5mmhbgvlmhvabadmqk8irgpkf15f7tcdlyk8y.jpg);
+    border: 2px solid rgb(233, 229, 224);
+    height: 50px;
+}
+
+.footer > p {
+    text-decoration: none;
+    font-size: 12px;
+    color: rgb(247, 240, 231);
+    text-shadow: 1px 1px rgb(22,20,20);
+    margin: auto;
+}
+
+.header {
+    background-image: url(https://news.nationalgeographic.com/content/dam/news/2018/06/09/waq-animal-hoarders/01-waq-animal-hoarders-nationalgeographic_1902487.ngsversion.1528534809831.adapt.1900.1.jpg);
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header > h1 {
+    font-size: 50px;
+    text-align: center;
+    color: rgb(247, 240, 231);
+    text-shadow: 2px 2px rgb(22,20,20);
+    margin: auto;
+    padding: 60px;
+}

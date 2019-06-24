@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+}
+.app-container {
+    border: 1px solid rgb(70, 70, 70);
+}
+
+.navbar {
+    border: 1px solid black;
+    background-color: rgb(116, 60, 60);
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+}
+
+.navbar > a {
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+    text-shadow: 1px 1px black;
+}
+
+.header {
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px grey;
+    text-align: center;
+}
