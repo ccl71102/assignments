@@ -46,7 +46,7 @@ const BlogList = () => {
         <div>
             <div className="bloglist-container">
                 {mappedBlogPosts}
-                <button className="button-back">Older Posts →</button>
+                <button className="button-back">OLDER POSTS →</button>
             </div>
             <p className="button-underline"></p>
         </div>
