@@ -113,7 +113,7 @@
 /*divs*/
 
 #main-container {
-    display: grid;
+
 }
 
 #banner-div {
@@ -122,6 +122,8 @@
     background-color: rgb(19,67,71);
     width: 100%;
 }
+
+
 
 #credits-div {
     background-image: url(../images/koi.jpg);
@@ -155,7 +157,7 @@
    background-color: rgb(221, 228, 224);
    display: grid;
    grid-template-columns: 3fr 3fr;
-   grid-template-rows: 2fr 2fr 2fr 2fr;
+   /* grid-template-rows: 2fr 2fr 2fr 2fr; */
 }
 
 /*images*/
@@ -248,12 +250,34 @@ ul {
     }
 
     #main-container {
+        display: grid;
         grid-template-columns: 4fr 2fr;
-        /* grid-template-rows:  */
+        grid-template-rows: 1fr 4fr 3fr 3fr 1fr .5fr;
     }
 
-    #fonts-div {
+    #banner-div {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+
+    }
+
+    #view-designs-div{
+        grid-column: 4 / 6;
+        grid-row: 1 / 2;
+    }
+
+    #paragraph1-div {
+        grid-column: 1 / 4;
         
+
+    }
+
+    #paragraph2-div {
+
+    }
+
+    #credits-div {
+        /*  */
     }
 }
 

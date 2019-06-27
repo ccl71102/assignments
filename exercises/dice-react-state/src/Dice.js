@@ -34,7 +34,8 @@ const Dice = props => {
         fontFamily: "sans-serif",
         color: "#fafafa",
         borderRadius: "3px",
-        backgroundColor: diceColor(props.roll)
+        backgroundColor: diceColor(props.roll),
+        transition: diceColor(props.roll) + "500ms linear"
     }
 
     return (
