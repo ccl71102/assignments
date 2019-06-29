@@ -18,7 +18,13 @@ const BadgeList = props => {
         backgroundColor = {props.colors[Math.floor(Math.random() * 9)]}
     />);
 
-    return <div>
+    const divStyle = {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-around"
+    }
+
+    return <div style={divStyle}>
         <BadgeForm
                 firstName= {props.firstName}
                 lastName= {props.lastName}
