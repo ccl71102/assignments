@@ -105,11 +105,8 @@ class App extends React.Component {
 
     render(){
 
-    const divStyle = {
-        display: "flex",
-        flexDirection: "column"
-    }
-    return <div style={divStyle}>
+
+    return <div>
                 <BadgeList 
                     firstName= {this.state.firstName}
                     lastName= {this.state.lastName}
