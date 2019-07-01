@@ -23,13 +23,13 @@
 }
 
 @font-face {
-    font-family: libreBakersvilleItalic;
-    src: url(../fonts/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWxEQDO-Wyrs.woff2);
+    font-family: libreBakersville;
+    src: url(../fonts/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxMaC82U.woff2);
 }
 
 @font-face {
-    font-family: libreBakersville;
-    src: url(../fonts/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxMaC82U.woff2);
+    font-family: libreBakersvilleItalic;
+    src: url(../fonts/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWxEQDO-Wyrs.woff2);
 }
 
 /*
@@ -37,7 +37,6 @@
     divs
 
 */
-
 
 #banner-div {
     background-size: cover;
@@ -50,18 +49,14 @@
     background-color: rgb(19,67,71);
 }
 
-#credits-div {
-    background-image: url(../images/koi.jpg);
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
+#view-designs-container {
+    text-align: center;
+    background-color: rgba(255,255,255,0.2);
+    padding: 20px;
 }
 
-.paragraph-container {
-    width: 90%;
+#view-designs-container > p {
+    color: rgb(221, 228, 224);
 }
 
 #paragraph2-div {
@@ -73,12 +68,20 @@
     background-color: rgb(221, 228, 224);
 }
 
+#credits-div {
+    background-image: url(../images/koi.jpg);
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
 #links-div {
     background-color: rgba(138,188,159,0.6);
     background-image: url(../images/bamboo.png);
     display: grid;
-    /* grid-template-columns: 1fr 1fr;
-    width: 100%; */
 }
 
 #links-div {
@@ -100,7 +103,6 @@
     grid-column: 1 / 2;
     grid-row: 2 / 3;
 }
-
 
 #icon-links {
     background-color: rgb(19,67,71);
@@ -127,14 +129,8 @@
     grid-template-columns: 1fr 1fr;
 }
 
-#view-designs-container {
-    text-align: center;
-    background-color: rgba(255,255,255,0.2);
-    padding: 20px;
-}
-
-#view-designs-container > p {
-    color: rgb(221, 228, 224);
+.paragraph-container {
+    width: 90%;
 }
 
 /*
@@ -155,6 +151,40 @@
     text
 
 */
+
+
+li {
+    list-style: none;
+    padding: 15px;
+    width: 100%;
+}
+
+#view-designs-p {
+    text-align: center;
+}
+
+#credits-div > p {
+    text-align: center;
+    width: 80%;
+    line-height: 1.6;
+}
+
+#title {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#subtitle {
+    padding: 5px 0 26px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#download-p {
+    display: none;
+}
 
 .verde-moderna {
     font-family: verdeModerna;
@@ -195,15 +225,10 @@
     text-decoration: none;
 }
 
-#download-p {
-    display: none;
-}
-
 .font-size-p{
     font-size: 13px;
     line-height: 2;
 }
-
 
 .font-size-h2 {
     font-size: 18px;
@@ -219,10 +244,6 @@
     padding: 0px 10px;
 }
 
-#view-designs-p {
-    text-align: center;
-}
-
 .no-underline {
     text-decoration: none;
 }
@@ -233,31 +254,6 @@
 
 .list-overline {
     border-top: 1px solid rgba(201, 208, 193, 0.8);
-}
-
-li {
-    list-style: none;
-    padding: 15px;
-    width: 100%;
-}
-
-#credits-div > p {
-    text-align: center;
-    width: 80%;
-    line-height: 1.6;
-}
-
-#title {
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-size: 25px;
-}
-
-#subtitle {
-    padding: 5px 0 26px;
-    font-size: 18px;
-    text-align: center;
 }
 
 .dark-green {
@@ -337,6 +333,7 @@ li {
 }
 
 @media only screen and (min-width: 600px) {
+
     #download-p {
         display: block;
     }
@@ -362,7 +359,8 @@ li {
     }
 }
 
-@media only screen and (min-width: 1130px) { /*1130*/
+@media only screen and (min-width: 1130px) { 
+
     #download-p {
         display: block;
     }
