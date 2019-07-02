@@ -46,16 +46,16 @@ const Badge = props => {
     const flexDiv = {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-around"
+        justifyContent: "space-evenly"
     }
 
     return <div style={divStyle}>
         <p style={titleStyle}>Badge: </p>
-            <div>
+            <div style={flexDiv}>
                 <span style={inputStyle}> Name: {firstName + " " + lastName}</span>
                 <span style={inputStyle}>Phone: {phone}</span>
             </div>
-            <div>
+            <div style={flexDiv}>
                 <span style={inputStyle}>Place of Birth: {placeOfBirth}</span>
                 <span style={inputStyle}>Favorite Food: {favoriteFood}</span>
             </div>
