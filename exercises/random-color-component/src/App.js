@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Box from "./Box.js";
 
 
 class App extends React.Component {
@@ -35,10 +36,11 @@ class App extends React.Component {
       fontFamily: "sans-serif",
       backgroundColor: this.state.color
     }
-    return <div onClick={this.changeColor}
-                style={divStyle}>
-                  Click Me
-    </div>;
+
+    return  <Box 
+                divStyle = {divStyle}
+                method = {this.changeColor}
+            />
   }
 }
 
