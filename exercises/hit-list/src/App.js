@@ -19,6 +19,8 @@ class App extends React.Component {
     }
 
     render(){
+
+        //I'm aware that writing everything down in one line is bad practice but I wanted to test out of I could pull it off.
         
         return <div style={{
 
