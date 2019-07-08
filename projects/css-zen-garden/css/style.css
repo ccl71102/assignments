@@ -62,6 +62,7 @@
 #paragraph2-div {
     background-color: rgba(138,188,159,0.5);
     background-image: url(../images/bamboo.png);
+    background-attachment: fixed;
 }
 
 #blank-div {
@@ -81,6 +82,7 @@
 #links-div {
     background-color: rgba(138,188,159,0.6);
     background-image: url(../images/bamboo.png);
+    background-attachment: fixed;
     display: grid;
 }
 
