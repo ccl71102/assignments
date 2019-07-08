@@ -17,21 +17,68 @@ class App extends Component{
         super();
         this.state = {
             stateName: "",
+            stateId: "",
             places: [],
             yearlySalary: "",
+            affordability: 0,
+            isAffordable: false,
             isStateSelected: false
         };
     }
 
+
+    stateSelected = () => {
+        if(this.state.stateName === "")
+            this.setState({isStateSelected: false})
+        else   
+            this.setState({
+                isStateSelected: true,
+            })
+    }
+
+
+    handleSelectChange = e => {
+        
+        const {name, value} = e.target;
+
+        console.log(name)
+        console.log(value)
+        console.log(this.state.places.find(item => item.State === value)["ID State"])
+
+        this.setState({
+            [name]: value,
+            stateId: this.state.places.find(item => item.State === value)["ID State"]
+        },this.stateSelected);
+
+        console.log("handleSelectChange")
+        console.log(this.state.stateName)
+        console.log(this.state.stateId)
+    }
+
     handleChange = e => {
         const {name, value} = e.target;
-        this.setState({
-            [name]: value
-        });
+
+        if(!isNaN(value))
+            this.setState({
+                [name]: value
+            },this.stateSelected);
+
+            console.log(name)
+            console.log(value)
+            console.log(this.state.yearlySalary)
     }
 
     handleSubmit = e => {
         e.preventDefault();
+
+        console.log(this.state.yearlySalary)
+
+        this.setState({
+            affordability: this.state.yearlySalary * 5.139,
+            isAffordable: this.state.yearlySalary * 5.139 >= this.state.places.find(item => item.State === this.state.stateId) ? true : false
+        })
+
+        console.log(this.state.affordability)
     }
 
     componentDidMount() {
@@ -58,6 +105,9 @@ class App extends Component{
                             <Home {...routerProps} 
                                 places={this.state.places}
                                 isStateSelected={this.state.isStateSelected}
+                                stateName={this.state.stateName}
+                                stateId={this.state.stateId}
+                                handleSelectChange={this.handleSelectChange}
                             /> 
                         }/>
                         <Route path="/calculator" render={routerProps => 
@@ -68,6 +118,8 @@ class App extends Component{
                                 stateName={this.state.stateName}
                                 isStateSelected={this.state.isStateSelected}
                                 yearlySalary={this.state.yearlySalary}
+                                stateId={this.state.stateId}
+                                handleSelectChange={this.handleSelectChange}
                             /> 
                         }/>
                         <Route path="/state-data" render={routerProps => 
@@ -77,6 +129,8 @@ class App extends Component{
                                 handleSubmit={this.handleSubmit}
                                 stateName={this.state.stateName}
                                 isStateSelected={this.state.isStateSelected}
+                                stateId={this.state.stateId}
+                                handleSelectChange={this.handleSelectChange}
                             /> 
                         }/>
                     </Switch>
