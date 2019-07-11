@@ -134,7 +134,7 @@
 .state-data-results {
     display: grid;
     grid-template: 1fr 1fr;
-    padding: 0 40px;
+    padding: 0 40px 10px;
 }
 
 .state-data-results-grid-1 {
@@ -375,6 +375,15 @@
     margin-top: 2px;
 }
 
+.click{
+    display: none;
+}
+
+.tap{
+    display: inline; 
+}
+
+
 @media only screen and (min-width: 800px) {
 
     .container-div {
@@ -414,7 +423,7 @@
     }
 
     .state-data-results {
-        padding: 0 60px;
+        padding: 0 60px 20px;
     }
 
     .piggy-bank-icon {
@@ -430,5 +439,13 @@
         text-align: justify;
         text-indent: 20px;
         padding: 10px 20px;
+    }
+
+    .click{
+        display: inline;
+    }
+    
+    .tap{
+        display: none; 
     }
 }
