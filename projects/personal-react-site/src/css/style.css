@@ -81,7 +81,7 @@
 .home-paragraph {
     text-align: justify;
     text-indent: 20px;
-    padding: 2px 20px;
+    padding: 6px 20px;
 }
 
 .content-heading {
@@ -94,7 +94,8 @@
     background-color: rgba(110,110,110,0.6);
     color: rgb(240, 240, 240);
     background-blend-mode: darken;
-    min-height: 60vh;
+    min-height: 500px;
+    max-height: 50vh;
     margin: 40px;
     text-shadow: 1px 1px rgb(53, 53, 53);
 }
@@ -117,7 +118,7 @@
 }
 
 .font-awesome-shadow {
-    filter: drop-shadow(5px 5px 5px 5px);
+    filter: drop-shadow(5px 5px 5px 5px); /*doesn't work*/
 }
 
 .calculator-form {
@@ -132,9 +133,8 @@
 
 .state-data-results {
     display: grid;
-    grid-template: 1fr;
-    text-align: left;
-    padding: 0 24px;
+    grid-template: 1fr 1fr;
+    padding: 0 40px;
 }
 
 .state-data-results-grid-1 {
@@ -143,33 +143,86 @@
 }
 
 .state-data-results-grid-2 {
-    grid-column: 1;
-    grid-row: 2;
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
 }
 
 .state-data-results-grid-3 {
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 2;
 }
 
 .state-data-results-grid-4 {
-    grid-column: 1;
-    grid-row: 4;
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
 }
 
 .state-data-results-grid-5 {
     grid-column: 1;
-    grid-row: 5;
+    grid-row: 3;
 }
 
 .state-data-results-grid-6 {
+    grid-column: 2;
+    grid-row: 3;
+    text-align: left;
+}
+
+.state-data-results-grid-7 {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.state-data-results-grid-8 {
+    grid-column: 2;
+    grid-row: 4;
+    text-align: left;
+}
+
+.state-data-results-grid-9 {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.state-data-results-grid-10 {
+    grid-column: 2;
+    grid-row: 5;
+    text-align: left;
+}
+
+.state-data-results-grid-11 {
     grid-column: 1;
     grid-row: 6;
 }
 
-.state-data-results > p > span {
+.state-data-results-grid-12 {
+    grid-column: 2;
+    grid-row: 6;
+    text-align: left;
+}
+
+.state-data-results-grid-13 {
+    grid-column: 1;
+    grid-row: 7;
+}
+
+.state-data-results-grid-14 {
+    grid-column: 2;
+    grid-row: 7;
+    text-align: left;
+}
+
+.state-data-results-grid-15 {
+    grid-column: 1 / 3;
+    grid-row: 8;
+    padding-top: 20px;
+}
+
+.state-data-results >  span {
     font-size: 16px;
-    padding: 5px;
+    padding: 2px 0;
 }
 
 .footer {
@@ -226,6 +279,14 @@
 
 .less-padding {
     padding-bottom: 20px;
+}
+
+.extra-margin {
+    margin-bottom: 50px;
+}
+
+.less-margin {
+   margin-bottom : 20px;
 }
 
 .result-display {
@@ -353,39 +414,7 @@
     }
 
     .state-data-results {
-        display: grid;
-        grid-template: 1fr;
-
-    }
-    
-    .state-data-results-grid-1 {
-        grid-column: 1;
-        grid-row: 1;
-    }
-    
-    .state-data-results-grid-2 {
-        grid-column: 1;
-        grid-row: 2;
-    }
-    
-    .state-data-results-grid-3 {
-        grid-column: 1;
-        grid-row: 3;
-    }
-    
-    .state-data-results-grid-4 {
-        grid-column: 1;
-        grid-row: 4;
-    }
-
-    .state-data-results-grid-5 {
-        grid-column: 1;
-        grid-row: 5;
-    }
-
-    .state-data-results-grid-6 {
-        grid-column: 1;
-        grid-row: 6;
+        padding: 0 60px;
     }
 
     .piggy-bank-icon {

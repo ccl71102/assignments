@@ -67,7 +67,7 @@ const Calculator = props => {
     return  <div className={lightMode ? "transparent-wrapper-light" : "transparent-wrapper"} style={divStyle}>
                 <div className="container-div">
                     <div className="content-div">
-                        <h1 className="content-heading">Calculator</h1>
+                        <h1 className="content-heading less-padding">Calculator</h1>
                         <form onSubmit={handleSubmit}>
                             <input 
                                 className="calculator-form" 
@@ -87,7 +87,7 @@ const Calculator = props => {
                                 required>
                                     <StatesList places={places}/>
                             </select>
-                            <button className="calculator-form">Submit</button>
+                            <button className="calculator-form less-margin">Submit</button>
                         </form>
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>{`The median property value is $${propertyValue.toLocaleString()}. You can afford to spend $${Math.floor(affordability).toLocaleString()} on a property.`}</p>
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>{isAffordable ? "You can afford to buy property here." : "You can't afford to buy property here."}</p>
