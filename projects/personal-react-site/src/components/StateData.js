@@ -32,7 +32,7 @@ const StateData = props =>{
         backgroundImage: `url(${backgroundURL})`
     };
 
-    let wikipediaLink = `https://en.wikipedia.org/wiki/${stateName.replace(" ","_")}`;
+    let wikipediaLink = stateName === "District of Columbia" ? "https://en.wikipedia.org/wiki/Washington,_D.C." : `https://en.wikipedia.org/wiki/${stateName.replace(" ","_")}`
 
     return  <div className={lightMode ? "transparent-wrapper-light" : "transparent-wrapper"} style={divStyle}>
                 <div className="container-div">

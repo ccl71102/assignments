@@ -15,9 +15,9 @@ const Footer = props => {
                     <FontAwesomeIcon icon={faGithub}/>
                     <span className={lightMode ? "tooltiptext-light" : "tooltiptext"}>Github Profile</span>
                 </a>
-                <span className="tooltip" onClick={toggleLightMode}>
+                <span className="tooltip theme-toggle" onClick={toggleLightMode}>
                     <span>{lightMode ? <FontAwesomeIcon icon={faSun}/> : <FontAwesomeIcon icon={faMoon}/>}</span>
-                    <span className={lightMode ? "tooltiptext-light" : "tooltiptext"}>{lightMode ? "Enable Cool Mode" : "Enable Warm Mode"}</span>
+                    <span className={lightMode ? "tooltiptext-light" : "no-side-padding tooltiptext"}>{lightMode ? "Enable Cool Mode" : "Enable Warm Mode"}</span>
                 </span>
             </div>;
 }
