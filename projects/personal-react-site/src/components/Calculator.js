@@ -16,7 +16,8 @@ const Calculator = props => {
             handleSelectChange, 
             isStateSelected, 
             handleSubmit, 
-            handleChange } = props;
+            handleChange,
+            lightMode } = props;
 
         
         let backgroundURL = placeholderImage;
@@ -63,7 +64,7 @@ const Calculator = props => {
         backgroundImage: `url(${backgroundURL})`
     };
 
-    return  <div className="transparent-wrapper" style={divStyle}>
+    return  <div className={lightMode ? "transparent-wrapper-light" : "transparent-wrapper"} style={divStyle}>
                 <div className="container-div">
                     <div className="content-div">
                         <h1 className="content-heading">Calculator</h1>
@@ -91,7 +92,7 @@ const Calculator = props => {
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>{`The median property value is $${propertyValue.toLocaleString()}. You can afford to spend $${Math.floor(affordability).toLocaleString()} on a property.`}</p>
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>{isAffordable ? "You can afford to buy property here." : "You can't afford to buy property here."}</p>
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>
-                            <span>Click </span><Link to="/state-data" className="links"><FontAwesomeIcon icon={faInfoCircle}/> here</Link> to learn more about {stateName}.
+                            <span>Click </span><Link to="/state-data" className={lightMode ? "links-light" : "links"}><FontAwesomeIcon icon={faInfoCircle}/> here</Link> to learn more about {stateName === "District of Columbia" ? "the" : ""} {stateName}.
                         </p>
                     </div>
                 </div>

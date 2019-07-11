@@ -11,7 +11,7 @@
 }
 
 .navbar {
-    border-bottom: 1px solid rgb(208, 206, 202);
+    border-bottom: 1px solid rgb(240, 240, 240);
     width: 100%;
     min-width: 300px;
     min-height: 10vh;
@@ -19,12 +19,13 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgb(114, 108, 100);
+    background-color: rgb(79, 84, 104);
+    background-image: linear-gradient(rgb(99, 104, 125),rgb(64, 68, 84));
     font-size: 40px;
 }
 
 .navbar-light {
-    border-bottom: 1px solid rgb(114, 108, 100);
+    border-bottom: 1px solid rgb(114, 106, 97);
     width: 100%;
     min-width: 300px;
     min-height: 10vh;
@@ -32,17 +33,18 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgb(208, 206, 202);
+    background-color: rgb(203, 198, 191);
+    background-image: linear-gradient(rgb(203, 198, 191),rgb(152, 147, 141));
     font-size: 40px;
 }
 
 .navbar > a {
-    color: rgb(208, 206, 202);
+    color: rgb(240, 240, 240);
     padding: 0 30px;
 }
 
 .navbar-light > a {
-    color: rgb(114, 108, 100);
+    color: rgb(114, 106, 97);
     padding: 0 30px;
 }
 
@@ -51,6 +53,18 @@
     background-position: center;
     background-size: "cover";
     background-repeat: no-repeat;
+    background-color: rgb(2, 2, 2);
+    filter: grayscale(70%);
+}
+
+.transparent-wrapper-light {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: "cover";
+    background-repeat: no-repeat;
+    background-color: rgb(2, 2, 2);
+    filter: grayscale(30%);
+    
 }
 
 .container-div {
@@ -61,7 +75,6 @@
     min-width: 300px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     text-align: center;
 }
 
@@ -70,7 +83,6 @@
     text-indent: 20px;
     padding: 2px 20px;
 }
-
 
 .content-heading {
     font-size: 28px;
@@ -84,7 +96,7 @@
     background-blend-mode: darken;
     min-height: 60vh;
     margin: 40px;
-    text-shadow: 1px 1px rgb(48, 49, 52);
+    text-shadow: 1px 1px rgb(53, 53, 53);
 }
 
 .piggy-bank-icon {
@@ -94,7 +106,18 @@
 
 .links {
     text-decoration: none;
-    color: rgb(206, 163, 98);
+    color: rgb(96, 124, 235);
+    text-shadow: 1px 1px rgb(40, 40, 40);
+}
+
+.links-light {
+    text-decoration: none;
+    color: rgb(208, 165, 119);
+    text-shadow: 1px 1px rgb(40, 40, 40);
+}
+
+.font-awesome-shadow {
+    filter: drop-shadow(5px 5px 5px 5px);
 }
 
 .calculator-form {
@@ -150,55 +173,51 @@
 }
 
 .footer {
-    /* position: absolute;
-    bottom: 0; */
-    border-top: 1px solid rgb(193, 197, 203);
+    border-top: 1px solid rgb(240, 240, 240);
     width: 100%;
     min-width: 300px;
-    min-height: 16vh;
-    padding-bottom: 10px;
+    min-height: 12vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    background-color: rgb(81, 86, 92);
+    background-color: rgb(79, 84, 104);
+    background-image: linear-gradient(rgb(99, 104, 125),rgb(64, 68, 84));
 }
 
 .footer-light {
-    /* position: absolute;
-    bottom: 0; */
-    border-top: 1px solid rgb(81, 86, 92);
+    border-top: 1px solid rgb(114, 106, 97);
     width: 100%;
     min-width: 300px;
-    min-height: 16vh;
-    padding-bottom: 10px;
+    min-height: 12vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    background-color: rgb(193, 197, 203);
+    background-color: rgb(203, 198, 191);
+    background-image: linear-gradient(rgb(203, 198, 191),rgb(152, 147, 141));
 }
 
 .footer > a {
     padding: 0 30px;
-    color: rgb(193, 197, 203);
+    color: rgb(240, 240, 240);
 }
 
 .footer > span {
     padding: 0 30px;
-    color: rgb(193, 197, 203);
+    color: rgb(240, 240, 240);
 }
 
 .footer-light > a {
     padding: 0 30px;
-    color: rgb(81, 86, 92);
+    color: rgb(114, 106, 97);
 }
 
 .footer-light > span {
     padding: 0 30px;
-    color: rgb(81, 86, 92);
+    color: rgb(114, 106, 97);
 }
 
 .extra-padding {
@@ -227,10 +246,12 @@
 }
 
 .tooltip .tooltiptext {
+    z-index: 1;
     visibility: hidden;
     width: 60px;
-    background-color: rgba(193, 197, 203,0);
-    color: rgb(79, 74, 68);
+    background-color: rgba(240, 240, 240,0);
+    color: rgb(79, 84, 104);
+    box-shadow: 1px 1px 5px rgb(20,20,20);
     font-size: 10px;
     top: 100%;
     left: 50%; 
@@ -241,7 +262,6 @@
     border-radius: 3px;
     font-weight: bold;
     position: absolute;
-    z-index: 1;
     transition-property: visibility, background-color;
     transition-duration: 500ms;
     transition-timing-function: ease-in;
@@ -249,8 +269,9 @@
 }
 
 .tooltip:hover .tooltiptext {
+    z-index: 1;
     visibility: visible;
-    background-color: rgba(193, 197, 203,1);
+    background-color: rgba(240, 240, 240, 1);
     width: 60px;
     top: 100%;
     left: 50%; 
@@ -259,10 +280,12 @@
 }
 
 .tooltip .tooltiptext-light {
+    z-index: 1;
     visibility: hidden;
     width: 60px;
-    background-color: rgba(193, 197, 203,0);
-    color: rgb(193, 197, 203);
+    background-color: rgba(114, 106, 97, 0);
+    box-shadow: 1px 1px 5px rgb(20,20,20);
+    color: rgb(203, 198, 191);
     font-size: 10px;
     top: 100%;
     left: 50%; 
@@ -273,7 +296,6 @@
     border-radius: 3px;
     font-weight: bold;
     position: absolute;
-    z-index: 1;
     transition-property: visibility, background-color;
     transition-duration: 500ms;
     transition-timing-function: ease-in;
@@ -281,8 +303,10 @@
 }
 
 .tooltip:hover .tooltiptext-light {
+    z-index: 1;
     visibility: visible;
-    background-color: rgba(81, 86, 92, 1);
+    background-color: rgba(114, 106, 97, 1);
+    box-shadow: 1px 1px 5px rgb(20,20,20);
     width: 60px;
     top: 100%;
     left: 50%; 
@@ -300,7 +324,7 @@
         visibility: hidden;
         width: 60px;
         background-color: rgba(193, 197, 203,0);
-        color: rgb(81, 86, 92);
+        color: rgb(79, 84, 104);
         font-size: 10px;
         top: 100%;
         left: 50%; 
@@ -320,7 +344,7 @@
     
     .tooltip:hover .tooltiptext {
         visibility: visible;
-        background-color: rgba(193, 197, 203,1);
+        background-color: rgba(240, 240, 240, 1);
         width: 60px;
         top: 100%;
         left: 50%; 
@@ -362,5 +386,20 @@
     .state-data-results-grid-6 {
         grid-column: 1;
         grid-row: 6;
+    }
+
+    .piggy-bank-icon {
+        font-size: 80px;
+        padding: 30px;
+    }
+
+    .center-data-span {
+        text-align: center;
+    }
+
+    .home-paragraph {
+        text-align: justify;
+        text-indent: 20px;
+        padding: 10px 20px;
     }
 }

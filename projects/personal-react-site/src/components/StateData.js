@@ -8,7 +8,7 @@ const StateData = props =>{
 
     document.title = "Affordability Calculator - State Data";
 
-    const {stateName, stateId, places} = props;
+    const {stateName, stateId, places, lightMode} = props;
 
     let stateSelected = "";
 
@@ -34,7 +34,7 @@ const StateData = props =>{
 
     let wikipediaLink = `https://en.wikipedia.org/wiki/${stateName.replace(" ","_")}`;
 
-    return  <div className="transparent-wrapper" style={divStyle}>
+    return  <div className={lightMode ? "transparent-wrapper-light" : "transparent-wrapper"} style={divStyle}>
                 <div className="container-div">
                 <div className="content-div">
                     <h1 className={stateSelected.State ? "content-heading less-padding" : "content-heading extra-padding"}>{stateSelected.State ? stateSelected.State : "No Data Available" }</h1>
@@ -44,7 +44,7 @@ const StateData = props =>{
                                 {stateSelected.Population ? 
                                 <FontAwesomeIcon icon={faUserFriends}/> : ""}
                             </span>
-                            <span>
+                            <span className={stateSelected.Population ? "" : "center-data-span"}>
                                 {stateSelected.Population ? 
                                 ` Population: ${stateSelected.Population.toLocaleString()}` : "There is no data to display."}
                             </span>
@@ -110,7 +110,7 @@ const StateData = props =>{
                             </span>
                         </p>
                         <p className={stateSelected["Property Value"] ? "result-display-inline state-data-results-grid-8" : "result-display-none state-data-results-grid-8"}>
-                            Click <a className="links" href={wikipediaLink}>here</a> to visit {stateName}'s {<FontAwesomeIcon icon={faWikipediaW}/>} Wikipedia page.
+                            Click <a className={lightMode ? "links-light" : "links"} href={wikipediaLink}>here</a> to visit {stateName === "District of Columbia" ? "the" : ""} {stateName}'s {<FontAwesomeIcon icon={faWikipediaW}/>} Wikipedia page.
                         </p>
                     </div>
                     </div>
