@@ -7,11 +7,11 @@ const Footer = props => {
 
     const {lightMode, toggleLightMode} = props;
     return  <div className={lightMode ? "footer-light" : "footer"}>
-                <a className="tooltip" href="https://www.linkedin.com/in/colonlopezcarlos/" target="_blank">
+                <a className="tooltip" href="https://www.linkedin.com/in/colonlopezcarlos/" rel="noopener noreferrer" target="_blank">
                     <FontAwesomeIcon icon={faLinkedin}/>
                     <span className={lightMode ? "tooltiptext-light" : "tooltiptext"}>LinkedIn Profile</span>
                 </a>
-                <a className="tooltip" href="https://github.com/ccl71102" target="_blank">
+                <a className="tooltip" href="https://github.com/ccl71102" rel="noopener noreferrer" target="_blank">
                     <FontAwesomeIcon icon={faGithub}/>
                     <span className={lightMode ? "tooltiptext-light" : "tooltiptext"}>Github Profile</span>
                 </a>

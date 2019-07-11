@@ -122,7 +122,7 @@ const StateData = props =>{
                             </span>
                         {/* </p> */}
                         <p className={stateSelected["Property Value"] ? "result-display-inline state-data-results-grid-15" : "result-display-none state-data-results-grid-15"}>
-                            <span className="click">Click </span><span className="tap">Tap </span> <a className={lightMode ? "links-light" : "links"} href={wikipediaLink} target="_blank">here</a> to visit {stateName === "District of Columbia" ? "the" : ""} {stateName}'s {<FontAwesomeIcon icon={faWikipediaW}/>} Wikipedia page.
+                            <span className="click">Click </span><span className="tap">Tap </span> <a className={lightMode ? "links-light" : "links"} href={wikipediaLink} rel="noopener noreferrer" target="_blank">here</a> to visit {stateName === "District of Columbia" ? "the" : ""} {stateName}'s {<FontAwesomeIcon icon={faWikipediaW}/>} Wikipedia page.
                         </p>
                     </div>
                     </div>
