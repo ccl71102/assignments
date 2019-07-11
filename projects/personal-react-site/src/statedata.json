@@ -1,19 +1,6 @@
 {
     "data": [
         {
-            "ID State": "04000US30",
-            "State": "Montana",
-            "ID Year": 2017,
-            "Year": "2017",
-            "Property Value": 231300,
-            "Slug State": "montana",
-            "Population": 1050493,
-            "Median Age": 40,
-            "Poverty Rate": 0.12471974489342741,
-            "Household Ownership": 423091,
-            "Average Commute Time": 16.911895684931373
-        },
-        {
             "ID State": "04000US01",
             "State": "Alabama",
             "ID Year": 2017,
@@ -25,6 +12,19 @@
             "Poverty Rate": 0.16888918814281145,
             "Household Ownership": 1841665,
             "Average Commute Time": 23.769892913418225
+        },
+        {
+            "ID State": "04000US02",
+            "State": "Alaska",
+            "ID Year": 2017,
+            "Year": "2017",
+            "Property Value": 273100,
+            "Slug State": "alaska",
+            "Population": 739795,
+            "Median Age": 34.5,
+            "Poverty Rate": 0.11105497507189731,
+            "Household Ownership": 250741,
+            "Average Commute Time": 18.669900535751903
         },
         {
             "ID State": "04000US04",
@@ -339,17 +339,17 @@
             "Average Commute Time": 22.544289951875495
         },
         {
-            "ID State": "04000US02",
-            "State": "Alaska",
+            "ID State": "04000US30",
+            "State": "Montana",
             "ID Year": 2017,
             "Year": "2017",
-            "Property Value": 273100,
-            "Slug State": "alaska",
-            "Population": 739795,
-            "Median Age": 34.5,
-            "Poverty Rate": 0.11105497507189731,
-            "Household Ownership": 250741,
-            "Average Commute Time": 18.669900535751903
+            "Property Value": 231300,
+            "Slug State": "montana",
+            "Population": 1050493,
+            "Median Age": 40,
+            "Poverty Rate": 0.12471974489342741,
+            "Household Ownership": 423091,
+            "Average Commute Time": 16.911895684931373
         },
         {
             "ID State": "04000US31",
@@ -508,6 +508,19 @@
             "Average Commute Time": 25.70940414387995
         },
         {
+            "ID State": "04000US72",
+            "State": "Puerto Rico",
+            "ID Year": 2017,
+            "Year": "2017",
+            "Property Value": 109800,
+            "Slug State": "puerto-rico",
+            "Population": 3337177,
+            "Median Age": 41.4,
+            "Poverty Rate": 0.4441864509036914,
+            "Household Ownership": 1191305,
+            "Average Commute Time": 27.912711979572716
+        },
+        {
             "ID State": "04000US44",
             "State": "Rhode Island",
             "ID Year": 2017,
@@ -662,19 +675,6 @@
             "Poverty Rate": 0.11332137385403067,
             "Household Ownership": 225796,
             "Average Commute Time": 16.711368643536513
-        },
-        {
-            "ID State": "04000US72",
-            "State": "Puerto Rico",
-            "ID Year": 2017,
-            "Year": "2017",
-            "Property Value": 109800,
-            "Slug State": "puerto-rico",
-            "Population": 3337177,
-            "Median Age": 41.4,
-            "Poverty Rate": 0.4441864509036914,
-            "Household Ownership": 1191305,
-            "Average Commute Time": 27.912711979572716
         }
     ],
     "source": [

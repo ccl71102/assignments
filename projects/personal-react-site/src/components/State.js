@@ -2,7 +2,7 @@ import React from "react";
 
 //do map here
 
-const State = props => {
+const State = () => {
     return <div></div>;
 }
 

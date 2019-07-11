@@ -8,10 +8,6 @@ import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
 import "./css/style.css";
 
-//GET request
-// https://datausa.io/api/data?drilldowns=State&measures=Property%20Value,Population,Median%20Age,Poverty%20Rate,Household%20Ownership,Average%20Commute%20Time&year=latest&order=State&sort=asc
-
-
 class App extends Component{
     constructor(){
         super();
@@ -20,39 +16,47 @@ class App extends Component{
             stateId: "",
             places: [],
             yearlySalary: "",
-            affordability: 0,
+            affordability: "",
             isAffordable: false,
-            isStateSelected: false
+            isStateSelected: false,
+            propertyValue: "",
+            lightMode: false
         };
     }
 
+    /*  stateSelect gets called at the same time anything related to the form changes in an attempt to keep
+        things synchronized. It doesn't seem to work as intended at times, 
+    */
 
-    stateSelected = () => {
-        if(this.state.stateName === "")
-            this.setState({isStateSelected: false})
-        else   
-            this.setState({
-                isStateSelected: true,
-            })
-    }
+    stateSelected = () => this.setState({isStateSelected: this.state.stateName === "" ? false : true})
 
+    toggleLightMode = () => this.setState(prevState => ({lightMode: !prevState.lightMode}))
 
     handleSelectChange = e => {
         
         const {name, value} = e.target;
 
-        console.log(name)
-        console.log(value)
-        console.log(this.state.places.find(item => item.State === value)["ID State"])
+        /*  If the default option from the dropdown menu gets reselected the app will throw an error
+            when you use the find method since it won't find anything
 
-        this.setState({
-            [name]: value,
-            stateId: this.state.places.find(item => item.State === value)["ID State"]
-        },this.stateSelected);
+            The fallback option is to just reset everything to default values to go back to the original
+            functionality.
+        */
 
-        console.log("handleSelectChange")
-        console.log(this.state.stateName)
-        console.log(this.state.stateId)
+        try{
+            this.setState({
+                [name]: value,
+                stateId: this.state.places.find(item => item.State === value)["ID State"],
+                propertyValue: ""
+            },this.stateSelected);
+
+        } catch {
+            this.setState({
+                stateName: "",
+                stateId: "",
+                propertyValue: ""
+            },this.stateSelected)
+        }
     }
 
     handleChange = e => {
@@ -62,79 +66,64 @@ class App extends Component{
             this.setState({
                 [name]: value
             },this.stateSelected);
-
-            console.log(name)
-            console.log(value)
-            console.log(this.state.yearlySalary)
     }
 
     handleSubmit = e => {
         e.preventDefault();
 
-        console.log(this.state.yearlySalary)
+        if(this.state.stateName !== "") {
 
-        this.setState({
-            affordability: this.state.yearlySalary * 5.139,
-            isAffordable: this.state.yearlySalary * 5.139 >= this.state.places.find(item => item.State === this.state.stateId) ? true : false
-        })
+            const newAff = Number(this.state.yearlySalary * 5.139);
+            const propValue = Number(this.state.places.find(item => item.State === this.state.stateName)["Property Value"]);
 
-        console.log(this.state.affordability)
+            this.setState({
+                affordability: newAff,
+                isAffordable: (newAff >= propValue),
+                propertyValue: propValue,
+                yearlySalary: ""
+            })    
+        }  
     }
 
     componentDidMount() {
-        axios.get("https://datausa.io/api/data?drilldowns=State&measures=Property%20Value,Population,Median%20Age,Poverty%20Rate,Household%20Ownership,Average%20Commute%20Time&year=latest&order=State&sort=asc")
-        .then(res => {
-            this.setState({
-                places: res.data.data
-            })
-        })
+        axios.get("https://datausa.io/api/data?drilldowns=State&measures=Property%20Value,Population,Median%20Age,Poverty%20Rate,Household%20Ownership,Average%20Commute%20Time,Average%20Wage&year=latest&order=State&sort=asc")
+        .then(res => this.setState({places: res.data.data}))
         .catch(err => console.log(err));
     }
 
     render(){
 
-        const styling = {
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            width: "100%"
-        }
-        return  <div style={styling}>
-                    <Navbar/>
+        return  <div className="main-container">
+                    <Navbar 
+                        lightMode={this.state.lightMode}
+                    />
                     <Switch>
                         <Route exact path="/" render={routerProps => 
-                            <Home {...routerProps} 
-                                places={this.state.places}
-                                isStateSelected={this.state.isStateSelected}
-                                stateName={this.state.stateName}
-                                stateId={this.state.stateId}
-                                handleSelectChange={this.handleSelectChange}
+                            <Home   {...routerProps} 
+                                    {...this.state}
                             /> 
                         }/>
                         <Route path="/calculator" render={routerProps => 
                             <Calculator {...routerProps} 
-                                places={this.state.places} 
                                 handleChange={this.handleChange} 
                                 handleSubmit={this.handleSubmit}
-                                stateName={this.state.stateName}
-                                isStateSelected={this.state.isStateSelected}
-                                yearlySalary={this.state.yearlySalary}
-                                stateId={this.state.stateId}
                                 handleSelectChange={this.handleSelectChange}
+                                {...this.state}
                             /> 
                         }/>
                         <Route path="/state-data" render={routerProps => 
                             <StateData {...routerProps} 
-                                places={this.state.places} 
                                 handleChange={this.handleChange} 
                                 handleSubmit={this.handleSubmit}
-                                stateName={this.state.stateName}
-                                isStateSelected={this.state.isStateSelected}
-                                stateId={this.state.stateId}
                                 handleSelectChange={this.handleSelectChange}
+                                {...this.state}
                             /> 
                         }/>
                     </Switch>
-                    <Footer/>
+                    <Footer   
+                        lightMode={this.state.lightMode} 
+                        toggleLightMode={this.toggleLightMode}
+                    />
                 </div>
     }
 }

@@ -5,10 +5,21 @@ import { faHome, faCalculator, faInfoCircle} from "@fortawesome/free-solid-svg-i
 
 
 const Navbar = props => {
-    return <div className="navbar">
-                <Link to="/"><FontAwesomeIcon icon={faHome}/></Link>
-                <Link to="/calculator"><FontAwesomeIcon icon={faCalculator}/></Link>
-                <Link to="/state-data"><FontAwesomeIcon icon={faInfoCircle}/></Link>
+    const {lightMode} = props;
+
+    return <div className={lightMode ? "navbar-light" : "navbar"}>
+                <Link className="tooltip" to="/">
+                    <FontAwesomeIcon icon={faHome}/>
+                    <span className={lightMode ? "tooltiptext-light" : "tooltiptext"}>Home</span>
+                </Link>
+                <Link className="tooltip" to="/calculator">
+                    <FontAwesomeIcon icon={faCalculator}/>
+                    <span className={lightMode ? "tooltiptext-light" : "tooltiptext"}>Calculator</span>
+                </Link>
+                <Link className="tooltip" to="/state-data">
+                    <FontAwesomeIcon icon={faInfoCircle}/>
+                    <span className={lightMode ? "tooltiptext-light" : "tooltiptext"}>State Information</span>
+                </Link>
            </div>
 }
 
