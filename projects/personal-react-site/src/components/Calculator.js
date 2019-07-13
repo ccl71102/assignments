@@ -7,6 +7,8 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 const Calculator = props => {
 
+    document.title = "Property Affordability Calculator - Calculator";
+
     const { stateName, 
             places, 
             affordability, 
@@ -57,8 +59,7 @@ const Calculator = props => {
     catch {
         //might have failed because of a delay with the axios.get method - use default values
     }
-    
-    document.title = "Affordability Calculator - Calculator";
+
 
     const divStyle = {
         backgroundImage: `url(${backgroundURL})`

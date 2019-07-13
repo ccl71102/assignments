@@ -12,7 +12,7 @@
 }
 
 .navbar {
-    border-bottom: 1px solid rgb(240, 240, 240);
+    border-bottom: 1px solid rgb(230, 230, 230);
     width: 100%;
     min-width: 320px;
     min-height: 12vh;
@@ -40,19 +40,31 @@
 }
 
 .navbar > a {
-    color: rgb(240, 240, 240);
-    padding: 10px 30px;
+    color: rgb(230, 230, 230);
+    padding: 6px 30px;
+    transition: color 500ms ease-in 100ms;
+}
+
+.navbar > a:hover {
+    color: rgb(155, 176, 201);
+    padding: 6px 30px;
 }
 
 .navbar-light > a {
     color: rgb(114, 106, 97);
-    padding: 10px 30px;
+    padding: 6px 30px;
+    transition: color 500ms ease-in 100ms;
+}
+
+.navbar-light > a:hover {
+    color: rgb(233, 229, 225);
+    padding: 6px 30px;
 }
 
 .transparent-wrapper {
     background-attachment: fixed;
     background-position: center;
-    background-size: "cover";
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(2, 2, 2);
     filter: grayscale(70%);
@@ -62,7 +74,7 @@
 .transparent-wrapper-light {
     background-attachment: fixed;
     background-position: center;
-    background-size: "cover";
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(2, 2, 2);
     filter: grayscale(30%);
@@ -95,7 +107,7 @@
 .content-div {
     width: 400px;
     background-color: rgba(110,110,110,0.6);
-    color: rgb(240, 240, 240);
+    color: rgb(230, 230, 230);
     background-blend-mode: darken;
     min-height: 500px;
     padding: 10px;
@@ -105,20 +117,48 @@
 }
 
 .piggy-bank-icon {
+    color: rgb(230, 230, 230);
     font-size: 40px;
-    padding: 10px;
+    margin: 10px;
+    transition: color 500ms ease-in 100ms;
+}
+
+.piggy-bank-icon:hover {
+    color: rgb(71, 160, 255);
+}
+
+.piggy-bank-icon-light {
+    color: rgb(230, 230, 230);
+    font-size: 40px;
+    margin: 10px;
+    transition: color 500ms ease-in 100ms;
+}
+
+.piggy-bank-icon-light:hover {
+    color: rgb(169, 141, 111);
+    
 }
 
 .links {
     text-decoration: none;
-    color: rgb(96, 124, 235);
+    color: rgb(25, 136, 255);
     text-shadow: 1px 1px rgb(40, 40, 40);
+    transition: color 500ms ease-in 100ms;
+}
+
+.links:hover{
+    color: rgb(237, 153, 63);
 }
 
 .links-light {
     text-decoration: none;
     color: rgb(169, 141, 111);
     text-shadow: 1px 1px rgb(40, 40, 40);
+    transition: color 500ms ease-in 100ms;
+}
+
+.links-light:hover {
+    color: rgb(79, 146, 218);
 }
 
 .calculator-form {
@@ -220,13 +260,13 @@
     padding-top: 20px;
 }
 
-.state-data-results >  span {
+.state-data-results > span {
     font-size: 16px;
     padding: 2px 0;
 }
 
 .footer {
-    border-top: 1px solid rgb(240, 240, 240);
+    border-top: 1px solid rgb(230, 230, 230);
     width: 100%;
     min-width: 320px;
     min-height: 16vh;
@@ -254,23 +294,43 @@
 }
 
 .footer > a {
-    padding: 10px 30px;
-    color: rgb(240, 240, 240);
+    padding: 6px 30px;
+    color: rgb(230, 230, 230);
+    transition: color 500ms ease-in 100ms;
 }
 
 .footer > span {
-    padding: 10px 30px;
-    color: rgb(240, 240, 240);
+    padding: 6px 30px;
+    color: rgb(230, 230, 230);
+    transition: color 500ms ease-in 100ms;
+}
+
+.footer > a:hover {
+    color: rgb(155, 176, 201);
+}
+
+.footer > span:hover {
+    color: rgb(155, 176, 201);
 }
 
 .footer-light > a {
-    padding: 0 30px;
+    padding: 6px 30px;
     color: rgb(114, 106, 97);
+    transition: color 500ms ease-in 100ms;
 }
 
 .footer-light > span {
-    padding: 0 30px;
+    padding: 6px 30px;
     color: rgb(114, 106, 97);
+    transition: color 500ms ease-in 100ms;
+}
+
+.footer-light > a:hover {
+    color: rgb(233, 229, 225);
+}
+
+.footer-light >span:hover {
+    color: rgb(233, 229, 225);
 }
 
 .extra-padding {
@@ -311,7 +371,7 @@
     visibility: hidden;
     max-width: 60px;
     min-width: 52px;
-    background-color: rgba(240, 240, 240,0);
+    background-color: rgba(200, 200, 200,0);
     color: rgb(79, 84, 104);
     box-shadow: 1px 1px 5px rgb(20,20,20);
     font-size: 10px;
@@ -325,21 +385,23 @@
     font-weight: bold;
     position: absolute;
     transition-property: visibility, background-color;
-    transition-duration: 350ms;
+    transition-duration: 250ms;
     transition-timing-function: ease-in;
-    transition-delay: 100ms;
+    transition-delay: 50ms;
 }
 
 .tooltip:hover .tooltiptext {
     z-index: 1;
     visibility: visible;
-    background-color: rgba(240, 240, 240, 1);
+    background-color: rgba(230, 230, 230, 1);
     max-width: 60px;
     min-width: 52px;
     top: 100%;
     left: 50%; 
     margin-left: -28px;
     margin-top: 2px;
+    transition-duration: 300ms;
+    transition-delay: 1200ms;
 }
 
 .tooltip .tooltiptext-light {
@@ -361,9 +423,9 @@
     font-weight: bold;
     position: absolute;
     transition-property: visibility, background-color;
-    transition-duration: 350ms;
+    transition-duration: 250ms;
     transition-timing-function: ease-in;
-    transition-delay: 100ms;
+    transition-delay: 50ms;
 }
 
 .tooltip:hover .tooltiptext-light {
@@ -377,6 +439,8 @@
     left: 50%; 
     margin-left: -28px;
     margin-top: 2px;
+    transition-duration: 300ms;
+    transition-delay: 1200ms;
 }
 
 .no-side-padding {
@@ -398,9 +462,90 @@
 
 @media only screen and (min-width: 800px) {
 
-    .container-div {
-        height: 600px;
+    .main-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-width: 100vh;
     }
+
+    .navbar {
+        grid-column: 2 / 3;
+        grid-row: 1;
+        justify-content: flex-end;
+        min-height: 8vh;
+    }
+
+    .navbar > a {
+        padding: 6px 30px;
+        font-size: 28px;
+    }
+
+    .footer {
+        grid-column: 1 / 2;
+        grid-row: 1;
+        min-height: 8vh;
+        justify-content: flex-start;
+        border-top: none;
+        border-bottom: 1px solid rgb(230, 230, 230);
+    }
+
+    .footer > a {
+        padding: 6px 30px;
+        font-size: 28px;
+    }
+
+    .footer > span {
+        padding: 6px 30px;
+        font-size: 28px;
+    }
+
+    .navbar-light {
+        grid-column: 2 / 3;
+        grid-row: 1;
+        min-height: 8vh;
+        justify-content: flex-end; 
+    }
+
+    .navbar-light > a {
+        padding: 6px 30px;
+        font-size: 28px;
+    }
+
+    .footer-light {
+        grid-column: 1 / 2;
+        grid-row: 1;
+        min-height: 8vh;
+        border-top: none;
+        border-bottom: 1px solid rgb(114, 106, 97);
+        justify-content: flex-start;
+    }
+
+    .footer-light > a {
+        padding: 6px 30px;
+        font-size: 28px;
+    }
+
+    .footer-light > span {
+        padding: 6px 30px;
+        font-size: 28px;
+    }
+
+    .transparent-wrapper {
+        height: 100vh;
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+
+    .transparent-wrapper-light {
+        height: 100vh;
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+
+    .container-div {
+        height: 100vh;
+    }
+
 
     .state-data-results {
         padding: 0 60px 20px;
@@ -408,7 +553,12 @@
 
     .piggy-bank-icon {
         font-size: 80px;
-        padding: 30px;
+        margin: 30px;
+    }
+
+    .piggy-bank-icon-light {
+        font-size: 80px;
+        margin: 30px;
     }
 
     .center-data-span {

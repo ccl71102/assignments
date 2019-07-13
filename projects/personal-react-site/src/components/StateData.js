@@ -6,7 +6,7 @@ import { faCar, faUserFriends, faGem, faHourglassHalf, faBuilding, faDollarSign,
 
 const StateData = props =>{
 
-    document.title = "Affordability Calculator - State Data";
+    document.title = "Property Affordability Calculator - State Data";
 
     const {stateName, stateId, places, lightMode} = props;
 
