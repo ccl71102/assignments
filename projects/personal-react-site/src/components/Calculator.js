@@ -93,6 +93,8 @@ const Calculator = props => {
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>{`The median property value is $${propertyValue.toLocaleString()}. You can afford to spend $${Math.floor(affordability).toLocaleString()} on a property.`}</p>
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>{isAffordable ? "You can afford to buy property here." : "You can't afford to buy property here."}</p>
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>
+                            <br/>
+                            <br/>
                             <span className="click">Click </span><span className="tap">Tap </span><Link to="/state-data" className={lightMode ? "links-light" : "links"}><FontAwesomeIcon icon={faInfoCircle}/> here</Link> to learn more about {stateName === "District of Columbia" ? "the" : ""} {stateName}.
                         </p>
                     </div>

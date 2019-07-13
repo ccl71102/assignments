@@ -128,7 +128,7 @@
 }
 
 .piggy-bank-icon:hover {
-    color: rgb(71, 160, 255);
+    color: rgb(53, 157, 237);
 }
 
 .piggy-bank-icon-light {
@@ -139,7 +139,7 @@
 }
 
 .piggy-bank-icon-light:hover {
-    color: rgb(169, 141, 111);
+    color: rgb(194, 167, 137);
     
 }
 
@@ -390,7 +390,7 @@
     border-radius: 3px;
     font-weight: bold;
     position: absolute;
-    transition-property: visibility, background-color;
+    transition-property: visibility, background-color, color;
     transition-duration: 250ms;
     transition-timing-function: ease-in;
     transition-delay: 50ms;
@@ -428,7 +428,7 @@
     border-radius: 3px;
     font-weight: bold;
     position: absolute;
-    transition-property: visibility, background-color;
+    transition-property: visibility, background-color, color;
     transition-duration: 250ms;
     transition-timing-function: ease-in;
     transition-delay: 50ms;
@@ -552,9 +552,24 @@
         height: 100vh;
     }
 
+    .content-div {
+        width: 500px;
+        max-height: 600px;
+    }
 
     .state-data-results {
-        padding: 0 60px 20px;
+        padding: 0 80px 10px;
+        
+    }
+
+    .state-data-results > span{
+        font-size: 20px;
+        padding: 0 10px;
+    }
+
+    .state-data-results > p {
+        font-size: 20px;
+        padding: 60px 0px;
     }
 
     .piggy-bank-icon {
@@ -575,6 +590,20 @@
         text-align: justify;
         text-indent: 20px;
         padding: 10px 20px;
+        font-size: 20px;
+    }
+
+    .content-heading {
+        font-size: 36px;
+    }
+
+    .calculator-results {
+        font-size: 20px;
+    }
+
+    .calculator-results > span {
+        padding-top: 50px;
+        font-size: 20px;
     }
 
     .click{
@@ -583,5 +612,17 @@
     
     .tap{
         display: none; 
+    }
+
+    input{
+        font-size: 16px;
+    }
+
+    select{
+        font-size: 16px;
+    }
+
+    button{
+        font-size: 16px;
     }
 }
