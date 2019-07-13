@@ -23,6 +23,7 @@
     background-color: rgb(79, 84, 104);
     background-image: linear-gradient(rgb(99, 104, 125),rgb(64, 68, 84));
     font-size: 40px;
+    transition: background-image 1000ms ease-in;
 }
 
 .navbar-light {
@@ -37,6 +38,7 @@
     background-color: rgb(203, 198, 191);
     background-image: linear-gradient(rgb(203, 198, 191),rgb(152, 147, 141));
     font-size: 40px;
+    transition: background-image 1000ms ease-in;
 }
 
 .navbar > a {
@@ -46,7 +48,7 @@
 }
 
 .navbar > a:hover {
-    color: rgb(155, 176, 201);
+    color: rgb(167, 181, 199);
     padding: 6px 30px;
 }
 
@@ -57,7 +59,7 @@
 }
 
 .navbar-light > a:hover {
-    color: rgb(233, 229, 225);
+    color: rgb(227, 220, 211);;
     padding: 6px 30px;
 }
 
@@ -69,6 +71,7 @@
     background-color: rgb(2, 2, 2);
     filter: grayscale(70%);
     min-width: 320px;
+    transition: background-image 2000ms ease-in;
 }
 
 .transparent-wrapper-light {
@@ -79,7 +82,7 @@
     background-color: rgb(2, 2, 2);
     filter: grayscale(30%);
     min-width: 320px;
-    
+    transition: background-image 2000ms ease-in;
 }
 
 .container-div {
@@ -114,6 +117,7 @@
     max-height: 50vh;
     margin: 40px;
     text-shadow: 1px 1px rgb(53, 53, 53);
+    border-radius: 3px;
 }
 
 .piggy-bank-icon {
@@ -147,7 +151,7 @@
 }
 
 .links:hover{
-    color: rgb(237, 153, 63);
+    color: rgb(111, 181, 255);
 }
 
 .links-light {
@@ -158,7 +162,7 @@
 }
 
 .links-light:hover {
-    color: rgb(79, 146, 218);
+    color: rgb(211, 195, 177);
 }
 
 .calculator-form {
@@ -277,6 +281,7 @@
     font-size: 40px;
     background-color: rgb(79, 84, 104);
     background-image: linear-gradient(rgb(99, 104, 125),rgb(64, 68, 84));
+    transition: background-image 1000ms ease-in;
 }
 
 .footer-light {
@@ -291,6 +296,7 @@
     font-size: 40px;
     background-color: rgb(203, 198, 191);
     background-image: linear-gradient(rgb(203, 198, 191),rgb(152, 147, 141));
+    transition: background-image 1000ms ease-in;
 }
 
 .footer > a {
@@ -306,11 +312,11 @@
 }
 
 .footer > a:hover {
-    color: rgb(155, 176, 201);
+    color: rgb(167, 181, 199);
 }
 
 .footer > span:hover {
-    color: rgb(155, 176, 201);
+    color: rgb(167, 181, 199);
 }
 
 .footer-light > a {
@@ -326,11 +332,11 @@
 }
 
 .footer-light > a:hover {
-    color: rgb(233, 229, 225);
+    color: rgb(227, 220, 211);
 }
 
 .footer-light >span:hover {
-    color: rgb(233, 229, 225);
+    color: rgb(227, 220, 211);
 }
 
 .extra-padding {
