@@ -32,14 +32,14 @@ const StateData = props =>{
         backgroundImage: `url(${backgroundURL})`
     };
 
-    let wikipediaLink = `https://en.wikipedia.org/wiki/${stateName.replace(" ","_")}`
+    let wikipediaLink = `https://en.wikipedia.org/wiki/${stateName.replace(" ","_")}`;
 
     switch(stateName){
         case "District of Columbia":
                 wikipediaLink = "https://en.wikipedia.org/wiki/Washington,_D.C.";
                 break;
         case "New York":
-                wikipediaLink = "https://en.wikipedia.org/wiki/New_York_(state)"
+                wikipediaLink = "https://en.wikipedia.org/wiki/New_York_(state)";
                 break;
         default:    //leave it as is
                 break;
@@ -108,12 +108,12 @@ const StateData = props =>{
                             `Median Property Value: $${Math.floor(stateSelected["Property Value"]).toLocaleString()}` : ""}
                             </span>
                         <p className={stateSelected["Property Value"] ? "result-display-inline state-data-results-grid-15" : "result-display-none state-data-results-grid-15"}>
-                            <span className="click">Click </span><span className="tap">Tap </span> <a className={lightMode ? "links-light" : "links"} href={wikipediaLink}>here</a> to visit {stateName === "District of Columbia" ? "the" : ""} {stateName}'s {<FontAwesomeIcon icon={faWikipediaW}/>} Wikipedia page.
+                            <span className="click">Click </span><span className="tap">Tap </span> <a className={lightMode ? "links-light" : "links"} href={wikipediaLink}>{<FontAwesomeIcon icon={faWikipediaW}/>} here</a> to visit {stateName === "District of Columbia" ? "the" : ""} {stateName}'s Wikipedia page.
                         </p>
                     </div>
                     </div>
                 </div>
-            </div>
+            </div>;
 }
 
 export default StateData;

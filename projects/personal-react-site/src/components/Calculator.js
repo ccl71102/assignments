@@ -21,7 +21,6 @@ const Calculator = props => {
             handleChange,
             lightMode } = props;
 
-        
         let backgroundURL = placeholderImage;
 
     try {
@@ -53,13 +52,12 @@ const Calculator = props => {
             }
         }
         else {
-
+            //use default
         }
     }
     catch {
         //might have failed because of a delay with the axios.get method - use default values
     }
-
 
     const divStyle = {
         backgroundImage: `url(${backgroundURL})`
@@ -71,7 +69,7 @@ const Calculator = props => {
                         <h1 className="content-heading less-padding">Calculator</h1>
                         <form onSubmit={handleSubmit}>
                             <input 
-                                className="calculator-form" 
+                                className="calculator-form slight-border-radius textbox-styling" 
                                 type="text" 
                                 placeholder="Yearly Income (USD)"
                                 value={yearlySalary}
@@ -81,14 +79,14 @@ const Calculator = props => {
                                 required
                             />
                             <select 
-                                className="calculator-form" 
+                                className="calculator-form slight-border-radius dropbox-styling" 
                                 value={stateName || ""} 
                                 onChange={handleSelectChange} 
                                 name="stateName"
                                 required>
                                     <StatesList places={places}/>
                             </select>
-                            <button className="calculator-form less-margin">Submit</button>
+                            <button className="calculator-form less-margin slight-border-radius button-styling">Submit</button>
                         </form>
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>{`The median property value is $${propertyValue.toLocaleString()}. You can afford to spend $${Math.floor(affordability).toLocaleString()} on a property.`}</p>
                         <p className={propertyValue === "" ? "result-display-none calculator-results" : "result-display calculator-results"}>{isAffordable ? "You can afford to buy property here." : "You can't afford to buy property here."}</p>

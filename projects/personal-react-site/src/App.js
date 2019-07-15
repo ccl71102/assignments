@@ -8,8 +8,8 @@ import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
 import "./css/style.css";
 
-class App extends Component{
-    constructor(){
+class App extends Component {
+    constructor() {
         super();
         this.state = {
             stateName: "",
@@ -28,9 +28,9 @@ class App extends Component{
         things synchronized. It doesn't seem to work as intended at times, 
     */
 
-    stateSelected = () => this.setState({isStateSelected: this.state.stateName === "" ? false : true})
+    stateSelected = () => this.setState({isStateSelected: this.state.stateName === "" ? false : true});
 
-    toggleLightMode = () => this.setState(prevState => ({lightMode: !prevState.lightMode}))
+    toggleLightMode = () => this.setState(prevState => ({lightMode: !prevState.lightMode}));
 
     handleSelectChange = e => {
         
@@ -43,7 +43,7 @@ class App extends Component{
             functionality.
         */
 
-        try{
+        try {
             this.setState({
                 [name]: value,
                 stateId: this.state.places.find(item => item.State === value)["ID State"],
@@ -55,7 +55,7 @@ class App extends Component{
                 stateName: "",
                 stateId: "",
                 propertyValue: ""
-            },this.stateSelected)
+            },this.stateSelected);
         }
     }
 
@@ -81,7 +81,7 @@ class App extends Component{
                 isAffordable: (newAff >= propValue),
                 propertyValue: propValue,
                 yearlySalary: ""
-            })    
+            });
         }  
     }
 
@@ -89,6 +89,8 @@ class App extends Component{
         axios.get("https://datausa.io/api/data?drilldowns=State&measures=Property%20Value,Population,Median%20Age,Poverty%20Rate,Household%20Ownership,Average%20Commute%20Time,Average%20Wage&year=latest&order=State&sort=asc")
         .then(res => this.setState({places: res.data.data}))
         .catch(err => console.log(err));
+
+        console.log("Application initialized");
     }
 
     render(){
@@ -124,7 +126,7 @@ class App extends Component{
                         lightMode={this.state.lightMode} 
                         toggleLightMode={this.toggleLightMode}
                     />
-                </div>
+                </div>;
     }
 }
 

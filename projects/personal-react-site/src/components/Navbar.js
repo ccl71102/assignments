@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faCalculator, faInfoCircle} from "@fortawesome/free-solid-svg-icons"
-
+import { faHome, faCalculator, faInfoCircle} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = props => {
+    
     const {lightMode} = props;
 
     return <div className={lightMode ? "navbar-light" : "navbar"}>
@@ -20,7 +20,7 @@ const Navbar = props => {
                     <FontAwesomeIcon icon={faInfoCircle}/>
                     <span className={lightMode ? "tooltiptext-light" : "tooltiptext"}>State Information</span>
                 </Link>
-           </div>
+           </div>;
 }
 
 export default Navbar;

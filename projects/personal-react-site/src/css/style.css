@@ -5,9 +5,9 @@
 }
 
 .main-container {
-    display: "grid";
-    grid-template-columns: "1fr";
-    width: "100%";
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
     min-width: 320px;
 }
 
@@ -71,7 +71,7 @@
     background-color: rgb(2, 2, 2);
     filter: grayscale(70%);
     min-width: 320px;
-    transition: background-image 2000ms ease-in;
+    transition: background-image 3100ms ease-in 300ms;
 }
 
 .transparent-wrapper-light {
@@ -82,7 +82,7 @@
     background-color: rgb(2, 2, 2);
     filter: grayscale(30%);
     min-width: 320px;
-    transition: background-image 2000ms ease-in;
+    transition: background-image 3100ms ease-in 300ms;
 }
 
 .container-div {
@@ -90,6 +90,7 @@
     background-blend-mode: darken;
     width: 100%;
     min-height: 80vh;
+    max-height: 140vh;
     min-width: 320px;
     display: flex;
     justify-content: center;
@@ -109,14 +110,14 @@
 
 .content-div {
     width: 400px;
-    background-color: rgba(110,110,110,0.6);
+    background-color: rgba(110, 110, 110, 0.6);
     color: rgb(230, 230, 230);
     background-blend-mode: darken;
     min-height: 500px;
     padding: 10px;
-    max-height: 50vh;
+    max-height: 120vh;
     margin: 40px;
-    text-shadow: 1px 1px rgb(53, 53, 53);
+    text-shadow: 1px 1px rgb(40, 40, 40);
     border-radius: 3px;
 }
 
@@ -140,7 +141,6 @@
 
 .piggy-bank-icon-light:hover {
     color: rgb(194, 167, 137);
-    
 }
 
 .links {
@@ -273,7 +273,7 @@
     border-top: 1px solid rgb(230, 230, 230);
     width: 100%;
     min-width: 320px;
-    min-height: 16vh;
+    min-height: 12vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -288,7 +288,7 @@
     border-top: 1px solid rgb(114, 106, 97);
     width: 100%;
     min-width: 320px;
-    min-height: 16vh;
+    min-height: 12vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -377,9 +377,9 @@
     visibility: hidden;
     max-width: 60px;
     min-width: 52px;
-    background-color: rgba(200, 200, 200,0);
+    background-color: rgba(200, 200, 200, 0);
     color: rgb(79, 84, 104);
-    box-shadow: 1px 1px 5px rgb(20,20,20);
+    box-shadow: 1px 1px 5px rgb(20, 20, 20);
     font-size: 10px;
     top: 100%;
     left: 50%; 
@@ -416,7 +416,7 @@
     max-width: 60px;
     min-width: 52px;
     background-color: rgba(114, 106, 97, 0);
-    box-shadow: 1px 1px 5px rgb(20,20,20);
+    box-shadow: 1px 1px 5px rgb(20, 20, 20);
     color: rgb(203, 198, 191);
     font-size: 10px;
     top: 100%;
@@ -438,7 +438,7 @@
     z-index: 1;
     visibility: visible;
     background-color: rgba(114, 106, 97, 1);
-    box-shadow: 1px 1px 5px rgb(20,20,20);
+    box-shadow: 1px 1px 5px rgb(20, 20, 20);
     max-width: 60px;
     min-width: 52px;
     top: 100%;
@@ -449,8 +449,105 @@
     transition-delay: 1200ms;
 }
 
+.tooltip .tooltiptext-bottom {
+    z-index: 1;
+    visibility: hidden;
+    max-width: 60px;
+    min-width: 52px;
+    background-color: rgba(200, 200, 200, 0);
+    color: rgb(79, 84, 104);
+    box-shadow: 1px 1px 5px rgb(20, 20, 20);
+    font-size: 10px;
+    bottom: 100%;
+    left: 50%; 
+    margin-left: -28px;
+    margin-top: 2px;
+    text-align: center;
+    padding: 2px; 
+    border-radius: 3px;
+    font-weight: bold;
+    position: absolute;
+    transition-property: visibility, background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;
+    transition-delay: 50ms;
+}
+
+.tooltip:hover .tooltiptext-bottom {
+    z-index: 1;
+    visibility: visible;
+    background-color: rgba(230, 230, 230, 1);
+    max-width: 60px;
+    min-width: 52px;
+    bottom: 100%;
+    left: 50%; 
+    margin-left: -28px;
+    margin-top: 2px;
+    transition-duration: 300ms;
+    transition-delay: 1200ms;
+}
+
+.tooltip .tooltiptext-light-bottom {
+    z-index: 1;
+    visibility: hidden;
+    max-width: 60px;
+    min-width: 52px;
+    background-color: rgba(114, 106, 97, 0);
+    box-shadow: 1px 1px 5px rgb(20, 20, 20);
+    color: rgb(203, 198, 191);
+    font-size: 10px;
+    bottom: 100%;
+    left: 50%; 
+    margin-left: -28px;
+    margin-top: 2px;
+    text-align: center;
+    padding: 2px; 
+    border-radius: 3px;
+    font-weight: bold;
+    position: absolute;
+    transition-property: visibility, background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;
+    transition-delay: 50ms;
+}
+
+.tooltip:hover .tooltiptext-light-bottom {
+    z-index: 1;
+    visibility: visible;
+    background-color: rgba(114, 106, 97, 1);
+    box-shadow: 1px 1px 5px rgb(20, 20, 20);
+    max-width: 60px;
+    min-width: 52px;
+    bottom: 100%;
+    left: 50%; 
+    margin-left: -28px;
+    margin-top: 2px;
+    transition-duration: 300ms;
+    transition-delay: 1200ms;
+}
+
 .no-side-padding {
     padding: 2px 0;
+}
+
+.slight-border-radius {
+    border-radius: 3px;
+}
+
+.button-styling {
+    box-shadow: 0 1px 2px rgb(20, 20, 20);
+    background-color: rgb(230, 230, 230);
+    color: rgb(20, 20, 20);
+}
+
+.dropbox-styling {
+    color: rgb(20, 20, 20);
+    background-color: rgb(230, 230, 230);
+}
+
+.textbox-styling {
+    color: rgb(20, 20, 20);
+    background-color: rgb(230, 230, 230);
 }
 
 .theme-toggle:hover {
@@ -464,7 +561,6 @@
 .tap{
     display: inline; 
 }
-
 
 @media only screen and (min-width: 800px) {
 
@@ -557,14 +653,9 @@
         max-height: 600px;
     }
 
-    .state-data-results {
-        padding: 0 80px 10px;
-        
-    }
-
     .state-data-results > span{
         font-size: 20px;
-        padding: 0 10px;
+        padding: 0px 10px; 
     }
 
     .state-data-results > p {
@@ -573,12 +664,12 @@
     }
 
     .piggy-bank-icon {
-        font-size: 80px;
+        font-size: 100px;
         margin: 30px;
     }
 
     .piggy-bank-icon-light {
-        font-size: 80px;
+        font-size: 100px;
         margin: 30px;
     }
 
@@ -625,4 +716,86 @@
     button{
         font-size: 16px;
     }
+
+    .tooltip .tooltiptext-bottom {
+        z-index: 1;
+        visibility: hidden;
+        max-width: 60px;
+        min-width: 52px;
+        background-color: rgba(200, 200, 200, 0);
+        color: rgb(79, 84, 104);
+        box-shadow: 1px 1px 5px rgb(20, 20, 20);
+        font-size: 10px;
+        top: 100%;
+        bottom: -100%;
+        left: 50%; 
+        margin-left: -28px;
+        margin-top: 2px;
+        text-align: center;
+        padding: 2px; 
+        border-radius: 3px;
+        font-weight: bold;
+        position: absolute;
+        transition-property: visibility, background-color, color;
+        transition-duration: 250ms;
+        transition-timing-function: ease-in;
+        transition-delay: 50ms;
+    }
+    
+    .tooltip:hover .tooltiptext-bottom {
+        z-index: 1;
+        visibility: visible;
+        background-color: rgba(230, 230, 230, 1);
+        max-width: 60px;
+        min-width: 52px;
+        top: 100%;
+        bottom: -100%;
+        left: 50%; 
+        margin-left: -28px;
+        margin-top: 2px;
+        transition-duration: 300ms;
+        transition-delay: 1200ms;
+    }
+    
+    .tooltip .tooltiptext-light-bottom {
+        z-index: 1;
+        visibility: hidden;
+        max-width: 60px;
+        min-width: 52px;
+        background-color: rgba(114, 106, 97, 0);
+        box-shadow: 1px 1px 5px rgb(20, 20, 20);
+        color: rgb(203, 198, 191);
+        font-size: 10px;
+        top: 100%;
+        bottom: -100%;
+        left: 50%; 
+        margin-left: -28px;
+        margin-top: 2px;
+        text-align: center;
+        padding: 2px; 
+        border-radius: 3px;
+        font-weight: bold;
+        position: absolute;
+        transition-property: visibility, background-color, color;
+        transition-duration: 250ms;
+        transition-timing-function: ease-in;
+        transition-delay: 50ms;
+    }
+    
+    .tooltip:hover .tooltiptext-light-bottom {
+        z-index: 1;
+        visibility: visible;
+        background-color: rgba(114, 106, 97, 1);
+        box-shadow: 1px 1px 5px rgb(20, 20, 20);
+        max-width: 60px;
+        min-width: 52px;
+        top: 100%;
+        bottom: -100%;
+        left: 50%; 
+        margin-left: -28px;
+        margin-top: 2px;
+        transition-duration: 300ms;
+        transition-delay: 1200ms;
+    } 
+    
 }
