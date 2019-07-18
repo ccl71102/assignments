@@ -7,9 +7,7 @@
 }
 
 /*
-
     fonts
-
 */
 
 @font-face {
@@ -32,10 +30,8 @@
     src: url(../fonts/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWxEQDO-Wyrs.woff2);
 }
 
-/*
-
-    divs
-
+/*  
+    divs    
 */
 
 #banner-div {
@@ -136,9 +132,7 @@
 }
 
 /*
-
     images
-
 */
 
 #zen-circle {
@@ -149,11 +143,8 @@
 }
 
 /*
-
     text
-
 */
-
 
 li {
     list-style: none;
@@ -320,9 +311,7 @@ li {
 }
 
 /* 
-
     media queries
-
 */
 
 @media only screen and (min-width: 500px) {

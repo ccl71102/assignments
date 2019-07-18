@@ -73,14 +73,14 @@ class App extends Component {
 
         if(this.state.stateName !== "") {
 
-            const newAff = Number(this.state.yearlySalary * 5.139);
+            const newAff = Math.abs(Number(this.state.yearlySalary * 5.139));
             const propValue = Number(this.state.places.find(item => item.State === this.state.stateName)["Property Value"]);
 
             this.setState({
                 affordability: newAff,
                 isAffordable: (newAff >= propValue),
-                propertyValue: propValue,
-                yearlySalary: ""
+                propertyValue: propValue
+                // yearlySalary: ""
             });
         }  
     }

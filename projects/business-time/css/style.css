@@ -13,8 +13,7 @@ body {
 
 nav {
     display: flex;
-    background-color: rgb(48, 55, 73);
-    border: 2px solid rgb(240, 240, 241);
+    background-image: linear-gradient(rgb(48, 55, 73),rgb(41, 47, 62));
     overflow: hidden;
     width: 100%;
     min-width: 320px;
@@ -23,6 +22,8 @@ nav {
     top: 0px;
     left: 0px;
     z-index: 100;
+    border: 1px solid rgb(240, 240, 241);
+    border-radius: 3px;
 }
 
 input {
@@ -73,11 +74,12 @@ header {
 .submit-button {
     margin-top: 10px;
     padding: 5px;
-    border: 2px solid rgb(240, 240, 241);
+    border: 1px solid rgb(240, 240, 241);
     background-color: rgb(48, 55, 73);
     font-size: 16px;
     width: 100px;
     box-shadow: 2px 2px rgb(30,30,30);
+    border-radius: 3px;
 }
 
 /*Home image styling*/
@@ -113,7 +115,7 @@ header {
 .home-content {
     background-color: rgba(120,120,120, 0.5);
     text-align: center;
-    margin: auto;
+    margin: 40px auto;
     padding: 10px;
     width: 80%;
 }
@@ -166,6 +168,7 @@ header {
 
 
 .package-details {
+    margin-top: 20px;
     width: 50%;
     font-size: 12px;
     text-align: justify;
