@@ -12,10 +12,12 @@ const Projects = () => {
         <div className="header-div">
             <h1 className="home-title">PROJECTS</h1>
             <h2 id="content" className="section-title table-of-content-title">CONTENTS</h2>
-            <a className = "table-of-content-link" href="#property-affordability-calculator">Property Affordability Calculator</a>
-            <a className = "table-of-content-link" href="#css-zen-garden">CSS Zen Garden</a>
-            <a className = "table-of-content-link" href="#business-time">Business Time Website</a>
-            <a className = "table-of-content-link" href="#parkwatch-parking-meter-monitoring-system">ParkWatch Parking Monitoring System</a>
+            <div className="table-of-content-div">
+                <a className = "table-of-content-link" href="#property-affordability-calculator">Property Affordability Calculator</a>
+                <a className = "table-of-content-link" href="#css-zen-garden">CSS Zen Garden</a>
+                <a className = "table-of-content-link" href="#business-time">Business Time Website</a>
+                <a className = "table-of-content-link" href="#parkwatch-parking-meter-monitoring-system">ParkWatch Parking Monitoring System</a>
+            </div>
             <br/>
             <br/>
         </div>

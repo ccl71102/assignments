@@ -13,7 +13,7 @@ body {
     min-height: 6vh;
     min-width: 320px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-image: linear-gradient(rgb(38,38,40), rgb(28, 28, 30));
 }
@@ -24,8 +24,10 @@ body {
     transition: color 300ms ease-in 100ms;
     color: rgb(230, 230, 232);
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .navbar > a:hover {
@@ -89,30 +91,44 @@ body {
     min-height: 6vh;
     min-width: 320px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
     background-image: linear-gradient(rgb(38,38,40), rgb(28, 28, 30));
     align-items: center;
 }
 
 .footer > a {
-    font-size: 30px;
+    font-size: 18px;
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     transition: color 300ms ease-in 100ms;
     color: rgb(230, 230, 232);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: lighter;
 }
 
 .footer > span {
     font-family: "Roboto", sans-serif;
     color: rgb(230, 230, 232);
     font-weight: lighter;
-    font-size: 14px;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .footer > a:hover {
     color: rgb(131, 149, 179);
+}
+
+#contact-span {
+    font-weight: lighter;
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(235, 235, 237);
 }
 
 .content-div {
@@ -247,9 +263,10 @@ body {
     font-family: "Roboto", sans-serif;
     transition: color 300ms ease-in 100ms;
     color: rgb(61, 157, 230);
-    text-decoration-line: underline;
+    text-decoration: none;
+    /* text-decoration-line: underline;
     text-underline-position: under; 
-    text-decoration-style: solid;
+    text-decoration-style: solid; */
 }
 
 .project-data-div > p > a:hover {
@@ -258,16 +275,23 @@ body {
 
 .table-of-content-title {
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     text-align: center;
+}
+
+.table-of-content-div {
+    display: flex;
+    flex-direction: column;
 }
 
 .table-of-content-link {
     text-align: center;
     color: rgb(230, 230, 232);
     font-family: "Roboto", sans-serif;
+    text-decoration: none;
     transition: color 300ms ease-in 100ms;
-    margin-bottom: 5px;
+    margin-right: 25px;
+    margin-left: 25px;
 }
 
 .table-of-content-link:hover {
@@ -300,7 +324,6 @@ body {
     max-width: 900px;
     border: 1px solid rgb(240, 240, 241);
 }
-
 
 @media only screen and (min-width: 600px) {
     
@@ -380,11 +403,6 @@ body {
         font-size: 20px;
     }
 
-    .content-grid-4 > span {
-        font-size: 22px;
-        margin-bottom: 5px;
-    }
-
     .content-grid-6 {
         font-size: 22px;
     }
@@ -404,6 +422,12 @@ body {
     .navbar > a {
         font-size: 30px;
         font-weight: lighter;
+        color: rgb(230, 230, 232);
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 50px;
+        margin-right: 50px;
     }
 
     .about-grid {
@@ -421,8 +445,8 @@ body {
         grid-column: 2 / 3;
         grid-row: 1;
         align-self: center;
-        justify-self: center;
-        text-align: left;
+        justify-self: start;
+        margin-left: 50px;
         
     }
 
@@ -436,7 +460,8 @@ body {
 
     .content-grid-2 > p {
         margin: 0;
-        margin-bottom: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .content-grid-3 {
@@ -445,9 +470,8 @@ body {
         grid-column: 2;
         grid-row: 2;
         align-self: center;
-        justify-self: center;
-        text-align: left;
-        margin-bottom: 20px;
+        justify-self: start;
+        margin-left: 50px;
     }
 
     .skills-grid{
@@ -469,15 +493,17 @@ body {
     }
 
     .content-grid-4 > span {
-        font-size: 30px;
+        font-size: 24px;
+        margin-top: 2px;
+        margin-bottom: 2px;
     }
 
     .content-grid-5 {
         grid-column: 2;
         grid-row: 4;
         align-self: center;
-        justify-self: center;
-        text-align: left;
+        justify-self: start;
+        margin-left: 50px;
     }
 
     .content-grid-6 {
@@ -499,8 +525,8 @@ body {
         grid-column: 2;
         grid-row: 3;
         align-self: center;
-        justify-self: center;
-        text-align: left;
+        justify-self: start;
+        margin-left: 50px;
     }
     
     .content-grid-8 {
@@ -512,7 +538,37 @@ body {
         justify-self: center;
     }
 
+    .table-of-content-title {
+       font-size: 36px;
+    }
+
     .portrait {
         width: 240px;
+    }
+
+    .table-of-content-div {
+        text-align: center;
+        display: block;
+    }
+
+    .table-of-content-link {
+        text-align: center;
+        margin-right: 25px;
+        margin-left: 25px;
+        font-size: 24px;
+    }
+
+    .footer > a {
+        font-size: 26px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 50px;
+        font-weight: lighter;
+    }
+    
+    .footer > span {
+        font-weight: lighter;
+        font-size: 26px;
+        margin-right: 50px;
     }
 }

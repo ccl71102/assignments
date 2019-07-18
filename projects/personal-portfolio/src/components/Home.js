@@ -45,6 +45,8 @@ const Home = () => {
                         <span className="icon-column-1"><FontAwesomeIcon icon={faCheckSquare}/></span>
                         <span className="text-column-1">C++</span> 
                         <span className="icon-column-1"><FontAwesomeIcon icon={faCheckSquare}/></span>
+                        <span className="text-column-1">C</span> 
+                        <span className="icon-column-1"><FontAwesomeIcon icon={faCheckSquare}/></span>
                         <span className="text-column-1">PowerScript</span>
                     </div>
                 </div>
