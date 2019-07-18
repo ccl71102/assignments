@@ -49,7 +49,7 @@ const Home = () => {
                     </div>
                 </div>
                 <h2 className="section-title content-grid-7">PROJECTS</h2>
-                    <Link className="content-grid-8" to="/projects#content">Available here.</Link>
+                    <Link className="content-grid-8" to="/projects#content">View Here</Link>
                     <h2 className="section-title content-grid-5">RESUME</h2>
                     <div className="content-grid-6">
                         <a href="https://docs.google.com/document/d/1IfxbXoNi467XQRiKuXsmNbpRq7bQdJs9CesBeaQw12A/"><FontAwesomeIcon icon={faDownload}/> View Here (Google Docs)</a>

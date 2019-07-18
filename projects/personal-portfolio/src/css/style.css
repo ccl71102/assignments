@@ -21,7 +21,7 @@ body {
 .navbar > a {
     text-decoration: none;
     font-family: "Roboto", sans-serif;
-    transition: color 500ms ease-in 100ms;
+    transition: color 300ms ease-in 100ms;
     color: rgb(230, 230, 232);
     font-size: 20px;
     margin-top: 10px;
@@ -98,7 +98,7 @@ body {
     font-size: 30px;
     text-decoration: none;
     font-family: "Roboto", sans-serif;
-    transition: color 500ms ease-in 100ms;
+    transition: color 300ms ease-in 100ms;
     color: rgb(230, 230, 232);
     margin-top: 10px;
     margin-bottom: 10px;
@@ -178,7 +178,7 @@ body {
     padding: 0 20px;
     text-decoration: none;
     color: rgb(230, 230, 232);
-    transition: color 500ms ease-in 100ms;
+    transition: color 300ms ease-in 100ms;
     margin-bottom: 20px;
 }
 
@@ -197,6 +197,13 @@ body {
     flex-direction: column;
     justify-content: justify;
     text-align: center;
+    text-decoration: none;
+    color: rgb(230, 230, 232);
+    transition: color 300ms ease-in 100ms;
+}
+
+.content-grid-8:hover {
+    color: rgb(61, 157, 230);
 }
 
 .project-screenshot{
@@ -218,7 +225,7 @@ body {
 
 .project-data-div > a > h2 {
     margin: 40px 20px 20px 20px;
-    transition: color 500ms ease-in 100ms;
+    transition: color 300ms ease-in 100ms;
     color: rgb(61, 157, 230);
 }
 
@@ -228,7 +235,7 @@ body {
 
 .project-data-div > a {
     text-decoration: none;
-    transition: color 500ms ease-in 100ms;
+    transition: color 300ms ease-in 100ms;
     color: rgb(74, 121, 198);
 }
 
@@ -238,7 +245,7 @@ body {
 
 .project-data-div > p > a {
     font-family: "Roboto", sans-serif;
-    transition: color 500ms ease-in 100ms;
+    transition: color 300ms ease-in 100ms;
     color: rgb(61, 157, 230);
     text-decoration-line: underline;
     text-underline-position: under; 
@@ -259,7 +266,7 @@ body {
     text-align: center;
     color: rgb(230, 230, 232);
     font-family: "Roboto", sans-serif;
-    transition: color 500ms ease-in 100ms;
+    transition: color 300ms ease-in 100ms;
     margin-bottom: 5px;
 }
 
@@ -325,7 +332,7 @@ body {
         display: block;
         margin-top: 50px;
         filter: grayscale(90%);
-        transition: filter 500ms linear 200ms;
+        transition: filter 300ms linear 100ms;
     }
 
     .project-screenshot:hover {
@@ -348,7 +355,8 @@ body {
     }
 
     .home-title {
-        font-size: 46px;
+        font-size: 66px;
+        padding-bottom: 50px;
     }
 
     .section-title {
@@ -380,6 +388,10 @@ body {
     .content-grid-6 {
         font-size: 22px;
     }
+
+    .content-grid-8 {
+        font-size: 22px;
+    }
     
     .table-of-content-link {
         font-size: 18px;
@@ -402,6 +414,7 @@ body {
     .center-portrait {
         grid-column: 1;
         grid-row: 1 / 2;
+        justify-self: flex-end;
     }
 
     .content-grid-1 {
@@ -423,7 +436,7 @@ body {
 
     .content-grid-2 > p {
         margin: 0;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .content-grid-3 {
@@ -455,6 +468,10 @@ body {
         margin-top: 50px;
     }
 
+    .content-grid-4 > span {
+        font-size: 30px;
+    }
+
     .content-grid-5 {
         grid-column: 2;
         grid-row: 4;
@@ -467,7 +484,15 @@ body {
         grid-column: 3 / 5;
         grid-row: 4;
         padding: 0;
+        margin: 0;
         padding-right: 5vh;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .content-grid-6 > a {
+        margin: 0;
+        padding: 0;
     }
 
     .content-grid-7 {
@@ -483,5 +508,11 @@ body {
         grid-row: 3;
         padding: 0;
         padding-right: 5vh;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .portrait {
+        width: 240px;
     }
 }
