@@ -1,7 +1,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .main-container {
@@ -382,7 +382,7 @@
     background-color: rgba(200, 200, 200, 0);
     color: rgb(79, 84, 104);
     box-shadow: 1px 1px 5px rgb(20, 20, 20);
-    font-size: 10px;
+    font-size: 11px;
     top: 100%;
     left: 50%; 
     margin-left: -28px;
@@ -420,7 +420,7 @@
     background-color: rgba(114, 106, 97, 0);
     box-shadow: 1px 1px 5px rgb(20, 20, 20);
     color: rgb(203, 198, 191);
-    font-size: 10px;
+    font-size: 11px;
     top: 100%;
     left: 50%; 
     margin-left: -28px;
@@ -459,7 +459,7 @@
     background-color: rgba(200, 200, 200, 0);
     color: rgb(79, 84, 104);
     box-shadow: 1px 1px 5px rgb(20, 20, 20);
-    font-size: 10px;
+    font-size: 11px;
     bottom: 100%;
     left: 50%; 
     margin-left: -28px;
@@ -497,7 +497,7 @@
     background-color: rgba(114, 106, 97, 0);
     box-shadow: 1px 1px 5px rgb(20, 20, 20);
     color: rgb(203, 198, 191);
-    font-size: 10px;
+    font-size: 11px;
     bottom: 100%;
     left: 50%; 
     margin-left: -28px;
@@ -731,12 +731,12 @@
     .tooltip .tooltiptext-bottom {
         z-index: 1;
         visibility: hidden;
+        font-size: 11px;
         max-width: 60px;
         min-width: 52px;
         background-color: rgba(200, 200, 200, 0);
         color: rgb(79, 84, 104);
         box-shadow: 1px 1px 5px rgb(20, 20, 20);
-        font-size: 10px;
         top: 100%;
         bottom: -100%;
         left: 50%; 
@@ -776,13 +776,14 @@
         background-color: rgba(114, 106, 97, 0);
         box-shadow: 1px 1px 5px rgb(20, 20, 20);
         color: rgb(203, 198, 191);
-        font-size: 10px;
+        font-size: 11px;
         top: 100%;
         bottom: -100%;
         left: 50%; 
         margin-left: -28px;
         margin-top: 2px;
         text-align: center;
+        justify-content: center;
         padding: 2px; 
         border-radius: 3px;
         font-weight: bold;
@@ -808,5 +809,4 @@
         transition-duration: 300ms;
         transition-delay: 1200ms;
     } 
-    
 }
