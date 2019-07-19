@@ -564,6 +564,17 @@
     display: inline; 
 }
 
+@supports (-moz-appearance:meterbar) and (background-blend-mode:difference,normal) {
+
+    .transparent-wrapper {
+        background-attachment: scroll;
+    }
+
+    .transparent-wrapper-light {
+        background-attachment: scroll;
+    }
+}
+
 @media only screen and (orientation: landscape) and (min-width: 800px)  {
     .container-div {
         overflow: scroll;

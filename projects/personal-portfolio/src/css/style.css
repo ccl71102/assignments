@@ -325,6 +325,14 @@ body {
     border: 1px solid rgb(240, 240, 241);
 }
 
+@supports (-moz-appearance:meterbar) and (background-blend-mode:difference,normal) {
+
+    .transparent-wrapper{
+        background-attachment: scroll;
+    }
+
+}
+
 @media only screen and (min-width: 600px) {
     
     .content-grid-2 {
@@ -392,7 +400,7 @@ body {
     }
     
     .project-screenshot {
-        height: 350px;
+        height: 380px;
         display: block;
         margin-top: 40px;
         margin-bottom: 60px;
@@ -420,10 +428,9 @@ body {
     }
 
     .navbar > a {
-        font-size: 30px;
+        font-size: 26px;
         font-weight: lighter;
         color: rgb(230, 230, 232);
-        font-size: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
         margin-left: 50px;
@@ -439,6 +446,7 @@ body {
         grid-column: 1;
         grid-row: 1 / 2;
         justify-self: flex-end;
+        padding: 0;
     }
 
     .content-grid-1 {
@@ -446,8 +454,9 @@ body {
         grid-row: 1;
         align-self: center;
         justify-self: start;
+        margin: 0;
+        padding: 0;
         margin-left: 50px;
-        
     }
 
     .content-grid-2 {
@@ -571,4 +580,12 @@ body {
         font-size: 26px;
         margin-right: 50px;
     }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .project-screenshot {
+        height: 460px;
+    }
+
 }

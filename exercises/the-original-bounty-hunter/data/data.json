@@ -1,0 +1,43 @@
+[
+    {   
+        "firstName": "Carth",
+        "lastName": "Onasi",
+        "living": true,
+        "bounty": 10,
+        "type": "jedi",
+        "_id": "1"
+    },
+    {   
+        "firstName": "Darth",
+        "lastName": "Revan",
+        "living": true,
+        "bounty": 20000,
+        "type": "sith",
+        "_id": "2"
+    },
+    {   
+        "firstName": "Darth",
+        "lastName": "Malak",
+        "living": false,
+        "bounty": 10000,
+        "type": "sith",
+        "_id": "3"
+    },
+    {   
+        "firstName": "Darth",
+        "lastName": "Stroyer",
+        "living": true,
+        "bounty": 500,
+        "type": "sith",
+        "_id": "4"
+    },
+    {   
+        "firstName": "Mission",
+        "lastName": "Vao",
+        "living": true,
+        "bounty": 1000,
+        "type": "jedi",
+        "_id": "5"
+    }
+
+]

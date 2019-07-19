@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const ThemeContext = React.createContext();
 const {Provider, Consumer} = ThemeContext;
 
@@ -27,7 +26,6 @@ class ThemeProvider extends React.Component {
                 </Provider>
     }
 }
-
 
 export const withTheme = C => props => (
     <Consumer>
