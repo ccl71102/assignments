@@ -1,14 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 
 const Footer = () => {
     return <div className="footer">
-        <span id="contact-span">CONTACT INFO</span>
-        <a href="https://www.linkedin.com/in/colonlopezcarlos/"><FontAwesomeIcon icon={faLinkedin}/> LinkedIn Profile</a>
-        <a href="https://github.com/ccl71102"><FontAwesomeIcon icon={faGithub}/> Github Profile</a>    
-        <span>colonlopezcarlos -at- gmail -dot- com</span>
+        <span  style={{marginTop: 15}} id="contact-span">CONTACT INFO</span>
+        <a href="https://www.linkedin.com/in/colonlopezcarlos/"><FontAwesomeIcon icon={faLinkedin}/> colonlopezcarlos</a>
+        <a href="https://github.com/ccl71102"><FontAwesomeIcon icon={faGithub}/> ccl71102</a>    
+        <span style={{marginBottom: 15}}><FontAwesomeIcon icon={faGoogle}/> colonlopezcarlos -at- gmail -dot- com</span>
     </div>
 }
 

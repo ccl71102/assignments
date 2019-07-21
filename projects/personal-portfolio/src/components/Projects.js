@@ -3,6 +3,9 @@ import pacScreenshot from "../images/pac-screenshot.png";
 import cssZenGardenScreenshot from "../images/css-zen-garden-screenshot.png";
 import parkwatchScreenshot from "../images/parkwatch-screenshot.jpg";
 import businessTimeScreenshot from "../images/business-time-screenshot.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
+
 const Projects = () => {
 
     document.title = "Carlos Colon";
@@ -13,10 +16,10 @@ const Projects = () => {
             <h1 className="home-title">PROJECTS</h1>
             <h2 id="content" className="section-title table-of-content-title">CONTENTS</h2>
             <div className="table-of-content-div">
-                <a className = "table-of-content-link" href="#property-affordability-calculator">Property Affordability Calculator</a>
-                <a className = "table-of-content-link" href="#css-zen-garden">CSS Zen Garden</a>
-                <a className = "table-of-content-link" href="#business-time">Business Time Website</a>
-                <a className = "table-of-content-link" href="#parkwatch-parking-meter-monitoring-system">ParkWatch Parking Monitoring System</a>
+                <a className = "table-of-content-link" href="#property-affordability-calculator"><FontAwesomeIcon icon={faDotCircle}/> Property Affordability Calculator</a>
+                <a className = "table-of-content-link" href="#css-zen-garden"><FontAwesomeIcon icon={faDotCircle}/> CSS Zen Garden</a>
+                <a className = "table-of-content-link" href="#business-time"><FontAwesomeIcon icon={faDotCircle}/> Business Time Website</a>
+                <a className = "table-of-content-link" href="#parkwatch-parking-meter-monitoring-system"><FontAwesomeIcon icon={faDotCircle}/> ParkWatch Parking Monitoring System</a>
             </div>
             <br/>
             <br/>
@@ -61,15 +64,15 @@ const Projects = () => {
                     <img className= "project-screenshot" src={parkwatchScreenshot} alt="parkwatch project documentation screenshot"/>
                 </a>
                 <br/>
-                <div class="video-container">
-                    <div class="video-responsive">
-                        <iframe title="ParkWacth Demo #1 (Handheld Device)" width="560" height="315" src="https://www.youtube.com/embed/0m4rpoGSzsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div className="video-container">
+                    <div className="video-responsive">
+                        <iframe title="ParkWacth Demo #1 (Handheld Device)" width="560" height="315" src="https://www.youtube.com/embed/0m4rpoGSzsA" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                 </div>
                 <br/>
-                <div class="video-container">
-                    <div class="video-responsive">
-                        <iframe title="ParkWatch Demo #2 (All Components)" width="560" height="315" src="https://www.youtube.com/embed/4QlbxwkxNhE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div className="video-container">
+                    <div className="video-responsive">
+                        <iframe title="ParkWatch Demo #2 (All Components)" width="560" height="315" src="https://www.youtube.com/embed/4QlbxwkxNhE" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                 </div>
                 <br/>

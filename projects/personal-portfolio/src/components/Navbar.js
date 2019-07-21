@@ -5,8 +5,8 @@ import { faHome, faClipboardList} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
     return <div className="navbar">
-        <Link to="/"><FontAwesomeIcon icon={faHome}/> Home</Link>
-        <Link to="/projects"><FontAwesomeIcon icon={faClipboardList}/> Projects</Link>
+        <Link to="/"><FontAwesomeIcon icon={faHome}/> HOME</Link>
+        <Link to="/projects"><FontAwesomeIcon icon={faClipboardList}/> PROJECTS</Link>
         {/* <Link to="/contact"><FontAwesomeIcon icon={faAddressCard}/> Contact</Link> */}
     </div>
 }

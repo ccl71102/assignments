@@ -9,6 +9,9 @@ body {
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
     width: 100%;
     min-height: 6vh;
     min-width: 320px;
@@ -35,7 +38,7 @@ body {
 }
 
 .home-title {
-    padding-top: 50px;
+    padding-top: 150px;
     text-align: center;
     font-size: 30px;
     font-weight: lighter;
@@ -87,38 +90,42 @@ body {
 }
 
 .footer {
+    /* margin-top: 100px;
+    position: fixed;
+    bottom: 0;
+    z-index: 100; */
     width: 100%;
     min-height: 6vh;
     min-width: 320px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     background-image: linear-gradient(rgb(38,38,40), rgb(28, 28, 30));
-    align-items: center;
 }
 
 .footer > a {
+    grid-column: 1;
     font-size: 18px;
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     transition: color 300ms ease-in 100ms;
     color: rgb(230, 230, 232);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 15px;
     font-weight: lighter;
+    justify-self: start;
 }
 
 .footer > span {
+    grid-column: 1;
     font-family: "Roboto", sans-serif;
     color: rgb(230, 230, 232);
     font-weight: lighter;
     font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 15px;
+    justify-self: start;
 }
 
 .footer > a:hover {
@@ -280,18 +287,20 @@ body {
 }
 
 .table-of-content-div {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
 .table-of-content-link {
-    text-align: center;
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    grid-column: 2;
+    justify-self: start;
     color: rgb(230, 230, 232);
     font-family: "Roboto", sans-serif;
     text-decoration: none;
     transition: color 300ms ease-in 100ms;
-    margin-right: 25px;
-    margin-left: 25px;
 }
 
 .table-of-content-link:hover {
@@ -556,29 +565,21 @@ body {
     }
 
     .table-of-content-div {
-        text-align: center;
-        display: block;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .table-of-content-link {
-        text-align: center;
-        margin-right: 25px;
-        margin-left: 25px;
         font-size: 24px;
     }
 
     .footer > a {
         font-size: 26px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-right: 50px;
-        font-weight: lighter;
+        margin-left: 10%;
     }
     
     .footer > span {
-        font-weight: lighter;
         font-size: 26px;
-        margin-right: 50px;
+        margin-left: 10%;
     }
 }
 
