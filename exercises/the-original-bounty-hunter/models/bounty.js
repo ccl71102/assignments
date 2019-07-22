@@ -20,7 +20,8 @@ const bountySchema = new Schema({
     },
     type: {
         type: String,
-        required: true
+        required: true,
+        lowercase: true
     },
     imgUrl: {
         type: String,

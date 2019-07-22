@@ -6,47 +6,55 @@ bountyRouter.get("/", (req, res, next) => {
     Bounty.find( (err, bounties) => {
         if(err) {
             res.status(500);
-            res.send(err);
+            next(err);
         } else
             res.status(200).send(bounties);
     });
-})
+});
+
+bountyRouter.get("/:_id", (req, res, next) => {
+    Bounty.findOne({_id: req.params._id}, (err, foundBounty) => {
+        if(err) {
+            res.status(500);
+            next(err);
+        } else
+            res.status(200).send(foundBounty);
+    });
+});
 
 bountyRouter.post("/", (req, res, next) => {
     const newBounty = new Bounty(req.body);
     newBounty.save((err, savedBounty) => {
         if(err) {
             res.status(500);
-            res.send(err);
+            next(err);
         } else
             res.status(201).send(savedBounty);
-    })
-})
+    });
+});
 
-// bountyRouter.route("/")
-//     .get( (req, res) => {
-//         res.send(bounties);
-//     })
-//     .post((req, res) => {
-//         req.body._id = uuid();
-//         bounties.push(req.body);
-//         res.send(req.body);
-//     })
+bountyRouter.put("/:_id", (req, res, next) => {
+    Bounty.findOneAndAndUpdate({ _id: req.params._id }, req.body, {new: true}, (err, updatedBounty) => {
+        if(err) {
+            res.status(500);
+            next(err);
+        } else
+            res.status(201).send(updatedBounty);
+    });
+});
 
-// bountyRouter.route("/:_id")
-//     .get( (req, res) => {
-//         console.log(bounties.find( bounty => bounty._id === req.params._id));
-//         res.send(bounties.find( bounty => bounty._id === req.params._id));
-//     })
-//     .delete((req, res) => {
-//         bounties = bounties.filter( bounty => bounty._id.toString() !== req.params._id);
-//         res.send("Successfully deleted record");
-//     })
-//     .put((req, res) => {
-//         req.body = Object.assign(bounties.find( bounty => bounty._id === req.params._id), req.body)
-//         bounties = bounties.map(bounty => bounty._id === req.params._id ? req.body : bounty);
-//         res.send(req.body);
-//     })
-
+bountyRouter.delete("/:_id", (req, res, next) => {
+    Bounty.findOneAndRemove({ _id: req.params._id }, (err, deletedBounty) => {
+        if(err) {
+            res.status(500);
+            next(err);
+        } else
+            res.status(202).send({
+                message: "Bounty successfully deleted",
+                success: true, 
+                _id: deletedBounty._id
+            });
+    });
+});
 
 module.exports = bountyRouter;
