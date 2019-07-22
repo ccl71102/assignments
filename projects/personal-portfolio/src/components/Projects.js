@@ -8,8 +8,6 @@ import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
 
-    document.title = "Carlos Colon";
-
     return <div>
     <div className="transparent-wrapper">
         <div className="header-div">

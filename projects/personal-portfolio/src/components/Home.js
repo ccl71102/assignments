@@ -6,8 +6,6 @@ import me from "../images/carlos.png";
 
 const Home = () => {
 
-    document.title = "Carlos Colon";
-
     return  <div>
             <div className="transparent-wrapper">
                 <div className="header-div">
