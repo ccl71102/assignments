@@ -1,28 +1,72 @@
-import React from "react";
+import React, {Component} from "react";
+// import axios from "axios";
 
-const BountyForm = props => {
+class BountyForm extends Component {
 
-    const { firstName, lastName, living, bounty, type, imgUrl } = props;
-
-    const submit = e => {
-
+    constructor(){
+        super();
+        this.state = {
+            firstName: "", 
+            lastName: "", 
+            living: true, 
+            bounty: 0, 
+            type: "", 
+            imgUrl: ""
+        }
     }
 
-    const change = e => {
+    handleSubmit = e => {
+        e.preventDefault();
 
+        const {firstName, lastName, living, bounty, type, imgUrl} = this.state
+
+        const newBounty = {
+            firstName: firstName,
+            lastName: lastName,
+            living: living,
+            bounty: bounty,
+            type: type,
+            imgUrl: imgUrl
+        }
+
+        this.props.postBounty(newBounty);
     }
 
-    return  <div>
-                <form onSubmit={submit}>
-                    <input type="text" name="firstName" value={firstName} onChange={change} placeholder="First Name"/>
-                    <input type="text" name="lastName" value={lastName} onChange={change} placeholder="Last Name"/>
-                    <input type="text" name="imgUrl" value={imgUrl} onChange={change} placeholder="imgUrl"/>
-                    <input type="checkbox" name="living" checked={living} onChange={change} placeholder="Living"/>
-                    <input type="number" name="bounty" value={bounty} onChange={change} placeholder="Bounty"/>
-                    <input type="radio" name="type" value={type === "jedi" ? true : false} onChange={change}/>
-                    <input type="radio" name="type" value={type === "sith" ? true : false} onChange={change}/>
-                </form>
-            </div>
+    handleClick = e => {
+
+        const {name, checked} = e.target;
+        this.setState({
+            [name]: checked
+        });
+    }
+
+    handleChange = e => {
+
+        const {name, value} = e.target;
+        this.setState({
+            [name]: value
+        }); 
+    }
+
+    render() {
+
+            return  <div style = {{fontFamily: "Roboto, sans-serif"}}>
+                        <form onSubmit={this.handleSubmit}>
+                            <input style={{marginBottom: 5}}type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} placeholder="First Name" required/>
+                            <input style={{marginBottom: 5, marginLeft: 5}}type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} placeholder="Last Name" required/>
+                            <input style={{marginBottom: 5, marginLeft: 5}}type="text" name="imgUrl" value={this.state.imgUrl} onChange={this.handleChange} placeholder="imgUrl"/>
+                            <label> Living: </label>
+                            <input style={{marginBottom: 5, marginLeft: 5}}type="checkbox" name="living" checked={this.state.living} onClick={this.handleClick} placeholder="Living"/>
+                            <input style={{marginBottom: 5, marginLeft: 5}}type="number" name="bounty" value={this.state.bounty} onChange={this.handleChange} placeholder="Bounty" required/>
+                            <select style={{marginBottom: 5, marginLeft: 5}} name="type" value={this.state.type} required onChange={this.handleChange}>
+                                <option value="">-Select Alignment-</option>
+                                <option value="jedi">Jedi</option>
+                                <option value="sith">Sith</option>
+                            </select>
+                            <button style={{marginBottom: 5, marginLeft: 5}}>Submit</button>
+                        </form>
+                    </div>
+    }
 }
 
 export default BountyForm;
