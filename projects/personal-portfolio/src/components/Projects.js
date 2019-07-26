@@ -5,6 +5,7 @@ import parkwatchScreenshot from "../images/parkwatch-screenshot.jpg";
 import businessTimeScreenshot from "../images/business-time-screenshot.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Projects = () => {
 
@@ -29,6 +30,7 @@ const Projects = () => {
                 </a>
                 <p>A React based single page application that determines whether the user can afford to live in a particular area based on their annual income. It also provides additional information about the area by retrieving information from an external API provided by datausa.io.</p>
                 <p>Additional features include being fully responsive without relying on external libraries (developed with a mobile first approach), having different appearance themes that can be selected by the user, and a background that is updated in real time based on input data.</p>
+                <a className= "source-code-link" href="https://github.com/ccl71102/assignments/tree/master/projects/personal-react-site"><FontAwesomeIcon icon={faGithub}/> Project Source Code</a>
                 <a href="https://property-affordability-calculator.surge.sh/">
                     <img className= "project-screenshot" src={pacScreenshot} alt="property affordability calculator screenshot"/>
                 </a>
@@ -38,17 +40,19 @@ const Projects = () => {
                     <h2 className="section-title">CSS ZEN GARDEN</h2>
                 </a>
                 <p>A CSS/HTML based project that involved replicating the <a href="http://www.csszengarden.com/214/">CSS Zen Garden website</a> without simply copying the source code. Additionally, the site's responsiveness had to be mimicked.</p>
+                <a className= "source-code-link" href="https://github.com/ccl71102/assignments/tree/master/projects/css-zen-garden"><FontAwesomeIcon icon={faGithub}/> Project Source Code</a>
                 <a href="https://css-zen-garden-colonlopezcarlos.surge.sh/">
                     <img className= "project-screenshot" src={cssZenGardenScreenshot} alt="css zen garden screenshot"/>
                 </a>
             </div>
             <div className="project-data-div" id="business-time">
                 <a href="https://business-time-colonlopezcarlos.surge.sh/">
-                    <h2 className="section-title">BUSINESS TIME WEBPAGE</h2>
+                    <h2 className="section-title">BUSINESS TIME WEBSITE</h2>
                 </a>
-                <p>The first static webpage project done at V School. The purpose was to build a responsive website for a fictional business from scratch using media queries. As a bonus, there's some light JavaScript functionality built in the Contact section, but whatever gets put in the form will vanish into the ether.</p>
+                <p>The first static website project done at V School. The purpose was to build a responsive website for a fictional business from scratch using media queries. As a bonus, there's some light JavaScript functionality built in the Contact section, but whatever gets put in the form will vanish into the ether.</p>
+                <a className= "source-code-link" href="https://github.com/ccl71102/assignments/tree/master/projects/business-time"><FontAwesomeIcon icon={faGithub}/> Project Source Code</a>
                 <a href="https://business-time-colonlopezcarlos.surge.sh/">
-                    <img className= "project-screenshot" src={businessTimeScreenshot} alt="business time webpage screenshot"/>
+                    <img className= "project-screenshot" src={businessTimeScreenshot} alt="business time website screenshot"/>
                 </a>
             </div>
             <div className="project-data-div" id="parkwatch-parking-meter-monitoring-system">

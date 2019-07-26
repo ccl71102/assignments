@@ -62,6 +62,12 @@ class App extends Component {
     handleChange = e => {
         const {name, value} = e.target;
 
+        if(value.indexOf(".") !== -1) {
+            if(value.substring(value.indexOf(".") + 1).length > 2) {
+                return;
+            }
+        }
+
         if(!isNaN(value))
             this.setState({
                 [name]: value

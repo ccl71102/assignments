@@ -66,6 +66,14 @@ body {
     color: rgb(235, 235, 237);
 }
 
+.source-code-link {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(235, 235, 237);
+}
+
 .transparent-wrapper {
     background-image: url(../images/background-image-2.jpeg);
     background-size: cover;
@@ -90,10 +98,6 @@ body {
 }
 
 .footer {
-    /* margin-top: 100px;
-    position: fixed;
-    bottom: 0;
-    z-index: 100; */
     width: 100%;
     min-height: 6vh;
     min-width: 320px;
@@ -259,7 +263,7 @@ body {
 .project-data-div > a {
     text-decoration: none;
     transition: color 300ms ease-in 100ms;
-    color: rgb(74, 121, 198);
+    color: rgb(61, 157, 230);
 }
 
 .project-data-div > a:hover {
@@ -403,8 +407,12 @@ body {
         font-size: 28px;
     }
 
+    .source-code-link {
+        font-size: 22px;
+    }
+
     .content-grid-2 {
-        padding: 0 40vh;
+        padding: 0 300px;
         font-size: 20px;
     }
     
@@ -416,7 +424,7 @@ body {
     }
 
     .project-data-div > p {
-        margin: 10px 40vh;
+        margin: 10px 50vh;
         font-size: 20px;
     }
 
@@ -570,6 +578,7 @@ body {
 
     .table-of-content-link {
         font-size: 24px;
+        margin-left: 5vw;
     }
 
     .footer > a {
