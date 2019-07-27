@@ -69,7 +69,7 @@ const Calculator = props => {
                         <h1 className="content-heading less-padding">Calculator</h1>
                         <form onSubmit={handleSubmit}>
                             <input 
-                                className="calculator-form slight-border-radius textbox-styling" 
+                                className="input-direction calculator-form slight-border-radius textbox-styling" 
                                 type="text" 
                                 placeholder="Yearly Income (USD)"
                                 value={yearlySalary}

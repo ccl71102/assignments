@@ -167,6 +167,12 @@
     color: rgb(211, 195, 177);
 }
 
+.input-direction{
+    width: 154px;
+    text-align: right;
+    direction: rtl important;
+}
+
 .calculator-form {
     margin-left: 5px;
     margin-top: 10px;
