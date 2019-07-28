@@ -32,8 +32,7 @@ const get12HourFormat = d => {
 }
 
 const getMonth = d => {
-    const months = [
-                        "January", 
+    const months = [ "January", 
                         "February", 
                         "March", 
                         "April",
@@ -44,9 +43,7 @@ const getMonth = d => {
                         "September",
                         "October",
                         "November",
-                        "December"
-                    ];
-    
+                        "December"];
     return months[d.getMonth()];
 }
 
@@ -55,7 +52,7 @@ const getDate = () => {
     let d = new Date();
     d.setMinutes(d.getMinutes() + 30);
     let month = getMonth(d);
-    let day = getDate();
+    let day = d.getDate();
     let suffix = d.getHours() >= 12 ? 'PM' : "AM";
     let hour = get12HourFormat(d);
     let minutes = d.getMinutes();
@@ -63,4 +60,9 @@ const getDate = () => {
     return `Your order has been placed and should be ready on ${month} ${day} by ${hour}:${minutes} ${suffix}.`;
 }
 
-console.log(getDate())
+getDate();
+
+
+
+
+
