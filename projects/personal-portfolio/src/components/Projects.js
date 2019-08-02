@@ -3,6 +3,7 @@ import pacScreenshot from "../images/pac-screenshot.png";
 import cssZenGardenScreenshot from "../images/css-zen-garden-screenshot.png";
 import parkwatchScreenshot from "../images/parkwatch-screenshot.jpg";
 import businessTimeScreenshot from "../images/business-time-screenshot.png";
+import fspScreenshot from "../images/full-stack-pizza-screenshot.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -15,6 +16,7 @@ const Projects = () => {
                         <h1 className="home-title">PROJECTS</h1>
                         <h2 id="content" className="section-title table-of-content-title">CONTENTS</h2>
                         <div className="table-of-content-div">
+                            <a className = "table-of-content-link" href="#full-stack-pizza"><FontAwesomeIcon icon={faDotCircle}/> Full Stack Pizza</a>
                             <a className = "table-of-content-link" href="#property-affordability-calculator"><FontAwesomeIcon icon={faDotCircle}/> Property Affordability Calculator</a>
                             <a className = "table-of-content-link" href="#css-zen-garden"><FontAwesomeIcon icon={faDotCircle}/> CSS Zen Garden</a>
                             <a className = "table-of-content-link" href="#business-time"><FontAwesomeIcon icon={faDotCircle}/> Business Time Website</a>
@@ -24,6 +26,24 @@ const Projects = () => {
                         <br/>
                     </div>
                     <div className="content-div">
+                    <div className="project-data-div" id="full-stack-pizza">
+                            <a href="https://fullstackpizza.herokuapp.com/">
+                                <h2 className="section-title">FULL STACK PIZZA</h2>
+                            </a>
+                            <p>A full stack single page application for a fictional pizzeria built with a combination of React, CSS, HTML for the front-end, and Node.js and MongoDB for the back-end.</p>
+                            <p>Features include:</p>
+                            <ul>
+                                <li>Being able to use the menu to filter options based on size and cost.</li>
+                                <li>Add pizzas to a cart or just order one and head straight to checkout.</li>
+                                <li>Modify the amount of pizzas of the same type in the cart or remove them altogether.</li>
+                                <li>A confirmation page with all the order details before placing an order.</li>
+                                <li>A cart whose contents persist if the user leaves and returns to the site.</li>
+                            </ul>
+                            <a className= "source-code-link" href="https://github.com/ccl71102/full-stack-group-project"><FontAwesomeIcon icon={faGithub}/> Project Source Code</a>
+                            <a href="https://fullstackpizza.herokuapp.com/">
+                                <img className= "project-screenshot" src={fspScreenshot} alt="full stack pizza screenshot"/>
+                            </a>
+                        </div>
                         <div className="project-data-div" id="property-affordability-calculator">
                             <a href="https://property-affordability-calculator.surge.sh/">
                                 <h2 className="section-title">PROPERTY AFFORDABILITY CALCULATOR</h2>
