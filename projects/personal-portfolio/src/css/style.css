@@ -26,11 +26,11 @@ body {
     font-family: "Roboto", sans-serif;
     transition: color 300ms ease-in 100ms;
     color: rgb(230, 230, 232);
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .navbar > a:hover {
@@ -75,7 +75,7 @@ body {
 }
 
 .transparent-wrapper {
-    background-image: url(../images/background-image-2.jpeg);
+    background-image: url(../images/background-image.jpeg);
     background-size: cover;
     background-position: center;
     background-size: center;
@@ -275,9 +275,6 @@ body {
     transition: color 300ms ease-in 100ms;
     color: rgb(61, 157, 230);
     text-decoration: none;
-    /* text-decoration-line: underline;
-    text-underline-position: under; 
-    text-decoration-style: solid; */
 }
 
 .project-data-div > p > a:hover {
@@ -343,7 +340,22 @@ body {
     .transparent-wrapper{
         background-attachment: scroll;
     }
+}
 
+@media only screen and (min-width: 400px) {
+
+    .navbar > a {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+
+    .navbar > a {
+        margin-left: 9px;
+        margin-right: 9px;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -358,6 +370,20 @@ body {
 
     .project-data-div > a > h2 {
         margin: 40px 30px 30px 20px;
+    }
+
+    .navbar > a {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+
+    .navbar > a {
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }
 
@@ -597,5 +623,4 @@ body {
     .project-screenshot {
         height: 460px;
     }
-
 }

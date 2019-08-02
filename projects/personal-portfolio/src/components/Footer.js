@@ -2,7 +2,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
-
 const Footer = () => {
     return <div className="footer" id="contact">
         <span  style={{marginTop: 15}} id="contact-span">CONTACT INFO</span>
