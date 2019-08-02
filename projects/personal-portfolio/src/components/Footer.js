@@ -4,7 +4,7 @@ import { faGithub, faLinkedin, faGoogle } from "@fortawesome/free-brands-svg-ico
 
 
 const Footer = () => {
-    return <div className="footer">
+    return <div className="footer" id="contact">
         <span  style={{marginTop: 15}} id="contact-span">CONTACT INFO</span>
         <a href="https://www.linkedin.com/in/colonlopezcarlos/"><FontAwesomeIcon icon={faLinkedin}/> colonlopezcarlos</a>
         <a href="https://github.com/ccl71102"><FontAwesomeIcon icon={faGithub}/> ccl71102</a>    
