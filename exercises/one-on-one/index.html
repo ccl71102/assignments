@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <audio src="441644__xtrgamr__metronome.wav" id="metronome"></audio>
+    <audio src="snarehihat-short.wav" id="snare"></audio>
+    <audio src="bassdrumhihat-short.wav" id="kick"></audio>
+    <button onclick="playMetronome(120)">Start</button>
+
+    <script>
+    {
+            function playMetronome(bpm){
+                console.log("click")
+
+                let firstBeatMS = Math.floor(1000 / (bpm/60));
+                let secondBeatMS = Math.floor(1000 / (bpm/60))* 2;
+
+                console.log(firstBeatMS)
+                console.log(secondBeatMS)
+
+                setInterval(function(){
+                    document.getElementById("kick").play();
+                }, firstBeatMS)
+                setInterval(function(){
+                    document.getElementById("snare").play();
+                }, secondBeatMS)
+            }
+    }
+    </script>
+
+</body>
+</html>

@@ -149,6 +149,9 @@ body {
     color: rgb(230, 230, 232);
     font-family: "Roboto", sans-serif;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content-grid-1 {
@@ -243,6 +246,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100vw;
+    padding-top: 120px;
 }
 
 .project-data-div > p {
