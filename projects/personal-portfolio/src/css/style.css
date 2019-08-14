@@ -37,10 +37,6 @@ body {
     color: rgb(131, 149, 179);
 }
 
-.navbar > a:focus {
-    color: rgb(143, 172, 218);
-}
-
 .active {
     color: rgb(143, 172, 218);
 }
@@ -104,6 +100,35 @@ body {
     background-color: rgba(24, 24, 26, 0.5);
     min-width: 320px;
 }
+
+/*CONTACT*/
+
+.contact {
+    width: 100%;
+    min-height: 6vh;
+    min-width: 320px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 300px;
+    padding-top: 50px;
+}
+
+.contact > a {
+    grid-column: 2 / 3;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    transition: color 300ms ease-in 100ms;
+    color: rgb(230, 230, 232);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contact > a:hover {
+    color: rgb(131, 149, 179);
+}
+
+/*FOOTER*/
 
 .footer {
     width: 100%;
@@ -371,6 +396,7 @@ body {
         margin-left: 7px;
         margin-right: 7px;
     }
+
 }
 
 @media only screen and (min-width: 500px) {
@@ -379,6 +405,7 @@ body {
         margin-left: 9px;
         margin-right: 9px;
     }
+
 }
 
 @media only screen and (min-width: 600px) {
@@ -408,9 +435,20 @@ body {
         margin-left: 15px;
         margin-right: 15px;
     }
+
+    .contact > a { 
+        font-size: 26px;
+    }
+
 }
 
 @media only screen and (min-width: 800px) {
+
+
+    .contact > a { 
+        font-size: 28px;
+        padding-left: 34px;
+    }
 
     .video-links {
         display: none;
@@ -445,9 +483,16 @@ body {
     .project-data-div > ul > li {
         margin: 10px 20vh;
     }
+
 }
 
 @media only screen and (min-width: 1000px) {
+
+
+    .contact > a { 
+        font-size: 30px;
+        padding-left: 50px;
+    }
 
     .project-data-div > ul > li {
         margin: 10px 30vh;
@@ -505,8 +550,6 @@ body {
 
     .navbar > a {
         font-size: 26px;
-        font-weight: lighter;
-        color: rgb(230, 230, 232);
         margin-top: 20px;
         margin-bottom: 20px;
         margin-left: 50px;
