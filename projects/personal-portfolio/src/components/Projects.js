@@ -32,7 +32,7 @@ const Projects = () => {
                             <a href="https://guitarstack.herokuapp.com/">
                                 <h2 className="section-title">GUITAR STACK</h2>
                             </a>
-                            <p>A guitar teaching tool; it's a full stack single page application that includes a metronome, a tuner, and the means to search and save guitar tabs per user account.</p>
+                            <p>A guitar teaching tool; Guitar Stack is a full stack single page application that includes a metronome, a tuner, and the means to search and save guitar tabs per user account.</p>
                             <a className= "source-code-link" href="https://github.com/ccl71102/guitar-app"><FontAwesomeIcon icon={faGithub}/> Project Source Code</a>
                             <a href="https://guitarstack.herokuapp.com/">
                                 <img className= "project-screenshot" src={guitarScreenshot} alt="guitar stack screenshot"/>
