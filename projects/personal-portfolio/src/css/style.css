@@ -61,6 +61,12 @@ body {
     width: 150px;
     border-radius: 50%;
     filter: grayscale(45%);
+    transition: filter 300ms linear 100ms;
+}
+
+.portrait:hover {
+    filter: grayscale(0%);
+    transition: filter 300ms linear 100ms;
 }
 
 .section-title {
