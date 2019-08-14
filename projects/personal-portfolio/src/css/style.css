@@ -276,6 +276,7 @@ body {
 
 .project-screenshot{
     display: none;
+    border-radius: 3px;
 }
 
 .project-data-div {
