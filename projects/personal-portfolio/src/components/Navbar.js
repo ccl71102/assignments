@@ -1,14 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faClipboardList, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
-    return <div className="navbar">
-        <Link to="/"><FontAwesomeIcon icon={faHome}/> HOME</Link>
-        <Link to="/projects"><FontAwesomeIcon icon={faClipboardList}/> PROJECTS</Link>
-        <a href="#contact"><FontAwesomeIcon icon={faAddressCard}/> CONTACT</a>
-    </div>;
+
+    return (
+        <div className="navbar">
+            <NavLink to="/" className="navlink" activeClassName="active"><FontAwesomeIcon icon={faHome}/> HOME</NavLink>
+            <NavLink to="/projects" className="navlink" activeClassName="active"><FontAwesomeIcon icon={faClipboardList}/> PROJECTS</NavLink>
+            <a className="navlink" href="#contact"><FontAwesomeIcon icon={faAddressCard}/> CONTACT</a>
+        </div>
+    );
 }
 
-export default Navbar;
+export default withRouter(Navbar);

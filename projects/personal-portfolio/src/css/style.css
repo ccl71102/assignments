@@ -21,7 +21,7 @@ body {
     background-image: linear-gradient(rgb(38,38,40), rgb(28, 28, 30));
 }
 
-.navbar > a {
+.navlink {
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     transition: color 300ms ease-in 100ms;
@@ -33,8 +33,16 @@ body {
     margin-right: 5px;
 }
 
-.navbar > a:hover {
+.navlink:hover {
     color: rgb(131, 149, 179);
+}
+
+.navbar > a:focus {
+    color: rgb(143, 172, 218);
+}
+
+.active {
+    color: rgb(143, 172, 218);
 }
 
 .home-title {
