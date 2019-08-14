@@ -6,7 +6,7 @@ import businessTimeScreenshot from "../images/business-time-screenshot.png";
 import fspScreenshot from "../images/full-stack-pizza-screenshot.png";
 import guitarScreenshot from "../images/guitar-stack-screenshot.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
+import { faDotCircle, faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Projects = () => {
@@ -14,7 +14,7 @@ const Projects = () => {
     return  <div>
                 <div className="transparent-wrapper">
                     <div className="header-div">
-                        <h1 className="home-title">PROJECTS</h1>
+                        <h1 className="home-title" id="table-of-content">PROJECTS</h1>
                         <h2 id="content" className="section-title table-of-content-title">CONTENTS</h2>
                         <div className="table-of-content-div">
                             <a className = "table-of-content-link" href="#guitar-stack"><FontAwesomeIcon icon={faDotCircle}/> Guitar Stack</a>
@@ -37,6 +37,7 @@ const Projects = () => {
                             <a href="https://guitarstack.herokuapp.com/">
                                 <img className= "project-screenshot" src={guitarScreenshot} alt="guitar stack screenshot"/>
                             </a>
+                            <a href="#table-of-content"><FontAwesomeIcon icon={faArrowCircleUp}/> Back to Top</a>
                         </div>
                         <div className="project-data-div" id="full-stack-pizza">
                             <a href="https://fullstackpizza.herokuapp.com/">
@@ -55,6 +56,7 @@ const Projects = () => {
                             <a href="https://fullstackpizza.herokuapp.com/">
                                 <img className= "project-screenshot" src={fspScreenshot} alt="full stack pizza screenshot"/>
                             </a>
+                            <a href="#table-of-content"><FontAwesomeIcon icon={faArrowCircleUp}/> Back to Top</a>
                         </div>
                         <div className="project-data-div" id="property-affordability-calculator">
                             <a href="https://property-affordability-calculator.surge.sh/">
@@ -66,6 +68,7 @@ const Projects = () => {
                             <a href="https://property-affordability-calculator.surge.sh/">
                                 <img className= "project-screenshot" src={pacScreenshot} alt="property affordability calculator screenshot"/>
                             </a>
+                            <a href="#table-of-content"><FontAwesomeIcon icon={faArrowCircleUp}/> Back to Top</a>
                         </div>
                         <div className="project-data-div" id="css-zen-garden">
                             <a href="https://css-zen-garden-colonlopezcarlos.surge.sh/">
@@ -76,6 +79,7 @@ const Projects = () => {
                             <a href="https://css-zen-garden-colonlopezcarlos.surge.sh/">
                                 <img className= "project-screenshot" src={cssZenGardenScreenshot} alt="css zen garden screenshot"/>
                             </a>
+                            <a href="#table-of-content"><FontAwesomeIcon icon={faArrowCircleUp}/> Back to Top</a>
                         </div>
                         <div className="project-data-div" id="business-time">
                             <a href="https://business-time-colonlopezcarlos.surge.sh/">
@@ -86,6 +90,7 @@ const Projects = () => {
                             <a href="https://business-time-colonlopezcarlos.surge.sh/">
                                 <img className= "project-screenshot" src={businessTimeScreenshot} alt="business time website screenshot"/>
                             </a>
+                            <a href="#table-of-content"><FontAwesomeIcon icon={faArrowCircleUp}/> Back to Top</a>
                         </div>
                         <div className="project-data-div" id="parkwatch-parking-meter-monitoring-system">
                             <a href="https://www.slideshare.net/slideshow/embed_code/key/rg6HHu7JqDHSGH">
@@ -110,6 +115,8 @@ const Projects = () => {
                                 </div>
                             </div>
                             <br/>
+                            <br/>
+                            <a href="#table-of-content"><FontAwesomeIcon icon={faArrowCircleUp}/> Back to Top</a>
                             <br/>
                             <br/>
                         </div>
