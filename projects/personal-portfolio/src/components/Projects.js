@@ -4,6 +4,7 @@ import cssZenGardenScreenshot from "../images/css-zen-garden-screenshot.png";
 import parkwatchScreenshot from "../images/parkwatch-screenshot.jpg";
 import businessTimeScreenshot from "../images/business-time-screenshot.png";
 import fspScreenshot from "../images/full-stack-pizza-screenshot.png";
+import guitarScreenshot from "../images/guitar-stack-screenshot.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -16,6 +17,7 @@ const Projects = () => {
                         <h1 className="home-title">PROJECTS</h1>
                         <h2 id="content" className="section-title table-of-content-title">CONTENTS</h2>
                         <div className="table-of-content-div">
+                            <a className = "table-of-content-link" href="#guitar-stack"><FontAwesomeIcon icon={faDotCircle}/> Guitar Stack</a>
                             <a className = "table-of-content-link" href="#full-stack-pizza"><FontAwesomeIcon icon={faDotCircle}/> Full Stack Pizza</a>
                             <a className = "table-of-content-link" href="#property-affordability-calculator"><FontAwesomeIcon icon={faDotCircle}/> Property Affordability Calculator</a>
                             <a className = "table-of-content-link" href="#css-zen-garden"><FontAwesomeIcon icon={faDotCircle}/> CSS Zen Garden</a>
@@ -26,7 +28,17 @@ const Projects = () => {
                         <br/>
                     </div>
                     <div className="content-div">
-                    <div className="project-data-div" id="full-stack-pizza">
+                    <div className="project-data-div" id="guitar-stack">
+                            <a href="https://guitarstack.herokuapp.com/">
+                                <h2 className="section-title">GUITAR STACK</h2>
+                            </a>
+                            <p>A guitar teaching tool; it's a full stack single page application that includes a metronome, a tuner, and the means to search and save guitar tabs per user account.</p>
+                            <a className= "source-code-link" href="https://github.com/ccl71102/guitar-app"><FontAwesomeIcon icon={faGithub}/> Project Source Code</a>
+                            <a href="https://guitarstack.herokuapp.com/">
+                                <img className= "project-screenshot" src={guitarScreenshot} alt="guitar stack screenshot"/>
+                            </a>
+                        </div>
+                        <div className="project-data-div" id="full-stack-pizza">
                             <a href="https://fullstackpizza.herokuapp.com/">
                                 <h2 className="section-title">FULL STACK PIZZA</h2>
                             </a>
