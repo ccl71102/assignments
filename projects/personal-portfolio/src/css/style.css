@@ -207,7 +207,7 @@ body {
     min-width: 320px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding-bottom: 300px;
+    padding-bottom: 500px;
     padding-top: 50px;
 }
 
