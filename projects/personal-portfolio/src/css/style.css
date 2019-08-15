@@ -1,3 +1,5 @@
+/* ##GLOBAL */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +9,22 @@
 body {
     background-color: rgb(28, 28, 30);
 }
+
+.transparent-wrapper {
+    background-image: url(../images/background-image.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-size: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-origin: border-box;
+    filter: grayscale(65%);
+    background-color: rgba(69, 73, 120, 0.9);
+    background-blend-mode: screen;
+    min-width: 320px;
+}
+
+/* ##NAVBAR */
 
 .navbar {
     position: fixed;
@@ -41,150 +59,7 @@ body {
     color: rgb(143, 172, 218);
 }
 
-.home-title {
-    padding-top: 150px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: lighter;
-    font-family: "Ubuntu", sans-serif;
-    color: rgb(235, 235, 237);
-}
-
-.center-portrait {
-    padding: 30px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.portrait {
-    width: 150px;
-    border-radius: 50%;
-    filter: grayscale(45%);
-    transition: filter 300ms linear 100ms;
-}
-
-.portrait:hover {
-    filter: grayscale(0%);
-    transition: filter 300ms linear 100ms;
-}
-
-.section-title {
-    font-size: 20px;
-    font-weight: lighter;
-    font-family: "Ubuntu", sans-serif;
-    color: rgb(235, 235, 237);
-}
-
-.source-code-link {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: lighter;
-    font-family: "Ubuntu", sans-serif;
-    color: rgb(235, 235, 237);
-}
-
-.top-link {
-    margin-top: 10px;
-}
-
-.transparent-wrapper {
-    background-image: url(../images/background-image.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-size: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-origin: border-box;
-    filter: grayscale(65%);
-    background-color: rgba(69, 73, 120, 0.9);
-    background-blend-mode: screen;
-    min-width: 320px;
-}
-
-.header-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 160px;
-    background-color: rgba(24, 24, 26, 0.5);
-    min-width: 320px;
-}
-
-/*CONTACT*/
-
-.contact {
-    width: 100%;
-    min-height: 6vh;
-    min-width: 320px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-bottom: 300px;
-    padding-top: 50px;
-}
-
-.contact > a {
-    grid-column: 2 / 3;
-    font-size: 20px;
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    transition: color 300ms ease-in 100ms;
-    color: rgb(230, 230, 232);
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.contact > a:hover {
-    color: rgb(131, 149, 179);
-}
-
-/*FOOTER*/
-
-.footer {
-    width: 100%;
-    min-height: 6vh;
-    min-width: 320px;
-    display: grid;
-    grid-template-columns: 1fr;
-    background-image: linear-gradient(rgb(38,38,40), rgb(28, 28, 30));
-}
-
-.footer > a {
-    grid-column: 1;
-    font-size: 18px;
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    transition: color 300ms ease-in 100ms;
-    color: rgb(230, 230, 232);
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 15px;
-    font-weight: lighter;
-    justify-self: start;
-}
-
-.footer > span {
-    grid-column: 1;
-    font-family: "Roboto", sans-serif;
-    color: rgb(230, 230, 232);
-    font-weight: lighter;
-    font-size: 18px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 15px;
-    justify-self: start;
-}
-
-.footer > a:hover {
-    color: rgb(131, 149, 179);
-}
-
-#contact-span {
-    font-weight: lighter;
-    font-family: "Ubuntu", sans-serif;
-    color: rgb(235, 235, 237);
-}
+/* ##HOME */
 
 .content-div {
     min-height: 840px;
@@ -278,6 +153,139 @@ body {
 
 .content-grid-8:hover {
     color: rgb(61, 157, 230);
+}
+
+.home-title {
+    padding-top: 150px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: lighter;
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(235, 235, 237);
+}
+
+.center-portrait {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait {
+    width: 150px;
+    border-radius: 50%;
+    filter: grayscale(45%);
+    transition: filter 300ms linear 100ms;
+}
+
+.portrait:hover {
+    filter: grayscale(0%);
+    transition: filter 300ms linear 100ms;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: lighter;
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(235, 235, 237);
+}
+
+.header-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 160px;
+    background-color: rgba(24, 24, 26, 0.5);
+    min-width: 320px;
+}
+
+/* ##CONTACT */
+
+.contact {
+    width: 100%;
+    min-height: 6vh;
+    min-width: 320px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 300px;
+    padding-top: 50px;
+}
+
+.contact > a {
+    grid-column: 2 / 3;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    transition: color 300ms ease-in 100ms;
+    color: rgb(230, 230, 232);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contact > a:hover {
+    color: rgb(131, 149, 179);
+}
+
+/* ##FOOTER */
+
+.footer {
+    width: 100%;
+    min-height: 6vh;
+    min-width: 320px;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-image: linear-gradient(rgb(38,38,40), rgb(28, 28, 30));
+}
+
+.footer > a {
+    grid-column: 1;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    transition: color 300ms ease-in 100ms;
+    color: rgb(230, 230, 232);
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 15px;
+    font-weight: lighter;
+    justify-self: start;
+}
+
+.footer > span {
+    grid-column: 1;
+    font-family: "Roboto", sans-serif;
+    color: rgb(230, 230, 232);
+    font-weight: lighter;
+    font-size: 18px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 15px;
+    justify-self: start;
+}
+
+.footer > a:hover {
+    color: rgb(131, 149, 179);
+}
+
+#contact-span {
+    font-weight: lighter;
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(235, 235, 237);
+}
+
+/* ##PROJECTS */
+
+.source-code-link {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(235, 235, 237);
+}
+
+.top-link {
+    margin-top: 10px;
 }
 
 .project-screenshot{
@@ -394,6 +402,8 @@ body {
     max-width: 900px;
     border: 1px solid rgb(240, 240, 241);
 }
+
+/* ##MEDIA QUERIES */
 
 @supports (-moz-appearance:meterbar) and (background-blend-mode:difference,normal) {
 

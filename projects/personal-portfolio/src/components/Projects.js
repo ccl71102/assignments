@@ -9,6 +9,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle, faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
+/* 
+    I should create a Project component and pass down the info as props
+    because this page is starting to get crowded.
+*/ 
+
 const Projects = () => {
 
     return  <div>
