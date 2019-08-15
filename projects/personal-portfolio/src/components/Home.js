@@ -20,7 +20,7 @@ const Home = () => {
                         <div className="content-grid-2">
                             <p>I am a problem solver who takes pride in being able to grasp new concepts with ease, being resourceful, having a wide breadth of technological knowledge, and figuring out how to use it to achieve results.</p> 
                             <p>From a humble beginning working with C and Java, I have expanded my toolset to include JavaScript (React, Node.js), C#, C++, PowerScript, SQL, and MongoDB.</p> 
-                            <p>When I am not programming or solving problems, I enjoy exploring the outdoors and playing all sorts of instruments; mainly guitar, bass, and drums.</p>
+                            <p>When I am not programming or solving problems, I enjoy exploring the outdoors, road trips, motorsports, and playing all sorts of instruments; mainly guitar, bass, and drums.</p>
                         </div>
                         <h2 className="section-title content-grid-3">SKILLS</h2>
                         <div className="skills-grid">   
